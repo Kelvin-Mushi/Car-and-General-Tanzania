@@ -579,11 +579,6 @@ h3 {
     font-size: 12px;
 }
 
-
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (Large Desktop down to Mobile)
-   ========================================================================== */
-
 /* 1. Large Monitors / 4K Screens (1400px and up) */
 @media (min-width: 1400px) {
     .card-grid {
