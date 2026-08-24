@@ -110,8 +110,13 @@ body {
 }
 
 .signup-btn {
-    background: var(--primary-blue);
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
     color: #ffffff;
+    transition: transform 2sec ease;
+}
+
+.signup-btn:hover{
+    transform: scale(1.1);
 }
 
 .header-container {
