@@ -45,3 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 });
+
+//Privacy Policy Page
+const privacyLink = document.getElementById('privacy-link');
+const privacyModal = document.getElementById('privacy-modal');
+const closeModal = document.getElementById('close-modal');
+
+// Open modal on click
+privacyLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    privacyModal.style.display = 'flex';
+});
+
+// Close modal on 'X' click
+closeModal.addEventListener('click', () => {
+    privacyModal.style.display = 'none';
+});
+
+// Close modal when clicking anywhere outside the card
+window.addEventListener('click', (e) => {
+    if (e.target === privacyModal) {
+        privacyModal.style.display = 'none';
+    }
+});
