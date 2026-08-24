@@ -739,3 +739,124 @@ h3 {
         justify-content: center;
     }
 }
+
+/* 43" Screens & 1080p Desktop Displays (1920px - 2559px) */
+@media screen and (min-width: 1920px) {
+    .container,
+    .branding,
+    .footer-container {
+        max-width: 1700px; /* Expands site layout across larger screens */
+    }
+
+    body {
+        font-size: 16px; /* Scales base typography up for distance viewing */
+    }
+
+    .logo img {
+        height: 75px;
+    }
+
+    .products-icons img {
+        height: 48px;
+    }
+
+    .hero-slider {
+        height: 65vh;
+        max-height: 750px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .card-img-container {
+        height: 280px;
+    }
+
+    .locator-box, 
+    .testimonial-box {
+        height: 65vh;
+        min-height: 600px;
+    }
+}
+
+/* 64", 70"+ Ultra-HD & 4K Smart TVs (2560px and above) */
+@media screen and (min-width: 2560px) {
+    .container,
+    .branding,
+    .footer-container {
+        max-width: 2300px;
+    }
+
+    body {
+        font-size: 20px;
+    }
+
+    .nav-links a,
+    .sub-nav-links a {
+        font-size: 18px;
+        padding: 10px 18px;
+    }
+
+    .logo img {
+        height: 95px;
+    }
+
+    .products-icons img {
+        height: 60px;
+        gap: 45px;
+    }
+
+    .hero-slider {
+        height: 55vh;
+        max-height: 850px;
+    }
+
+    .slide-overlay h1 {
+        font-size: 56px;
+    }
+
+    .slide-overlay p {
+        font-size: 24px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(5, 1fr); /* Fits 5 products per row on large displays */
+        gap: 35px;
+    }
+
+    .card-img-container {
+        height: 320px;
+    }
+
+    .card-body h3 {
+        font-size: 18px;
+    }
+
+    .arrow-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 40px;
+        margin-bottom: 45px;
+    }
+
+    .locator-box, 
+    .testimonial-box {
+        height: 60vh;
+        min-height: 750px;
+    }
+
+    .modal-content {
+        max-width: 50%;
+        max-height: 70vh;
+    }
+
+    .modal-body {
+        font-size: 16px;
+    }
+}
