@@ -1,3 +1,9 @@
+
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
 let slideIntervalTimer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -74,6 +80,7 @@ window.addEventListener('click', (e) => {
 //Terms and Conditions Page
 const termsLink = document.getElementById('terms-link');
 const termsModal = document.getElementById('terms-modal');
+const closeModal2 = document.getElementById('close-modal2');
 
 // Open modal on click
 termsLink.addEventListener('click', (e) => {
@@ -82,7 +89,7 @@ termsLink.addEventListener('click', (e) => {
 });
 
 // Close modal on 'X' click
-closeModal.addEventListener('click', () => {
+closeModal2.addEventListener('click', () => {
     termsModal.style.display = 'none';
 });
 
