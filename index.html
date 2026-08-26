@@ -37,8 +37,22 @@
         <div class="container header-container">
             <nav class="nav-links">
                 <a href="#" class="active">Home</a>
-                <a href="#our-products">Our Products</a>
-                <a href="#">My Orders</a>
+                <!--<a href="#our-products">Our Products</a>-->
+                <div class="nav-dropdown">
+                    <a href="#our-products" class="dropdown-toggle">
+                        Our Products <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" id="nav-kirloskar" data-product="Kirloskar Chillers">Kirloskar Chillers</a>
+                        <a href="#" id="nav-cummins" data-product="Cummins Power Generation">Cummins Power Generation</a>
+                        <a href="#" id="nav-ingersoll">Ingersoll Rand</a>
+                        <a href="#" id="nav-develon">Develon</a>
+                        <a href="#" id="nav-valvoline">Valvoline</a>
+                        <a href="#" id="nav-briggs">Briggs & Stratton</a>
+                        <a href="#" id="nav-mrf">MRF Tyres</a>
+                    </div>
+                </div>
+                <!--<a href="#">My Orders</a>-->
                 <a href="#dealer-locator">Dealer Locator</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#about-us">About Us</a>
@@ -291,6 +305,686 @@
         </section> 
 
     </div>
+
+    <!--ENGINEERING PRODUCTS SECTION-->
+    <div id="product-section" style="display: none;">
+  <!-- Shared top container (back button, logos, etc.) -->
+  <div class="product-container">
+    <div class="product-left">
+      <button class="back-btn" id="backBtn">← Back to Home</button>
+      <div class="product-header-animated">
+        <img id="product-logo-img" src="" alt="Product Logo" class="product-logo">
+      </div>
+    </div>
+  </div>
+
+  <!-- UNIQUE SECTIONS (Add a shared class 'product-detail-section') -->
+  
+  <section class="product-detail-section" id="cummins-section" style="display: none;">
+    <!-- Your full Cummins HTML content here -->
+  <div class="cummins-container">
+    
+    <!-- HEADER -->
+    <header class="cummins-header">
+      <span class="cummins-badge">ALWAYS ON • ALWAYS POWERING</span>
+      <h2 class="cummins-title">Cummins Power & Maintenance Solutions</h2>
+      <p class="cummins-subtitle">
+        Delivering world-class power generation, heavy-duty engines, filtration science, and premium lubrication backed by global service excellence.
+      </p>
+    </header>
+
+    <!-- PRODUCT & SERVICE CARDS GRID -->
+    <div class="cummins-grid">
+      
+      <!-- CARD 1: CUMMINS ENGINES -->
+      <article class="cummins-card">
+        <div class="card-image-wrap">
+          <img src="https://www.cummins.com/sites/default/files/styles/product_display/public/2025-02/b72-product-da.png" alt="Cummins Heavy-Duty Engine" class="card-img" />
+          <span class="card-category">Powertrain</span>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Cummins Engines</h3>
+          <p class="card-description">
+            Engineered for high reliability, maximum uptime, and unmatched thermal efficiency across highway, off-highway, agricultural, and industrial applications.
+          </p>
+          <ul class="card-features">
+            <li>Advanced fuel injection & combustion systems</li>
+            <li>Optimized power-to-weight performance</li>
+            <li>Compliant with stringent global emission standards</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- CARD 2: POWER GENERATION -->
+      <article class="cummins-card">
+        <div class="card-image-wrap">
+          <img src="https://cdn.ade-power.com/assets/img/generators/cummins/33kva-38kva-cummins-silent-diesel-generator-cummins-c33d5-c38d5.jpg" alt="Cummins Power Generation Generator Set" class="card-img" />
+          <span class="card-category">Power Systems</span>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Cummins Power Generation</h3>
+          <p class="card-description">
+            Fully integrated power systems including diesel & gas generator sets, automatic transfer switches, and digital controls for standby and prime power needs.
+          </p>
+          <ul class="card-features">
+            <li>Seamless integration from 10 kVA to 3750 kVA</li>
+            <li>Single-source manufacturing for engine & alternator</li>
+            <li>Instant emergency power backup systems</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- CARD 3: FLEETGUARD FILTRATION -->
+      <article class="cummins-card">
+        <div class="card-image-wrap">
+          <img src="https://cdn11.bigcommerce.com/s-hc30m/images/stencil/1280x1280/products/3258/16295/LF17475__49306.1767628362.jpg" alt="Fleetguard Heavy Duty Filter" class="card-img" />
+          <span class="card-category">Filtration</span>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Fleetguard Filtration</h3>
+          <p class="card-description">
+            Advanced air, lube, fuel, and hydraulic filtration systems designed specifically to safeguard equipment components and lower Total Cost of Ownership (TCO).
+          </p>
+          <ul class="card-features">
+            <li>Patented NanoNet® media technology</li>
+            <li>Superior contaminant retention efficiency</li>
+            <li>Extended drain interval protection</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- CARD 4: VALVOLINE LUBRICANTS -->
+      <article class="cummins-card">
+        <div class="card-image-wrap">
+          <img src="https://www.valvolineglobal.com/497878/globalassets/vcom/product%20detail%20pages/heavy%20duty/us_818289_val_prem_blue_8600_10w30_1gal.png" alt="Valvoline Premium Blue Engine Oil" class="card-img" />
+          <span class="card-category">Lubrication</span>
+        </div>
+        <div class="card-content">
+          <h3 class="card-title">Valvoline™ Premium Blue</h3>
+          <p class="card-description">
+            The exclusive heavy-duty engine oil endorsed and co-developed with Cummins to maximize engine life, reduce oil consumption, and ensure thermal stability.
+          </p>
+          <ul class="card-features">
+            <li>Officially approved for Cummins engines</li>
+            <li>Enhanced wear protection & soot control</li>
+            <li>Extends maintenance & oil drain intervals</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- AFTER SALES & SERVICE BANNER -->
+    <div class="cummins-banner">
+      <div class="banner-image">
+        <img src="https://www.cummins.com/sites/default/files/styles/scroll_jack_image/public/2025-06/diesel-technician.jpg" alt="Cummins Certified Technician Service" />
+      </div>
+      <div class="banner-info">
+        <span class="banner-tag">SUPPORT & MAINTENANCE</span>
+        <h3 class="banner-heading">After Sales & Global Service</h3>
+        <p class="banner-text">
+          Maximize equipment uptime with certified field engineers, genuine OEM replacement parts, and 24/7 technical assistance through our global service network.
+        </p>
+        <div class="banner-stats">
+          <div class="stat-item">
+            <span class="stat-num">500+</span>
+            <span class="stat-lbl">Global Distributors</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">190+</span>
+            <span class="stat-lbl">Countries Served</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">24/7</span>
+            <span class="stat-lbl">Cummins Care Support</span>
+          </div>
+        </div>
+        <a href="#contact" class="cummins-btn">Request Support</a>
+      </div>
+    </div>
+
+  </div>
+
+  </section>
+  <!--KIRLOSCAR CHILLERS SECTION-->
+    <!-- SINGLE-PAGE KIRLOSKAR GROUP SOLUTIONS SECTION -->
+<section class="product-detail-section" id="kirloskar-section" style="display: none;">
+  <div class="kirloskar-page-wrapper">
+
+    <!-- PAGE HERO HEADER -->
+    <header class="kirloskar-hero">
+      <span class="kirloskar-badge">OFFICIAL DIVISION CATALOG</span>
+      <h1 class="kirloskar-main-heading">Kirloskar Industrial & HVAC Solutions</h1>
+      <p class="kirloskar-lead-text">
+        Engineering excellence across refrigeration, air compression, liquid chilling, heat recovery, and heavy-duty gas power generation.
+      </p>
+    </header>
+
+    <!-- DIVISION 1: KIRLOSKAR PNEUMATIC COMPANY LTD. -->
+    <div class="kirloskar-division-block">
+      <div class="division-header">
+        <span class="division-num">01</span>
+        <h2>Kirloskar Pneumatic Company Ltd.</h2>
+      </div>
+
+      <div class="kirloskar-product-grid">
+        <!-- Gas Compressors -->
+        <article class="kc-single-card">
+          <div class="kc-img-frame">
+            <img src="https://www.kirloskar-kpcl.com/images/gas-compressor.jpg" alt="Kirloskar Gas Compressor" class="kc-product-img" />
+            <span class="kc-type-tag">Pneumatic</span>
+          </div>
+          <div class="kc-card-details">
+            <h3>Gas Compressors</h3>
+            <p>High-pressure process gas compression systems built for CNG stations, petrochemical refining, and heavy industrial gas transport.</p>
+            <ul class="kc-spec-list">
+              <li>Heavy-duty continuous process operational rating</li>
+              <li>Multi-stage compression with custom intercooling</li>
+              <li>Engineered for hazardous environment compatibility</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Booster Compressors -->
+        <article class="kc-single-card">
+          <div class="kc-img-frame">
+            <img src="https://www.kirloskar-kpcl.com/images/booster-compressor.jpg" alt="Kirloskar Booster Compressor" class="kc-product-img" />
+            <span class="kc-type-tag">Pneumatic</span>
+          </div>
+          <div class="kc-card-details">
+            <h3>Booster Compressors</h3>
+            <p>Specialized booster units designed to elevate existing line pressure to ultra-high operational levels for specialized manufacturing steps.</p>
+            <ul class="kc-spec-list">
+              <li>Energy-efficient pressure escalation loops</li>
+              <li>Compact foot-print with low operational vibration</li>
+              <li>Automated pressure-drop monitoring system</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Refrigeration Compressors -->
+        <article class="kc-single-card">
+          <div class="kc-img-frame">
+            <img src="https://www.kirloskar-kpcl.com/images/refrigeration-compressor.jpg" alt="Kirloskar Refrigeration Compressor" class="kc-product-img" />
+            <span class="kc-type-tag">Pneumatic</span>
+          </div>
+          <div class="kc-card-details">
+            <h3>Refrigeration Compressors</h3>
+            <p>Industrial-grade reciprocating and screw compressors built specifically for commercial cold storage, dairy, and food processing plants.</p>
+            <ul class="kc-spec-list">
+              <li>High-efficiency Screw & Reciprocating options</li>
+              <li>Compatible with eco-friendly modern refrigerants</li>
+              <li>Variable capacity control for low power consumption</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DIVISION 2: KIRLOSKAR CHILLERS PRIVATE LTD. -->
+    <div class="kirloskar-division-block">
+      <div class="division-header">
+        <span class="division-num">02</span>
+        <h2>Kirloskar Chillers Private Ltd.</h2>
+      </div>
+
+      <div class="kirloskar-product-grid">
+        <!-- Chillers -->
+        <article class="kc-single-card">
+          <div class="kc-img-frame">
+            <img src="https://www.kirloskarchillers.com/o/kirloskar-common-theme/images/round.png" alt="Kirloskar Liquid Chiller" class="kc-product-img" />
+            <span class="kc-type-tag">HVAC & Process</span>
+          </div>
+          <div class="kc-card-details">
+            <h3>Chillers</h3>
+            <p>AHRI-certified Water-Cooled and Air-Cooled liquid chillers utilizing Centrifugal, Screw, and Scroll compression technology.</p>
+            <ul class="kc-spec-list">
+              <li>AHRI-certified performance ratings</li>
+              <li>Integrates low-GWP eco-refrigerants (R-134a, R-513A)</li>
+              <li>VFD Integration for extreme IPLV energy efficiency</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Heat Pumps -->
+        <article class="kc-single-card">
+          <div class="kc-img-frame">
+            <img src="https://th.bing.com/th/id/OIP.D3xTsTQ262xjc5O7Svk_6gHaEK?w=327&h=184&c=7&r=0&o=7&pid=1.7&rm=3" alt="Kirloskar Heat Pump" class="kc-product-img" />
+            <span class="kc-type-tag">Energy Recovery</span>
+          </div>
+          <div class="kc-card-details">
+            <h3>Heat Pumps</h3>
+            <p>Industrial water-to-water heat recovery pumps generating simultaneous hot water (up to 80°C) and chilled water for industrial heating.</p>
+            <ul class="kc-spec-list">
+              <li>Simultaneous heating and cooling mode COP maximization</li>
+              <li>Drastically cuts boiler fossil fuel usage</li>
+              <li>Precision micro-processor control panel interface</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DIVISION 3: KIRLOSKAR OIL ENGINES LTD. -->
+    <div class="kirloskar-division-block">
+      <div class="division-header">
+        <span class="division-num">03</span>
+        <h2>Kirloskar Oil Engines Ltd.</h2>
+      </div>
+
+      <div class="kirloskar-product-grid">
+        <!-- Gas Generators -->
+        <article class="kc-single-card">
+          <div class="kc-img-frame">
+            <img src="https://th.bing.com/th/id/OIP.ryo75zHrUtsaWYGwVOhBUwHaFH?w=195&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Kirloskar Gas Generator" class="kc-product-img" />
+            <span class="kc-type-tag">Power Systems</span>
+          </div>
+          <div class="kc-card-details">
+            <h3>Gas Generators</h3>
+            <p>Heavy-duty, low-emission continuous power gas generator sets engineered to supply reliable baseload power to continuous facilities.</p>
+            <ul class="kc-spec-list">
+              <li>Runs on Natural Gas and Biogas streams</li>
+              <li>Low total cost of operation with long service intervals</li>
+              <li>Engineered to strict regional emission compliance norms</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+  <!--END OF KIRLOSCAR CHILLERS SECTION-->
+    <!-- SINGLE-PAGE INGERSOLL RAND SOLUTIONS SECTION -->
+<section class="product-detail-section" id="ingersoll-section" style="display: none;">
+  <div class="ir-page-wrapper">
+
+    <!-- HERO HEADER -->
+    <header class="ir-hero">
+      <span class="ir-badge">COMPRESSED AIR & FLUID MANAGEMENT</span>
+      <h1 class="ir-main-heading">Ingersoll Rand & Partner Brands</h1>
+      <p class="ir-lead-text">
+        Industry-leading air compressors, air treatment systems, pneumatic tools, and specialized fluid handling equipment across global manufacturing brands.
+      </p>
+    </header>
+
+    <!-- DIVISION 1: INGERSOLL RAND -->
+    <div class="ir-division-block">
+      <div class="ir-division-header">
+        <span class="ir-division-num">01</span>
+        <h2>Ingersoll Rand Product Range</h2>
+      </div>
+
+      <div class="ir-product-grid">
+        <!-- Rotary Screw Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.ingersollrand.com/content/dam/ir-corporate/products/compressors/rotary-screw/oil-flooded-rotary-screw-compressor.png" alt="Ingersoll Rand Rotary Screw Air Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Air Systems</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Rotary Screw Air Compressors</h3>
+            <p>Oil-flooded and oil-free rotary screw compressors engineered for continuous industrial operations requiring maximum runtime.</p>
+            <ul class="ir-spec-list">
+              <li>Next-generation air ends with high-efficiency motor drives</li>
+              <li>Available in fixed-speed and Variable Speed Drive (VSD)</li>
+              <li>Integrated Xe-Series smart controllers for remote monitoring</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Reciprocating Air Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.ingersollrand.com/content/dam/ir-corporate/products/compressors/reciprocating/t30-reciprocating-air-compressor.png" alt="Ingersoll Rand Reciprocating Air Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Air Systems</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Reciprocating Air Compressors</h3>
+            <p>Legendary Type 30 heavy-duty cast-iron reciprocating compressors built for workshop, auto service, and industrial applications.</p>
+            <ul class="ir-spec-list">
+              <li>Durable 100% cast-iron construction</li>
+              <li>High-pressure operation up to 175 psi (12 bar)</li>
+              <li>Low maintenance requirements with extended service life</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Air Treatment & Dryers -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.ingersollrand.com/content/dam/ir-corporate/products/air-treatment/refrigerated-dryer.png" alt="Ingersoll Rand Refrigerated Air Dryer" class="ir-product-img" />
+            <span class="ir-type-tag">Air Treatment</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Air Treatment & Dryers</h3>
+            <p>Refrigerated and desiccant air dryers, inline moisture filters, and condensate drains to deliver clean, dry, moisture-free air.</p>
+            <ul class="ir-spec-list">
+              <li>Protects downstream equipment from rust and liquid contamination</li>
+              <li>Energy-saving thermal mass and heatless desiccant options</li>
+              <li>ISO 8573-1 air purity compliance</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DIVISION 2: COMPAIR -->
+    <div class="ir-division-block">
+      <div class="ir-division-header">
+        <span class="ir-division-num">02</span>
+        <h2>CompAir Product Range</h2>
+      </div>
+
+      <div class="ir-product-grid">
+        <!-- Oil-Free Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.compair.com/en/-/media/images/compair/products/oil-free-compressors/d-series-oil-free-screw-compressor.png" alt="CompAir Oil-Free Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Clean Air</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Oil-Free Air Compressors</h3>
+            <p>100% oil-free certified compressed air solutions tailored for pharmaceutical, food & beverage, and electronics manufacturing.</p>
+            <ul class="ir-spec-list">
+              <li>ISO 8573-1 CLASS 0 oil-free air delivery</li>
+              <li>Water-injected and two-stage dry screw technologies</li>
+              <li>Delivers maximum purity to critical process environments</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Portable Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.compair.com/en/-/media/images/compair/products/portable-compressors/c-series-portable-compressor.png" alt="CompAir Portable Mobile Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Mobile Power</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Portable Mobile Compressors</h3>
+            <p>Rugged C-Series towable diesel compressors built for tough road construction, quarrying, and civil engineering sites.</p>
+            <ul class="ir-spec-list">
+              <li>Fuel-efficient diesel engines meeting modern emission standards</li>
+              <li>Impact-resistant canopy for harsh outdoor weather</li>
+              <li>Dual-pressure options for versatility on construction sites</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DIVISION 3: CHAMPION -->
+    <div class="ir-division-block">
+      <div class="ir-division-header">
+        <span class="ir-division-num">03</span>
+        <h2>Champion Pneumatic Product Range</h2>
+      </div>
+
+      <div class="ir-product-grid">
+        <!-- Commercial Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.championpneumatic.com/en/-/media/images/champion/products/reciprocating/advantage-series-compressor.png" alt="Champion Commercial Air Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Pneumatics</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Commercial Air Compressors</h3>
+            <p>Heavy-duty industrial reciprocating and rotary screw packages designed for reliable operation in small-to-medium workshops.</p>
+            <ul class="ir-spec-list">
+              <li>Advantage & Command Series heavy-duty pump designs</li>
+              <li>Factory-mounted magnetic starters and automatic tank drains</li>
+              <li>Proven low-RPM pump operation for cooler running temperatures</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DIVISION 4: ARO -->
+    <div class="ir-division-block">
+      <div class="ir-division-header">
+        <span class="ir-division-num">04</span>
+        <h2>ARO Fluid Management Range</h2>
+      </div>
+
+      <div class="ir-product-grid">
+        <!-- Diaphragm Pumps -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.arozone.com/en/-/media/images/aro/products/diaphragm-pumps/exp-series-diaphragm-pump.png" alt="ARO Air-Operated Diaphragm Pump" class="ir-product-img" />
+            <span class="ir-type-tag">Fluid Handling</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Air-Operated Diaphragm Pumps</h3>
+            <p>EXP Series air-operated double diaphragm (AODD) pumps for precise, stall-free transferring of chemicals, slurries, and viscous fluids.</p>
+            <ul class="ir-spec-list">
+              <li>Patented Quick-Dump™ air valves eliminate pump stalling</li>
+              <li>Metallic and non-metallic body options for chemical compatibility</li>
+              <li>Sealless design prevents hazardous liquid leakage</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Piston Pumps & Lubrication Equipment -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.arozone.com/en/-/media/images/aro/products/piston-pumps/thunder-series-piston-pump.png" alt="ARO Heavy Duty Piston Pump" class="ir-product-img" />
+            <span class="ir-type-tag">Fluid Handling</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Piston Pumps & Fluid Systems</h3>
+            <p>High-pressure pneumatic piston pumps engineered to transfer high-viscosity paints, sealants, adhesives, and heavy lubricants.</p>
+            <ul class="ir-spec-list">
+              <li>Extreme pressure ratios up to 100:1 for thick materials</li>
+              <li>Durable stainless steel fluid legs for wear resistance</li>
+              <li>Smooth double-acting delivery stroke for steady flow rates</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--INGERSOLL RAND SECTION-->
+    <!-- SINGLE-PAGE INGERSOLL RAND SOLUTIONS SECTION -->
+<section class="product-detail-section" id="ingersoll-section" style="display: none;">
+  <div class="ir-page-wrapper">
+
+    <!-- HERO HEADER -->
+    <header class="ir-hero">
+      <span class="ir-badge">COMPRESSED AIR & FLUID MANAGEMENT</span>
+      <h1 class="ir-main-heading">Ingersoll Rand & Partner Brands</h1>
+      <p class="ir-lead-text">
+        Industry-leading air compressors, air treatment systems, pneumatic tools, and specialized fluid handling equipment across global manufacturing brands.
+      </p>
+    </header>
+
+    <!-- DIVISION 1: INGERSOLL RAND -->
+    <div class="ir-division-block">
+      <div class="ir-division-header">
+        <span class="ir-division-num">01</span>
+        <h2>Ingersoll Rand Product Range</h2>
+      </div>
+
+      <div class="ir-product-grid">
+        <!-- Rotary Screw Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.ingersollrand.com/content/dam/ir-corporate/products/compressors/rotary-screw/oil-flooded-rotary-screw-compressor.png" alt="Ingersoll Rand Rotary Screw Air Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Air Systems</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Rotary Screw Air Compressors</h3>
+            <p>Oil-flooded and oil-free rotary screw compressors engineered for continuous industrial operations requiring maximum runtime.</p>
+            <ul class="ir-spec-list">
+              <li>Next-generation air ends with high-efficiency motor drives</li>
+              <li>Available in fixed-speed and Variable Speed Drive (VSD)</li>
+              <li>Integrated Xe-Series smart controllers for remote monitoring</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Reciprocating Air Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.ingersollrand.com/content/dam/ir-corporate/products/compressors/reciprocating/t30-reciprocating-air-compressor.png" alt="Ingersoll Rand Reciprocating Air Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Air Systems</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Reciprocating Air Compressors</h3>
+            <p>Legendary Type 30 heavy-duty cast-iron reciprocating compressors built for workshop, auto service, and industrial applications.</p>
+            <ul class="ir-spec-list">
+              <li>Durable 100% cast-iron construction</li>
+              <li>High-pressure operation up to 175 psi (12 bar)</li>
+              <li>Low maintenance requirements with extended service life</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Air Treatment & Dryers -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.ingersollrand.com/content/dam/ir-corporate/products/air-treatment/refrigerated-dryer.png" alt="Ingersoll Rand Refrigerated Air Dryer" class="ir-product-img" />
+            <span class="ir-type-tag">Air Treatment</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Air Treatment & Dryers</h3>
+            <p>Refrigerated and desiccant air dryers, inline moisture filters, and condensate drains to deliver clean, dry, moisture-free air.</p>
+            <ul class="ir-spec-list">
+              <li>Protects downstream equipment from rust and liquid contamination</li>
+              <li>Energy-saving thermal mass and heatless desiccant options</li>
+              <li>ISO 8573-1 air purity compliance</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DIVISION 2: COMPAIR -->
+    <div class="ir-division-block">
+      <div class="ir-division-header">
+        <span class="ir-division-num">02</span>
+        <h2>CompAir Product Range</h2>
+      </div>
+
+      <div class="ir-product-grid">
+        <!-- Oil-Free Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.compair.com/en/-/media/images/compair/products/oil-free-compressors/d-series-oil-free-screw-compressor.png" alt="CompAir Oil-Free Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Clean Air</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Oil-Free Air Compressors</h3>
+            <p>100% oil-free certified compressed air solutions tailored for pharmaceutical, food & beverage, and electronics manufacturing.</p>
+            <ul class="ir-spec-list">
+              <li>ISO 8573-1 CLASS 0 oil-free air delivery</li>
+              <li>Water-injected and two-stage dry screw technologies</li>
+              <li>Delivers maximum purity to critical process environments</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Portable Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.compair.com/en/-/media/images/compair/products/portable-compressors/c-series-portable-compressor.png" alt="CompAir Portable Mobile Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Mobile Power</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Portable Mobile Compressors</h3>
+            <p>Rugged C-Series towable diesel compressors built for tough road construction, quarrying, and civil engineering sites.</p>
+            <ul class="ir-spec-list">
+              <li>Fuel-efficient diesel engines meeting modern emission standards</li>
+              <li>Impact-resistant canopy for harsh outdoor weather</li>
+              <li>Dual-pressure options for versatility on construction sites</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DIVISION 3: CHAMPION -->
+    <div class="ir-division-block">
+      <div class="ir-division-header">
+        <span class="ir-division-num">03</span>
+        <h2>Champion Pneumatic Product Range</h2>
+      </div>
+
+      <div class="ir-product-grid">
+        <!-- Commercial Compressors -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.championpneumatic.com/en/-/media/images/champion/products/reciprocating/advantage-series-compressor.png" alt="Champion Commercial Air Compressor" class="ir-product-img" />
+            <span class="ir-type-tag">Pneumatics</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Commercial Air Compressors</h3>
+            <p>Heavy-duty industrial reciprocating and rotary screw packages designed for reliable operation in small-to-medium workshops.</p>
+            <ul class="ir-spec-list">
+              <li>Advantage & Command Series heavy-duty pump designs</li>
+              <li>Factory-mounted magnetic starters and automatic tank drains</li>
+              <li>Proven low-RPM pump operation for cooler running temperatures</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- DIVISION 4: ARO -->
+    <div class="ir-division-block">
+      <div class="ir-division-header">
+        <span class="ir-division-num">04</span>
+        <h2>ARO Fluid Management Range</h2>
+      </div>
+
+      <div class="ir-product-grid">
+        <!-- Diaphragm Pumps -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.arozone.com/en/-/media/images/aro/products/diaphragm-pumps/exp-series-diaphragm-pump.png" alt="ARO Air-Operated Diaphragm Pump" class="ir-product-img" />
+            <span class="ir-type-tag">Fluid Handling</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Air-Operated Diaphragm Pumps</h3>
+            <p>EXP Series air-operated double diaphragm (AODD) pumps for precise, stall-free transferring of chemicals, slurries, and viscous fluids.</p>
+            <ul class="ir-spec-list">
+              <li>Patented Quick-Dump™ air valves eliminate pump stalling</li>
+              <li>Metallic and non-metallic body options for chemical compatibility</li>
+              <li>Sealless design prevents hazardous liquid leakage</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Piston Pumps & Lubrication Equipment -->
+        <article class="ir-single-card">
+          <div class="ir-img-frame">
+            <img src="https://www.arozone.com/en/-/media/images/aro/products/piston-pumps/thunder-series-piston-pump.png" alt="ARO Heavy Duty Piston Pump" class="ir-product-img" />
+            <span class="ir-type-tag">Fluid Handling</span>
+          </div>
+          <div class="ir-card-details">
+            <h3>Piston Pumps & Fluid Systems</h3>
+            <p>High-pressure pneumatic piston pumps engineered to transfer high-viscosity paints, sealants, adhesives, and heavy lubricants.</p>
+            <ul class="ir-spec-list">
+              <li>Extreme pressure ratios up to 100:1 for thick materials</li>
+              <li>Durable stainless steel fluid legs for wear resistance</li>
+              <li>Smooth double-acting delivery stroke for steady flow rates</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--END OF INGERSOLL RAND SECTION-->
+
+  <section class="product-detail-section" id="develon-section" style="display: none;">
+    <!-- Your full Develon HTML content here -->
+  </section>
+
+</div>
 
   <!-- MAIN PRODUCT HERO SECTION -->
     <div class="product-hero-section" id="product-section" style="display: none;">

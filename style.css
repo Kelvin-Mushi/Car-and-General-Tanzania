@@ -129,6 +129,62 @@ body {
     padding: 10px 0;
 }
 
+/*OUR PRODUCTS DROPDOWN LINK*/
+/* Dropdown Container */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Arrow Icon Alignment & Transition */
+.dropdown-arrow {
+    font-size: 0.75em;
+    margin-left: 2px;
+    transition: transform 0.25s ease;
+}
+
+/* Rotate Arrow on Hover */
+.nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu Box */
+.nav-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+/* Individual Links inside Dropdown */
+.nav-dropdown .dropdown-menu a {
+    display: block;
+    color: #333333;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover State for Sub-Links */
+.nav-dropdown .dropdown-menu a:hover {
+    background-color: #f4f4f4;
+    color: #0056b3;
+}
+
+/* Reveal Sub-Menu on Hover */
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 .nav-links {
     display: flex;
     flex-wrap: wrap;
@@ -725,7 +781,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  align-items: center;
+  align-items:start;
 }
 
 /* Entrance Animation for Logo and Title */
@@ -736,7 +792,7 @@ h3 {
   opacity: 0;
   transform: translateX(-60px);
   animation: slideInFromLeft 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
 
 .product-logo {
@@ -744,22 +800,41 @@ h3 {
   object-fit: contain;
 }
 
+@keyframes pulseScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08); /* Scales up by 8% */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .back-btn {
   padding: 12px 24px;
   font-size: 0.95rem;
   font-weight: 600;
   color:  var(--text-dark);
-  background: transparent;
+  background: linear-gradient(rgba(255, 0, 0, 0.5),rgba(255,0,0,0.5));
   border: 1px solid var(--text-dark);
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
+  animation: pulseScale 1.5s ease-in-out infinite;
+  
+  /* Retains smooth scaling performance */
+  will-change: transform;
+  display: inline-block;
 }
 
 .back-btn:hover {
   background:linear-gradient(90deg, var(--primary-blue), var(--accent-red));
   color: var(--light-bg);
+  animation-play-state: paused;
+  transform: scale(1.1); /* Optional: slight accent jump on hover */
+  transition: transform 0.2s ease;
 }
 
 /* Keyframes for Left Slide-In */
@@ -1073,3 +1148,617 @@ h3 {
   align-items: center;
 }
 
+/*PRODUCTS PAGE CUMMINS*/
+:root {
+  --cummins-red: #EE2E24;
+  --cummins-dark: #111111;
+  --cummins-gray: #F4F4F4;
+  --cummins-border: #E0E0E0;
+  --cummins-text-dark: #1A1A1A;
+  --cummins-text-muted: #555555;
+}
+
+.cummins-section {
+  background-color: #FFFFFF;
+  color: var(--cummins-text-dark);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 60px 20px;
+}
+
+.cummins-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cummins-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cummins-badge {
+  background-color: var(--cummins-dark);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.cummins-title {
+  color: var(--cummins-dark);
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.cummins-subtitle {
+  color: var(--cummins-text-muted);
+  font-size: 16px;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* GRID SYSTEM */
+.cummins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.cummins-card {
+  background: #FFFFFF;
+  border: 1px solid var(--cummins-border);
+  border-top: 4px solid var(--cummins-red);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cummins-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-image-wrap {
+  position: relative;
+  height: 200px;
+  background-color: var(--cummins-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.card-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.card-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--cummins-red);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cummins-dark);
+  margin: 0 0 12px 0;
+}
+
+.card-description {
+  font-size: 14px;
+  color: var(--cummins-text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+}
+
+.card-features li {
+  font-size: 13px;
+  color: #333333;
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.card-features li::before {
+  content: "■";
+  color: var(--cummins-red);
+  font-size: 10px;
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+/* AFTER SALES BANNER */
+.cummins-banner {
+  background-color: var(--cummins-dark);
+  color: #FFFFFF;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  align-items: center;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-info {
+  padding: 40px;
+}
+
+.banner-tag {
+  color: var(--cummins-red);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.banner-heading {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 14px 0;
+}
+
+.banner-text {
+  color: #CCCCCC;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.banner-stats {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+  border-top: 1px solid #333333;
+  padding-top: 20px;
+}
+
+.stat-num {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.stat-lbl {
+  font-size: 11px;
+  color: #999999;
+  text-transform: uppercase;
+}
+
+.cummins-btn {
+  display: inline-block;
+  background-color: var(--cummins-red);
+  color: #FFFFFF;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease;
+}
+
+.cummins-btn:hover {
+  background-color: #C82119;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+  .cummins-banner {
+    grid-template-columns: 1fr;
+  }
+  .banner-image img {
+    min-height: 220px;
+  }
+  .banner-info {
+    padding: 30px 20px;
+  }
+  .banner-stats {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* PRODUCTS SECTION KIRLOSCAR CHILLERS*/
+
+:root {
+  --kirloskar-navy: #002A54;
+  --kirloskar-green: #008241;
+  --kirloskar-light-bg: #F8FAFC;
+  --kirloskar-card-border: #E2E8F0;
+  --kirloskar-text-muted: #64748B;
+}
+
+.kirloskar-page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+}
+
+/* Page Hero Header */
+.kirloskar-hero {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 2px dashed var(--kirloskar-card-border);
+}
+
+.kirloskar-badge {
+  display: inline-block;
+  background-color: rgba(0, 130, 65, 0.1);
+  color: var(--kirloskar-green);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.kirloskar-main-heading {
+  color: var(--kirloskar-navy);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.kirloskar-lead-text {
+  color: var(--kirloskar-text-muted);
+  font-size: 1.1rem;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Division Block Grouping */
+.kirloskar-division-block {
+  margin-bottom: 60px;
+}
+
+.division-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  border-left: 5px solid var(--kirloskar-green);
+  padding-left: 15px;
+}
+
+.division-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--kirloskar-green);
+  opacity: 0.8;
+}
+
+.division-header h2 {
+  color: var(--kirloskar-navy);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Product Cards Layout Grid */
+.kirloskar-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Single Product Card */
+.kc-single-card {
+  background: #ffffff;
+  border: 1px solid var(--kirloskar-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.kc-single-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 42, 84, 0.12);
+  border-color: rgba(0, 130, 65, 0.4);
+}
+
+.kc-img-frame {
+  position: relative;
+  height: 220px;
+  background-color: var(--kirloskar-light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--kirloskar-card-border);
+}
+
+.kc-product-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.kc-type-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--kirloskar-navy);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.kc-card-details {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.kc-card-details h3 {
+  color: var(--kirloskar-navy);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.kc-card-details p {
+  color: #475569;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+/* Bullet Specification List */
+.kc-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+}
+
+.kc-spec-list li {
+  font-size: 0.88rem;
+  color: #334155;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.kc-spec-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--kirloskar-green);
+  font-weight: bold;
+}
+
+
+/* ==========================================================================
+   INGERSOLL RAND SECTION STYLES
+   ========================================================================== */
+
+:root {
+  --ir-red: #E31837;
+  --ir-dark: #1E1E1E;
+  --ir-light-bg: #F8FAFC;
+  --ir-card-border: #E2E8F0;
+  --ir-text-muted: #64748B;
+}
+
+.ir-page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+}
+
+/* Page Hero Header */
+.ir-hero {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 2px dashed var(--ir-card-border);
+}
+
+.ir-badge {
+  display: inline-block;
+  background-color: rgba(227, 24, 55, 0.1);
+  color: var(--ir-red);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.ir-main-heading {
+  color: var(--ir-dark);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.ir-lead-text {
+  color: var(--ir-text-muted);
+  font-size: 1.1rem;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Division Block Grouping */
+.ir-division-block {
+  margin-bottom: 60px;
+}
+
+.ir-division-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  border-left: 5px solid var(--ir-red);
+  padding-left: 15px;
+}
+
+.ir-division-num {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--ir-red);
+  opacity: 0.85;
+}
+
+.ir-division-header h2 {
+  color: var(--ir-dark);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Product Cards Grid */
+.ir-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Single Product Card */
+.ir-single-card {
+  background: #ffffff;
+  border: 1px solid var(--ir-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.ir-single-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(227, 24, 55, 0.12);
+  border-color: rgba(227, 24, 55, 0.4);
+}
+
+.ir-img-frame {
+  position: relative;
+  height: 220px;
+  background-color: var(--ir-light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--ir-card-border);
+}
+
+.ir-product-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.ir-type-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--ir-dark);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.ir-card-details {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ir-card-details h3 {
+  color: var(--ir-dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.ir-card-details p {
+  color: #475569;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+/* Bullet Specification List */
+.ir-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+}
+
+.ir-spec-list li {
+  font-size: 0.88rem;
+  color: #334155;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.ir-spec-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--ir-red);
+  font-weight: bold;
+}
