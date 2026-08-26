@@ -101,7 +101,7 @@ const products = [
     image1:"https://www.kirloskarchillers.com/o/kirloskar-common-theme/images/round.png",
     image2:"https://th.bing.com/th/id/OIP.D3xTsTQ262xjc5O7Svk_6gHaEK?w=327&h=184&c=7&r=0&o=7&pid=1.7&rm=3",
     image3:"https://th.bing.com/th/id/OIP.ryo75zHrUtsaWYGwVOhBUwHaFH?w=195&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
-    logo:"",
+    logo:"./products_logos/kirloscar_chillers.png",
     type1:"",
     type2:"",
     type3:"",
@@ -112,7 +112,7 @@ const products = [
     image1:"",
     image2:"",
     image3:"",
-    logo:"",
+    logo:"./products_logos/cumminspower.png",
     type1:"",
     type2:"",
     type3:"",
@@ -123,7 +123,7 @@ const products = [
     image1:"",
     image2:"",
     image3:"",
-    logo:"",
+    logo:"./products_logos/ingersoll.png",
     type1:"",
     type2:"",
     type3:"",
@@ -134,7 +134,7 @@ const products = [
     image1:"",
     image2:"",
     image3:"",
-    logo:"",
+    logo:"./products_logos/develonlogo.png",
     type1:"",
     type2:"",
     type3:"",
@@ -145,7 +145,7 @@ const products = [
     image1:"",
     image2:"",
     image3:"",
-    logo:"",
+    logo:"./products_logos/valvoline.png",
     type1:"",
     type2:"",
     type3:"",
@@ -156,7 +156,18 @@ const products = [
     image1:"",
     image2:"",
     image3:"",
-    logo:"",
+    logo:"./products_logos/briggslogo.png.webp",
+    type1:"",
+    type2:"",
+    type3:"",
+  },
+    {
+    name: "MRF",
+    description: "Original, Durable Tyres for your Car, 3-Wheeler and 2-Wheeler",
+    image1:"",
+    image2:"",
+    image3:"",
+    logo:"./products_logos/mrflogo.png",
     type1:"",
     type2:"",
     type3:"",
@@ -190,48 +201,16 @@ function displayProducts(name) {
             <div class="bg-slide" style="background-image: url('${product.image3}');"></div>
             
             <!-- Gradient overlay -->
-            <div class="bg-overlay"></div>
+            <!--<div class="bg-overlay"></div>-->
         </div>
-
+    
         <div class="product-container">
             <div class="product-left">
-                <button class="back-btn" id="backBtn">← Back to Previous Page</button>
                 <div class="product-header-animated">
-                <img src="https://via.placeholder.com/80" alt="Product Logo" class="product-logo">
-                <h1 class="product-title">${product.name}</h1>
+                  <img src="${product.logo}" alt="Product Logo" class="product-logo">
                 </div>
-
+                <button class="back-btn" id="backBtn">← Back to Previous Page</button>
             </div>
-
-            <div class="product-right">
-                <h2 class="big-heading">FEATURED ITEM</h2>
-                   <p class="product-description">
-                    ${product.description}
-                </p>
-            </div>
-
-                    <div class="container card-grid">
-                    
-                        <div class="service-card">
-                            <div class="card-img-container">
-                                <img src="https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/home-listing/HLX_150X_5_GEAR_Home.webp">
-                            </div>
-                            <div class="card-body">
-                                <h3>TVS 2-Wheelers Collection</h3>
-                                <button class="arrow-btn" onclick="window.open('https://digital.cargen.co.tz/models/two-wheeler', '_parent')"><i class="fas fa-arrow-right"></i></button>
-                            </div>
-                        </div>
-                          <div class="service-card">
-                            <div class="card-img-container">
-                                <img src="https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/home-listing/HLX_150X_5_GEAR_Home.webp">
-                            </div>
-                            <div class="card-body">
-                                <h3>TVS 2-Wheelers Collection</h3>
-                                <button class="arrow-btn" onclick="window.open('https://digital.cargen.co.tz/models/two-wheeler', '_parent')"><i class="fas fa-arrow-right"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
         </div>
     `;
 
@@ -275,7 +254,7 @@ if (cumminsBtn) {
   });
 }
 
-const ingersollRandBtn = document.getElementById('ingersoll-rand');
+const ingersollRandBtn = document.getElementById('ingersoll');
 if (ingersollRandBtn) {
   ingersollRandBtn.addEventListener('click', () => {
     displayProducts('Ingersoll Rand');
@@ -296,9 +275,15 @@ if (valvolineBtn) {
   });
 }
 
-const briggsAndStrattonBtn = document.getElementById('briggs-and-stratton');
+const briggsAndStrattonBtn = document.getElementById('briggs');
 if (briggsAndStrattonBtn) {
   briggsAndStrattonBtn.addEventListener('click', () => {
     displayProducts('Briggs & Stratton');
   });
+}
+const mrfBtn = document.getElementById('mrf');
+if (mrf) {
+  mrfBtn.addEventListener('click', () => {
+    displayProducts('MRF')
+  })
 }
