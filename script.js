@@ -1,3 +1,5 @@
+let slideIntervalTimer = null;
+
 document.addEventListener('DOMContentLoaded', () => {
     // Slider Logic
     const slides = document.querySelectorAll('.slide');
@@ -68,3 +70,235 @@ window.addEventListener('click', (e) => {
         privacyModal.style.display = 'none';
     }
 });
+
+//Terms and Conditions Page
+const termsLink = document.getElementById('terms-link');
+const termsModal = document.getElementById('terms-modal');
+
+// Open modal on click
+termsLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    termsModal.style.display = 'flex';
+});
+
+// Close modal on 'X' click
+closeModal.addEventListener('click', () => {
+    termsModal.style.display = 'none';
+});
+
+// Close modal when clicking anywhere outside the card
+window.addEventListener('click', (e) => {
+    if (e.target === termsModal) {
+        termsModal.style.display = 'none';
+    }
+});
+
+//DATA DISPLAY FOR CARGEN PRODUCTS
+const products = [
+  {
+    name: "Kirloskar Chillers",
+    description: "Kirloskar Chillers has been a leading player in the HVAC&R space for the last 20 years. We provide the reliability, the operating efficiency and the responsive after-sales support that has always been associated with the Kirloskar name.",
+    image1:"https://www.kirloskarchillers.com/o/kirloskar-common-theme/images/round.png",
+    image2:"https://th.bing.com/th/id/OIP.D3xTsTQ262xjc5O7Svk_6gHaEK?w=327&h=184&c=7&r=0&o=7&pid=1.7&rm=3",
+    image3:"https://th.bing.com/th/id/OIP.ryo75zHrUtsaWYGwVOhBUwHaFH?w=195&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+    logo:"",
+    type1:"",
+    type2:"",
+    type3:"",
+  },
+  {
+    name: "Cummins Power Generation",
+    description: "Protect your home and belongings with our reliable home insurance policy.",
+    image1:"",
+    image2:"",
+    image3:"",
+    logo:"",
+    type1:"",
+    type2:"",
+    type3:"",
+  },
+  {
+    name: "Ingersoll Rand",
+    description: "High-performance engines for various industrial applications.",
+    image1:"",
+    image2:"",
+    image3:"",
+    logo:"",
+    type1:"",
+    type2:"",
+    type3:"",
+  },
+  {
+    name: "Develon",
+    description: "Durable construction and excavation equipment for your projects.",
+    image1:"",
+    image2:"",
+    image3:"",
+    logo:"",
+    type1:"",
+    type2:"",
+    type3:"",
+  },
+  {
+    name: "Valvoline",
+    description: "High-quality lubricants for your vehicle's engine.",
+    image1:"",
+    image2:"",
+    image3:"",
+    logo:"",
+    type1:"",
+    type2:"",
+    type3:"",
+  },
+  {
+    name: "Briggs & Stratton",
+    description: "Reliable lawn mowers and outdoor equipment for your garden.",
+    image1:"",
+    image2:"",
+    image3:"",
+    logo:"",
+    type1:"",
+    type2:"",
+    type3:"",
+  }
+
+];
+
+const all = document.getElementById('all');
+const productSection = document.getElementById('product-section');
+
+//A FUNCTION TO DISPLAY PRODUCTS BASED ON THE NAME PASSED
+function displayProducts(name) {
+    // Clear any running slideshow timer before opening a new product
+  if (slideIntervalTimer) {
+    clearInterval(slideIntervalTimer);
+  }
+  all.style.display = 'none'; // Hide the main content
+  productSection.style.display = 'block'; // Show the product section 
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'instant'
+  }); 
+  const product = products.find(p => p.name === name);
+  if (product) {
+    productSection.innerHTML = `
+           <!-- Dynamic Background Slideshow -->
+        <div class="bg-slideshow">
+            <div class="bg-slide active" style="background-image: url('${product.image1}');"></div>
+            <div class="bg-slide" style="background-image: url('${product.image2}');"></div>
+            <div class="bg-slide" style="background-image: url('${product.image3}');"></div>
+            
+            <!-- Gradient overlay -->
+            <div class="bg-overlay"></div>
+        </div>
+
+        <div class="product-container">
+            <div class="product-left">
+                <button class="back-btn" id="backBtn">← Back to Previous Page</button>
+                <div class="product-header-animated">
+                <img src="https://via.placeholder.com/80" alt="Product Logo" class="product-logo">
+                <h1 class="product-title">${product.name}</h1>
+                </div>
+
+            </div>
+
+            <div class="product-right">
+                <h2 class="big-heading">FEATURED ITEM</h2>
+                   <p class="product-description">
+                    ${product.description}
+                </p>
+            </div>
+
+                    <div class="container card-grid">
+                    
+                        <div class="service-card">
+                            <div class="card-img-container">
+                                <img src="https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/home-listing/HLX_150X_5_GEAR_Home.webp">
+                            </div>
+                            <div class="card-body">
+                                <h3>TVS 2-Wheelers Collection</h3>
+                                <button class="arrow-btn" onclick="window.open('https://digital.cargen.co.tz/models/two-wheeler', '_parent')"><i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                          <div class="service-card">
+                            <div class="card-img-container">
+                                <img src="https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/home-listing/HLX_150X_5_GEAR_Home.webp">
+                            </div>
+                            <div class="card-body">
+                                <h3>TVS 2-Wheelers Collection</h3>
+                                <button class="arrow-btn" onclick="window.open('https://digital.cargen.co.tz/models/two-wheeler', '_parent')"><i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+    `;
+
+    // ---SLIDESHOW & BACK BUTTON LOGIC ---
+    const slides = productSection.querySelectorAll('.bg-slide');
+    let currentSlide = 0;
+
+    if (slides.length > 1) {
+      slideIntervalTimer = setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 3000);
+    }
+
+    // Fixed Back Button (hides product section & shows main content)
+    const backBtn = document.getElementById('backBtn');
+    if (backBtn) {
+      backBtn.addEventListener('click', () => {
+        if (slideIntervalTimer) clearInterval(slideIntervalTimer);
+        productSection.style.display = 'none';
+        all.style.display = 'block';
+      });
+    }
+  }
+}
+
+
+// Event listener for product buttons
+const kirloskarBtn = document.getElementById('kirloskar');
+if (kirloskarBtn) {
+  kirloskarBtn.addEventListener('click', () => {
+    displayProducts('Kirloskar Chillers');
+  });
+}
+
+const cumminsBtn = document.getElementById('cummins');
+if (cumminsBtn) {
+  cumminsBtn.addEventListener('click', () => {
+    displayProducts('Cummins Power Generation');
+  });
+}
+
+const ingersollRandBtn = document.getElementById('ingersoll-rand');
+if (ingersollRandBtn) {
+  ingersollRandBtn.addEventListener('click', () => {
+    displayProducts('Ingersoll Rand');
+  });
+}
+
+const develonBtn = document.getElementById('develon');
+if (develonBtn) {
+  develonBtn.addEventListener('click', () => {
+    displayProducts('Develon');
+  });
+}
+
+const valvolineBtn = document.getElementById('valvoline');
+if (valvolineBtn) {
+  valvolineBtn.addEventListener('click', () => {
+    displayProducts('Valvoline');
+  });
+}
+
+const briggsAndStrattonBtn = document.getElementById('briggs-and-stratton');
+if (briggsAndStrattonBtn) {
+  briggsAndStrattonBtn.addEventListener('click', () => {
+    displayProducts('Briggs & Stratton');
+  });
+}
