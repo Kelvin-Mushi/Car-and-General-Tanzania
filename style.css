@@ -975,49 +975,6 @@ h3 {
   color: #ffffff;
 }
 
-/* Background Slideshow (Supports Unlimited Images) */
-.bg-slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity:0.1;
-}
-
-.bg-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
-.bg-slide.active {
-  opacity: 1;
-}
-
-/* Darker Gradient Overlay on the Left for Readability */
-.bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right, 
-    rgba(0, 0, 0, 0.9) 0%, 
-    rgba(0, 0, 0, 0.7) 45%, 
-    rgba(0, 0, 0, 0.15) 100%
-  );
-  z-index: 2;
-}
-
 /* Main Grid Layout */
 .product-container {
   position: relative;
