@@ -289,7 +289,7 @@ function displayProducts(name) {
   // 1. Toggle main views
   all.style.display = 'none';
   productSection.style.display = 'block';
-  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  //window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
   // 2. Set header logo
   const logoImg = document.getElementById('product-logo-img');
@@ -400,4 +400,26 @@ productNavs.forEach(item => {
     }
 });
 
-//PRODUCT SECTION LOGIC
+//PRODUCT CAROUSEL LOGIC
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('cardSlider');
+    const leftBtn = document.getElementById('slideLeft');
+    const rightBtn = document.getElementById('slideRight');
+
+    // Amount to scroll per click (350px card width + 25px gap = 375px)
+    const scrollAmount = 375;
+
+    leftBtn.addEventListener('click', () => {
+        slider.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    rightBtn.addEventListener('click', () => {
+        slider.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+});
