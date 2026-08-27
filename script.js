@@ -12,6 +12,86 @@ window.addEventListener('DOMContentLoaded', () => {
     window.scrollTo(0, 0);
 });
 
+//nav links activation in any page
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Function to show the main page (#all) and hide all product detail containers
+  function showMainView() {
+    // 1. Hide all individual product detail sections
+    document.querySelectorAll('.product-detail-section').forEach(detail => {
+      detail.style.display = 'none';
+    });
+
+    // 2. Hide the product view wrapper/container (holding the top logo & back button)
+    // Adjust selector below if your wrapper uses a different class/id (e.g., #product-view-wrapper)
+    const productWrapper = document.querySelector('.product-detail-container') || document.querySelector('#product-wrapper');
+    if (productWrapper) {
+      productWrapper.style.display = 'none';
+    }
+
+    // 3. Completely restore the main homepage container
+    const mainContent = document.getElementById('all');
+    if (mainContent) {
+      mainContent.style.display = 'block';
+    }
+  }
+
+  // 1. HANDLE DROPDOWN PRODUCT SELECTION
+  document.querySelectorAll('.dropdown-menu a').forEach(productLink => {
+    productLink.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Show the product view wrapper if it was hidden
+      const productWrapper = document.querySelector('.product-detail-container') || document.querySelector('#product-wrapper');
+      if (productWrapper) {
+        productWrapper.style.display = 'block';
+      }
+
+      // Hide the main page container while viewing a product
+      const mainContent = document.getElementById('all');
+      if (mainContent) {
+        mainContent.style.display = 'none';
+      }
+
+      // Trigger your existing product switch function
+      const productId = this.id;
+      if (typeof showProductDetail === 'function') {
+        showProductDetail(productId);
+      }
+    });
+  });
+
+  // 2. HANDLE MAIN NAVIGATION LINKS (Home, Dealer Locator, Testimonials, About Us)
+  document.querySelectorAll('.nav-links > a:not(.dropdown-toggle)').forEach(mainLink => {
+    mainLink.addEventListener('click', function(e) {
+      const targetHash = this.getAttribute('href');
+
+      // Reset view to main #all container
+      showMainView();
+
+      // Handle Home link click
+      if (targetHash === '#') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } 
+      // Handle section scroll targets (#about-us, #dealer-locator, #testimonials)
+      else if (targetHash.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(targetHash);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      // Update active nav button class
+      document.querySelectorAll('.nav-links a').forEach(nav => nav.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+});
+
+
 let slideIntervalTimer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -153,17 +233,19 @@ const products = [
     image2:"",
     image3:"",
     logo:"./products_logos/develonlogo.png",
+    sectionId: "develon-section",
     type1:"",
     type2:"",
     type3:"",
   },
   {
-    name: "Valvoline",
+    name: "Kubota",
     description: "High-quality lubricants for your vehicle's engine.",
     image1:"",
     image2:"",
     image3:"",
-    logo:"./products_logos/valvoline.png",
+    logo:"./products_logos/kubotalogo.svg.png",
+    sectionId: "kubota-section",
     type1:"",
     type2:"",
     type3:"",
@@ -175,6 +257,7 @@ const products = [
     image2:"",
     image3:"",
     logo:"./products_logos/briggslogo.png.webp",
+    sectionId: "briggs-section",
     type1:"",
     type2:"",
     type3:"",
@@ -186,6 +269,7 @@ const products = [
     image2:"",
     image3:"",
     logo:"./products_logos/mrflogo.png",
+    sectionId: "mrf-section",
     type1:"",
     type2:"",
     type3:"",
@@ -196,191 +280,6 @@ const products = [
 const all = document.getElementById('all');
 const productSection = document.getElementById('product-section');
 
-//A FUNCTION TO DISPLAY PRODUCTS BASED ON THE NAME PASSED
-/*function displayProducts(name) {
-    // Clear any running slideshow timer before opening a new product
-  if (slideIntervalTimer) {
-    clearInterval(slideIntervalTimer);
-  }
-  all.style.display = 'none'; // Hide the main content
-  productSection.style.display = 'block'; // Show the product section 
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'instant'
-  }); 
-  const product = products.find(p => p.name === name);
-  if (product) {
-    productSection.innerHTML = `
-           <!-- Dynamic Background Slideshow -->
-        <div class="bg-slideshow">
-            <div class="bg-slide active" style="background-image: url('${product.image1}');"></div>
-            <div class="bg-slide" style="background-image: url('${product.image2}');"></div>
-            <div class="bg-slide" style="background-image: url('${product.image3}');"></div>
-            
-            <!-- Gradient overlay -->
-            <!--<div class="bg-overlay"></div>-->
-        </div>
-    
-        <div class="product-container">
-            <div class="product-left">
-                <button class="back-btn" id="backBtn">← Back to Home</button>
-                <div class="product-header-animated">
-                  <img src="${product.logo}" alt="Product Logo" class="product-logo">
-                </div>
-            </div>
-        </div>
-
-        <!-- CUMMINS SOLUTIONS & PRODUCTS SECTION -->
-<section class="cummins-section" id="cummins-section" style="display: none">
-  <div class="cummins-container">
-    
-    <!-- HEADER -->
-    <header class="cummins-header">
-      <span class="cummins-badge">ALWAYS ON • ALWAYS POWERING</span>
-      <h2 class="cummins-title">Cummins Power & Maintenance Solutions</h2>
-      <p class="cummins-subtitle">
-        Delivering world-class power generation, heavy-duty engines, filtration science, and premium lubrication backed by global service excellence.
-      </p>
-    </header>
-
-    <!-- PRODUCT & SERVICE CARDS GRID -->
-    <div class="cummins-grid">
-      
-      <!-- CARD 1: CUMMINS ENGINES -->
-      <article class="cummins-card">
-        <div class="card-image-wrap">
-          <img src="https://www.cummins.com/sites/default/files/styles/product_display/public/2025-02/b72-product-da.png" alt="Cummins Heavy-Duty Engine" class="card-img" />
-          <span class="card-category">Powertrain</span>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">Cummins Engines</h3>
-          <p class="card-description">
-            Engineered for high reliability, maximum uptime, and unmatched thermal efficiency across highway, off-highway, agricultural, and industrial applications.
-          </p>
-          <ul class="card-features">
-            <li>Advanced fuel injection & combustion systems</li>
-            <li>Optimized power-to-weight performance</li>
-            <li>Compliant with stringent global emission standards</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- CARD 2: POWER GENERATION -->
-      <article class="cummins-card">
-        <div class="card-image-wrap">
-          <img src="https://cdn.ade-power.com/assets/img/generators/cummins/33kva-38kva-cummins-silent-diesel-generator-cummins-c33d5-c38d5.jpg" alt="Cummins Power Generation Generator Set" class="card-img" />
-          <span class="card-category">Power Systems</span>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">Cummins Power Generation</h3>
-          <p class="card-description">
-            Fully integrated power systems including diesel & gas generator sets, automatic transfer switches, and digital controls for standby and prime power needs.
-          </p>
-          <ul class="card-features">
-            <li>Seamless integration from 10 kVA to 3750 kVA</li>
-            <li>Single-source manufacturing for engine & alternator</li>
-            <li>Instant emergency power backup systems</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- CARD 3: FLEETGUARD FILTRATION -->
-      <article class="cummins-card">
-        <div class="card-image-wrap">
-          <img src="https://cdn11.bigcommerce.com/s-hc30m/images/stencil/1280x1280/products/3258/16295/LF17475__49306.1767628362.jpg" alt="Fleetguard Heavy Duty Filter" class="card-img" />
-          <span class="card-category">Filtration</span>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">Fleetguard Filtration</h3>
-          <p class="card-description">
-            Advanced air, lube, fuel, and hydraulic filtration systems designed specifically to safeguard equipment components and lower Total Cost of Ownership (TCO).
-          </p>
-          <ul class="card-features">
-            <li>Patented NanoNet® media technology</li>
-            <li>Superior contaminant retention efficiency</li>
-            <li>Extended drain interval protection</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- CARD 4: VALVOLINE LUBRICANTS -->
-      <article class="cummins-card">
-        <div class="card-image-wrap">
-          <img src="https://www.valvolineglobal.com/497878/globalassets/vcom/product%20detail%20pages/heavy%20duty/us_818289_val_prem_blue_8600_10w30_1gal.png" alt="Valvoline Premium Blue Engine Oil" class="card-img" />
-          <span class="card-category">Lubrication</span>
-        </div>
-        <div class="card-content">
-          <h3 class="card-title">Valvoline™ Premium Blue</h3>
-          <p class="card-description">
-            The exclusive heavy-duty engine oil endorsed and co-developed with Cummins to maximize engine life, reduce oil consumption, and ensure thermal stability.
-          </p>
-          <ul class="card-features">
-            <li>Officially approved for Cummins engines</li>
-            <li>Enhanced wear protection & soot control</li>
-            <li>Extends maintenance & oil drain intervals</li>
-          </ul>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- AFTER SALES & SERVICE BANNER -->
-    <div class="cummins-banner">
-      <div class="banner-image">
-        <img src="https://www.cummins.com/sites/default/files/styles/scroll_jack_image/public/2025-06/diesel-technician.jpg" alt="Cummins Certified Technician Service" />
-      </div>
-      <div class="banner-info">
-        <span class="banner-tag">SUPPORT & MAINTENANCE</span>
-        <h3 class="banner-heading">After Sales & Global Service</h3>
-        <p class="banner-text">
-          Maximize equipment uptime with certified field engineers, genuine OEM replacement parts, and 24/7 technical assistance through our global service network.
-        </p>
-        <div class="banner-stats">
-          <div class="stat-item">
-            <span class="stat-num">500+</span>
-            <span class="stat-lbl">Global Distributors</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">190+</span>
-            <span class="stat-lbl">Countries Served</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">24/7</span>
-            <span class="stat-lbl">Cummins Care Support</span>
-          </div>
-        </div>
-        <a href="#contact" class="cummins-btn">Request Support</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-    `;
-
-    // ---SLIDESHOW & BACK BUTTON LOGIC ---
-    const slides = productSection.querySelectorAll('.bg-slide');
-    let currentSlide = 0;
-
-    if (slides.length > 1) {
-      slideIntervalTimer = setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-      }, 3000);
-    }
-
-    // Fixed Back Button (hides product section & shows main content)
-    const backBtn = document.getElementById('backBtn');
-    if (backBtn) {
-      backBtn.addEventListener('click', () => {
-        if (slideIntervalTimer) clearInterval(slideIntervalTimer);
-        productSection.style.display = 'none';
-        all.style.display = 'block';
-      });
-    }
-  }
-}*/
 function displayProducts(name) {
   if (slideIntervalTimer) clearInterval(slideIntervalTimer);
 
@@ -460,10 +359,10 @@ if (develonBtn) {
   });
 }
 
-const valvolineBtn = document.getElementById('valvoline');
-if (valvolineBtn) {
-  valvolineBtn.addEventListener('click', () => {
-    displayProducts('Valvoline');
+const kubotaBtn = document.getElementById('kubota');
+if (kubotaBtn) {
+  kubotaBtn.addEventListener('click', () => {
+    displayProducts('Kubota');
   });
 }
 
@@ -486,7 +385,7 @@ const productNavs = [
     { id: 'nav-cummins', name: 'Cummins Power Generation' },
     { id: 'nav-ingersoll', name: 'Ingersoll Rand' },
     { id: 'nav-develon', name: 'Develon' },
-    { id: 'nav-valvoline', name: 'Valvoline' },
+    { id: 'nav-kubota', name: 'Kubota' },
     { id: 'nav-briggs', name: 'Briggs & Stratton' },
     { id: 'nav-mrf', name: 'MRF' }
 ];

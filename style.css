@@ -41,7 +41,9 @@ body {
 #all{
     display: block;
 }
-
+h3{
+  color: var(--text-dark);
+}
 /* Global Container Constraints for Ultra-Wide Screens */
 .container {
     max-width: 1300px;
@@ -352,10 +354,7 @@ body {
 
 /* Services Grid */
 h3 {
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    color: transparent;
+    color: var(--text-dark);
 }
 
 .services-section {
@@ -1761,4 +1760,897 @@ h3 {
   left: 0;
   color: var(--ir-red);
   font-weight: bold;
+}
+
+/*ANIMATIONS FOR PRODUCTS*/
+/* ==========================================================================
+   GLOBAL UI ANIMATIONS & TRANSITIONS
+   ========================================================================== */
+
+/* Keyframes: Smooth Section Entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes: Subtle Pulse for Hero Badges */
+@keyframes badgePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 42, 84, 0.15);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(0, 42, 84, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 42, 84, 0);
+  }
+}
+
+/* 1. SECTION FADE-IN (Triggers on display: block) */
+.product-detail-section {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. PRODUCT CARDS HOVER & TRANSITION STYLING */
+.kc-single-card,
+.ir-single-card,
+.dev-single-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.kc-single-card:hover,
+.ir-single-card:hover,
+.dev-single-card:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* 3. PRODUCT IMAGE SMOOTH ZOOM */
+.kc-img-frame,
+.ir-img-frame,
+.dev-img-frame {
+  overflow: hidden;
+}
+
+.kc-product-img,
+.ir-product-img,
+.dev-product-img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.kc-single-card:hover .kc-product-img,
+.ir-single-card:hover .ir-product-img,
+.dev-single-card:hover .dev-product-img {
+  transform: scale(1.08);
+}
+
+/* 4. HERO BADGE PULSE ANIMATION */
+.kirloskar-badge,
+.ir-badge,
+.dev-badge {
+  animation: badgePulse 2.5s infinite;
+  transition: transform 0.2s ease;
+}
+
+.kirloskar-badge:hover,
+.ir-badge:hover,
+.dev-badge:hover {
+  transform: scale(1.04);
+}
+
+/* 5. CHECKMARK SPECIFICATION SLIDE EFFECT */
+.kc-spec-list li,
+.ir-spec-list li,
+.dev-spec-list li {
+  transition: transform 0.25s ease;
+}
+
+.kc-spec-list li:hover,
+.ir-spec-list li:hover,
+.dev-spec-list li:hover {
+  transform: translateX(4px);
+}
+
+/* 6. TYPE TAG BADGE HIGHLIGHT */
+.kc-type-tag,
+.ir-type-tag,
+.dev-type-tag {
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.kc-single-card:hover .kc-type-tag,
+.ir-single-card:hover .ir-type-tag,
+.dev-single-card:hover .dev-type-tag {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   DEVELON SECTION STYLES & ANIMATIONS
+   ========================================================================== */
+
+:root {
+  --dev-orange: #FF6600;
+  --dev-dark: #1A1D20;
+  --dev-light-bg: #F8FAFC;
+  --dev-card-border: #E2E8F0;
+  --dev-text-muted: #64748B;
+}
+
+/* 1. SECTION CONTAINER & FADE-IN ENTRANCE */
+#develon-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+  animation: devFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes devFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. SECTION HEADER & PULSING BADGE */
+.dev-header {
+  text-align: center;
+  margin-bottom: 45px;
+  padding-bottom: 25px;
+  border-bottom: 2px dashed var(--dev-card-border);
+}
+
+.dev-badge {
+  display: inline-block;
+  background-color: rgba(255, 102, 0, 0.1);
+  color: var(--dev-orange);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  animation: devBadgePulse 2.5s infinite;
+}
+
+@keyframes devBadgePulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.2); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 102, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0); }
+}
+
+.dev-title {
+  color: var(--dev-dark);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.dev-subtitle {
+  color: var(--dev-text-muted);
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* 3. PRODUCT CARDS GRID */
+.dev-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* 4. PRODUCT CARD HOVER micro-interactions */
+.dev-single-card {
+  background: #ffffff;
+  border: 1px solid var(--dev-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.dev-single-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 30px rgba(255, 102, 0, 0.15);
+  border-color: rgba(255, 102, 0, 0.5);
+}
+
+/* 5. IMAGE ZOOM ANIMATION */
+.dev-img-frame {
+  position: relative;
+  height: 230px;
+  background-color: var(--dev-light-bg);
+  overflow: hidden;
+  border-bottom: 1px solid var(--dev-card-border);
+}
+
+.dev-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.dev-single-card:hover .dev-product-img {
+  transform: scale(1.08);
+}
+
+/* Type Tag */
+.dev-type-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--dev-dark);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.dev-single-card:hover .dev-type-tag {
+  background-color: var(--dev-orange);
+  transform: scale(1.05);
+}
+
+/* 6. CARD BODY & SPEC LIST ANIMATION */
+.dev-card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dev-card-title {
+  color: var(--dev-dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.dev-card-desc {
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.dev-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+}
+
+.dev-spec-list li {
+  font-size: 0.88rem;
+  color: #334155;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: transform 0.25s ease;
+}
+
+.dev-spec-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--dev-orange);
+  font-weight: bold;
+}
+
+.dev-spec-list li:hover {
+  transform: translateX(5px);
+}
+/*DEVELON LOGO RESIZING*/
+brand-card img[src*="develon"], 
+.product-logo[src*="develon"],
+.logo-container img[src*="develon"] {
+  width: 170px;       /* Adjust width as needed */
+  height: auto;        /* Maintains proper aspect ratio */
+  max-height: 80px;   /* Prevents overflowing its container */
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   BRIGGS & STRATTON SECTION STYLES & ANIMATIONS
+   ========================================================================== */
+
+:root {
+  --bs-red: #D32F2F;
+  --bs-dark: #1E232A;
+  --bs-light-bg: #F8FAFC;
+  --bs-card-border: #E2E8F0;
+  --bs-text-muted: #64748B;
+}
+
+/* 1. SECTION CONTAINER & FADE-IN ENTRANCE */
+#briggs-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+  animation: bsFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. SECTION HEADER & PULSING BADGE */
+.bs-header {
+  text-align: center;
+  margin-bottom: 45px;
+  padding-bottom: 25px;
+  border-bottom: 2px dashed var(--bs-card-border);
+}
+
+.bs-badge {
+  display: inline-block;
+  background-color: rgba(211, 47, 47, 0.1);
+  color: var(--bs-red);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  animation: bsBadgePulse 2.5s infinite;
+}
+
+@keyframes bsBadgePulse {
+  0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.2); }
+  70% { box-shadow: 0 0 0 8px rgba(211, 47, 47, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+}
+
+.bs-title {
+  color: var(--bs-dark);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.bs-subtitle {
+  color: var(--bs-text-muted);
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* 3. PRODUCT CARDS GRID */
+.bs-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* 4. PRODUCT CARD HOVER TRANSITIONS */
+.bs-single-card {
+  background: #ffffff;
+  border: 1px solid var(--bs-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.bs-single-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 30px rgba(211, 47, 47, 0.15);
+  border-color: rgba(211, 47, 47, 0.4);
+}
+
+/* 5. IMAGE ZOOM ANIMATION */
+.bs-img-frame {
+  position: relative;
+  height: 230px;
+  background-color: var(--bs-light-bg);
+  overflow: hidden;
+  border-bottom: 1px solid var(--bs-card-border);
+}
+
+.bs-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.bs-single-card:hover .bs-product-img {
+  transform: scale(1.08);
+}
+
+/* Type Tag */
+.bs-type-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--bs-dark);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.bs-single-card:hover .bs-type-tag {
+  background-color: var(--bs-red);
+  transform: scale(1.05);
+}
+
+/* 6. CARD BODY & SPEC LIST ANIMATION */
+.bs-card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.bs-card-title {
+  color: var(--bs-dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.bs-card-desc {
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.bs-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+}
+
+.bs-spec-list li {
+  font-size: 0.88rem;
+  color: #334155;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: transform 0.25s ease;
+}
+
+.bs-spec-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--bs-red);
+  font-weight: bold;
+}
+
+.bs-spec-list li:hover {
+  transform: translateX(5px);
+}
+
+/* ==========================================================================
+   MRF SECTION STYLES & ANIMATIONS
+   ========================================================================== */
+
+:root {
+  --mrf-red: #E31E24;
+  --mrf-dark: #111827;
+  --mrf-light-bg: #F9FAFB;
+  --mrf-card-border: #E5E7EB;
+  --mrf-text-muted: #4B5563;
+}
+
+/* 1. SECTION CONTAINER & FADE-IN ENTRANCE */
+#mrf-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+  animation: mrfFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes mrfFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. SECTION HEADER & PULSING BADGE */
+.mrf-header {
+  text-align: center;
+  margin-bottom: 45px;
+  padding-bottom: 25px;
+  border-bottom: 2px dashed var(--mrf-card-border);
+}
+
+.mrf-badge {
+  display: inline-block;
+  background-color: rgba(227, 30, 36, 0.1);
+  color: var(--mrf-red);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  animation: mrfBadgePulse 2.5s infinite;
+}
+
+@keyframes mrfBadgePulse {
+  0% { box-shadow: 0 0 0 0 rgba(227, 30, 36, 0.2); }
+  70% { box-shadow: 0 0 0 8px rgba(227, 30, 36, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(227, 30, 36, 0); }
+}
+
+.mrf-title {
+  color: var(--mrf-dark);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.mrf-subtitle {
+  color: var(--mrf-text-muted);
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* 3. PRODUCT CARDS GRID */
+.mrf-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* 4. PRODUCT CARD HOVER TRANSITIONS */
+.mrf-single-card {
+  background: #ffffff;
+  border: 1px solid var(--mrf-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.mrf-single-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 30px rgba(227, 30, 36, 0.15);
+  border-color: rgba(227, 30, 36, 0.4);
+}
+
+/* 5. IMAGE ZOOM ANIMATION */
+.mrf-img-frame {
+  position: relative;
+  height: 230px;
+  background-color: var(--mrf-light-bg);
+  overflow: hidden;
+  border-bottom: 1px solid var(--mrf-card-border);
+}
+
+.mrf-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.mrf-single-card:hover .mrf-product-img {
+  transform: scale(1.08);
+}
+
+/* Type Tag */
+.mrf-type-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--mrf-dark);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.mrf-single-card:hover .mrf-type-tag {
+  background-color: var(--mrf-red);
+  transform: scale(1.05);
+}
+
+/* 6. CARD BODY & SPEC LIST ANIMATION */
+.mrf-card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mrf-card-title {
+  color: var(--mrf-dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.mrf-card-desc {
+  color: #374151;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.mrf-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+}
+
+.mrf-spec-list li {
+  font-size: 0.88rem;
+  color: #1F2937;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: transform 0.25s ease;
+}
+
+.mrf-spec-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--mrf-red);
+  font-weight: bold;
+}
+
+.mrf-spec-list li:hover {
+  transform: translateX(5px);
+}
+
+/* ==========================================================================
+   KUBOTA SECTION STYLES & ANIMATIONS
+   ========================================================================== */
+
+:root {
+  --kubota-orange: #E65100;
+  --kubota-orange-bright: #FF6F00;
+  --kubota-dark: #1E232A;
+  --kubota-light-bg: #F8FAFC;
+  --kubota-card-border: #E2E8F0;
+  --kubota-text-muted: #64748B;
+}
+
+/* 1. SECTION CONTAINER & FADE-IN ENTRANCE */
+#kubota-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 60px 20px;
+  animation: kubotaFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes kubotaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. SECTION HEADER & PULSING BADGE */
+.kubota-header {
+  text-align: center;
+  margin-bottom: 45px;
+  padding-bottom: 25px;
+  border-bottom: 2px dashed var(--kubota-card-border);
+}
+
+.kubota-badge {
+  display: inline-block;
+  background-color: rgba(230, 81, 0, 0.1);
+  color: var(--kubota-orange);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.2px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  animation: kubotaBadgePulse 2.5s infinite;
+}
+
+@keyframes kubotaBadgePulse {
+  0% { box-shadow: 0 0 0 0 rgba(230, 81, 0, 0.2); }
+  70% { box-shadow: 0 0 0 8px rgba(230, 81, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 81, 0, 0); }
+}
+
+.kubota-title {
+  color: var(--kubota-dark);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.kubota-subtitle {
+  color: var(--kubota-text-muted);
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* 3. PRODUCT CARDS GRID */
+.kubota-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* 4. PRODUCT CARD HOVER TRANSITIONS */
+.kubota-single-card {
+  background: #ffffff;
+  border: 1px solid var(--kubota-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.kubota-single-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 16px 30px rgba(230, 81, 0, 0.15);
+  border-color: rgba(230, 81, 0, 0.4);
+}
+
+/* 5. IMAGE ZOOM ANIMATION */
+.kubota-img-frame {
+  position: relative;
+  height: 230px;
+  background-color: var(--kubota-light-bg);
+  overflow: hidden;
+  border-bottom: 1px solid var(--kubota-card-border);
+}
+
+.kubota-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.kubota-single-card:hover .kubota-product-img {
+  transform: scale(1.08);
+}
+
+/* Type Tag */
+.kubota-type-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--kubota-dark);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.kubota-single-card:hover .kubota-type-tag {
+  background-color: var(--kubota-orange);
+  transform: scale(1.05);
+}
+
+/* 6. CARD BODY & SPEC LIST ANIMATION */
+.kubota-card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.kubota-card-title {
+  color: var(--kubota-dark);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.kubota-card-desc {
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.kubota-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0 0;
+}
+
+.kubota-spec-list li {
+  font-size: 0.88rem;
+  color: #334155;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: transform 0.25s ease;
+}
+
+.kubota-spec-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--kubota-orange);
+  font-weight: bold;
+}
+
+.kubota-spec-list li:hover {
+  transform: translateX(5px);
 }
