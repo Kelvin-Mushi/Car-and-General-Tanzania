@@ -981,12 +981,17 @@ h3 {
   z-index: 3;
   width: 100%;
   max-width: 1300px;
+  min-height: calc(100vh - 120px);
   margin: 0 auto;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   gap: 40px;
   align-items:start;
+  overflow: hidden;
+}
+.product-hero-section.is-hidden {
+  display: none !important;
 }
 
 /* Entrance Animation for Logo and Title */
