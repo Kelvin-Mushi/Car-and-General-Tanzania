@@ -40,6 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//PRODUCTS SECTION LOGIC
+const navLinks = document.querySelectorAll('.nav-btn');
+const productSections = document.querySelectorAll('.page-section');
+const mainSections = document.getElementById('all');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const targetId = this.getAttribute('data-target');
+
+    mainSections.style.display = 'none';
+    document.getElementById(targetId).classList.remove('hidden');
+  });
+});
+
 // Update Current Year in Footer
 document.addEventListener('DOMContentLoaded', () => {
     const yearSpan = document.getElementById('current-year');
