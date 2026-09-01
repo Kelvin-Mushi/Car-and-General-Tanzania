@@ -20,9 +20,8 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'Officina';
-    src: url('./fonts/officina.ttf');
-    font-weight: bold;
+    font-family: 'officina';
+    src: url('officina.otf');
     font-style: normal;
 }
 
@@ -30,7 +29,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat-Regular', sans-serif;
+    font-family: 'officina', sans-serif;
 }
 
 body {
