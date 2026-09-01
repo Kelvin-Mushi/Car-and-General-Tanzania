@@ -7,6 +7,10 @@
     --text-muted: #666666;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: 'Montserrat-Regular';
     src: url('./fonts/mont.ttf');
@@ -123,92 +127,87 @@ h3{
     transform: scale(1.1);
 }
 
-.header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
+/*NAVIGATION STYLING*/
+/* --- Base Styles --- */
+.navbar{
+  width: 100%;
 }
 
-/*OUR PRODUCTS DROPDOWN LINK*/
-/* Dropdown Container */
-.nav-dropdown {
-    position: relative;
-    display: inline-block;
-    margin-top: 5px;
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-/* Arrow Icon Alignment & Transition */
-.dropdown-arrow {
-    font-size: 0.75em;
-    margin-left: 2px;
-    transition: transform 0.25s ease;
+.navbar a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-dark);
+    text-decoration: none;
+    background-color: #ffffff;
+    white-space: nowrap;
 }
 
-/* Rotate Arrow on Hover */
-.nav-dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg);
+.navbar a:hover {
+    background-color: #f4f4f4;
+    color: #d9232e; /* Highlight color */
 }
 
-/* Dropdown Menu Box */
-.nav-dropdown .dropdown-menu {
-    display: none;
+.nav-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Container Positioning --- */
+.dropdown, .has-flyout {
+    position: relative; /* Anchor point for absolute submenus */
+}
+
+/* --- Base Submenu Reset --- */
+.submenu {
     position: absolute;
+    display: none; /* Hide all nested menus by default */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    z-index: 100;
+}
+
+/* Level 1 Submenu: Appears directly below "Products" */
+.submenu.level-1 {
     top: 100%;
     left: 0;
-    min-width: 220px;
-    background-color: #ffffff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    border-radius: 6px;
-    padding: 8px 0;
-    z-index: 1000;
 }
 
-/* Individual Links inside Dropdown */
-.nav-dropdown .dropdown-menu a {
-    display: block;
-    color: #333333;
-    padding: 10px 16px;
-    text-decoration: none;
-    font-size: 14px;
-    white-space: nowrap;
-    transition: background-color 0.2s ease, color 0.2s ease;
+/* Level 2 Submenu: Appears to the right of the individual product */
+.submenu.level-2 {
+    top: 0;
+    left: 100%; /* Positions the box immediately to the right edge */
 }
 
-/* Hover State for Sub-Links */
-.nav-dropdown .dropdown-menu a:hover {
-    background-color: #f4f4f4;
-    color: #0056b3;
+.submenu.level-3{
+  top: 0;
+  left: 100%;
 }
 
-/* Reveal Sub-Menu on Hover */
-.nav-dropdown:hover .dropdown-menu {
+/* --- The Hover Chain Logic --- */
+
+/* 1. Show Level 1 when hovering on 'Products' */
+.dropdown:hover > .level-1 {
     display: block;
 }
 
-.nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+/* 2. Show Level 2 when hovering on a specific product category item */
+.has-flyout:hover > .level-2 {
+    display: block;
 }
 
-.nav-links a {
-    text-decoration: none;
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    color: transparent;
-    font-weight: 700;
-    font-size: 13px;
-    padding: 7px 10px;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s ease;
+/* 2. Show Level 3 when hovering on a specific product category item */
+.has-flyout-2:hover > .level-3 {
+    display: block;
 }
 
-.nav-links a.active, .nav-links a:hover {
-    border-bottom: 3px solid var(--accent-red);
-}
 
 /* Hero Slider */
 .hero-slider {

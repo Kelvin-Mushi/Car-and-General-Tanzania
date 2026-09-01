@@ -34,25 +34,78 @@
 
         </div>
 
-        <div class="container header-container">
-            <nav class="nav-links">
+          <div class="container navbar">
+            <ul class="nav-links">
                 <a href="#" class="active">Home</a>
                 <!--<a href="#our-products">Our Products</a>-->
-                <div class="nav-dropdown">
-                    <a href="#sub-nav" class="dropdown-toggle">
-                        Our Products <i class="fas fa-chevron-down dropdown-arrow"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="#" id="drop-automotive" >Automotive</a>
-                        <a href="#" id="drop-engineering">Engineering</a>
-                    </div>
-                </div>
+                <li class="dropdown">
+                  <a href="#" class="nav-item">Products <i class="fas fa-chevron-down"></i></a>
+            
+                    <!-- Level 2: First Flyout Menu -->
+                    <ul class="submenu level-1">
+                        <li class="has-flyout">
+                            <a href="#">Automotive <i class="fas fa-chevron-right"></i></a>
+                            
+                            <!-- Level 3: Second Flyout Menu -->
+                            <ul class="submenu level-2">
+                                <li><a href="#"> TVS 2 Wheelers</a></li>
+                                <li><a href="#">TVS 3 Wheelers</a></li>
+                                <li><a href="#">MRF Tyres</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="has-flyout">
+                            <a href="#">Engineering <i class="fas fa-chevron-right"></i></a>
+
+                            <ul class="submenu level-2">
+                                <li class="has-flyout-2">
+                                  <a href="#">Cummins <i class="fas fa-chevron-right"></i></a>
+                                  <ul class="submenu level-3">
+                                    <li><a href="#">Cummins Power Generation</a></li>
+                                    <li><a href="#">Cummins Engines</a></li>
+                                    <li><a href="#">Fleet guard</a></li>
+                                    <li><a href="#">Valvoline</a></li>
+                                    <li><a href="#">After-Sales Service</a></li>
+                                  </ul>
+                                </li>
+
+                                <li class="has-flyout-2">
+                                  <a href="#">Develon <i class="fas fa-chevron-right"></i></a>
+                                  <ul class="submenu level-3">
+                                    <li><a href="#">Excavators</a></li>
+                                    <li><a href="#">Wheel Loaders</a></li>
+                                    <li><a href="#">Attachments</a></li>
+                                  </ul>
+                                </li>
+
+                                <li class="has-flyout-2">
+                                  <a href="#">Kirloskar <i class="fas fa-chevron-right"></i></a>
+                                  <ul class="submenu level-3">
+                                    <li><a href="#">Kirloskar Pneumatic Company Ltd</a></li>
+                                    <li><a href="#">Kirloskar Chillers Private Ltd</a></li>
+                                    <li><a href="#">Kirloskar Oil Engines Ltd</a></li>
+                                  </ul>
+                                </li>
+
+                                <li class="has-flyout-2">
+                                  <a href="#">Ingersoll Rand <i class="fas fa-chevron-right"></i></a>
+                                  <ul class="submenu level-3">
+                                    <li><a href="#">Ingersoll Rand</a></li>
+                                    <li><a href="#">Compair</a></li>
+                                    <li><a href="#">Champion</a></li>
+                                    <li><a href="#">Aro</a></li>
+                                  </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <!--<a href="#">My Orders</a>-->
                 <a href="#dealer-locator">Dealer Locator</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#about-us">About Us</a>
-            </nav>
-        </div>
+              </ul>
+          </div>
     </header>
     <section id="all">
 
