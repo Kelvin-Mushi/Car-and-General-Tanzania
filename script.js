@@ -55,6 +55,19 @@ navLinks.forEach(link => {
   });
 });
 
+//PRODUCTS SIDEBAR LOGIC
+const stage1 = document.querySelectorAll('.stage-1');
+const stage2 = document.querySelector('.stage-2');
+
+stage1.forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+
+        stage2.style.display = 'block';
+    });
+});
+
+
 // Update Current Year in Footer
 document.addEventListener('DOMContentLoaded', () => {
     const yearSpan = document.getElementById('current-year');

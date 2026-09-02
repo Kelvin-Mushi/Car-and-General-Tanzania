@@ -758,13 +758,14 @@ h3 {
 .main-product-content{
   flex: 1;
   padding: 20px;
+  text-align: center;
   overflow-y: auto;
 }
 .scrollable-sidebar {
     width: 320px;
     background-color: #f4f6f8;
-    border-left: 1px solid #ddd;
-    padding: 20px;
+    border-left: 2px solid #d1d1d1;
+    padding: 0px;
     height: 100%;
     overflow-y: auto;
 }
@@ -782,6 +783,119 @@ h3 {
 .scrollable-sidebar::-webkit-scrollbar-thumb:hover {
     background-color: #999;
 }
+
+.sidebar-items{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sidebar-heading{
+    text-align: left;
+    color: var(--text-dark);
+    padding: 20px;
+    background-color: #f8fafc;
+    /*background: linear-gradient(10deg, var(--accent-red), var(--primary-blue));*/
+    margin-bottom: 10px;
+}
+
+.main-product-head{
+   color: var(--accent-red);
+}
+/* 1. Parent Container (Prevents multiple buttons from touching) */
+.goes-down {
+    list-style: none;
+    margin-bottom: 10px;
+    position: relative; /* Keeps flow stable when adding more items */
+}
+
+/* 2. The Button (.stage-1) */
+.stage-1 {
+    display: block; /* Forces full width and stable layout */
+    background-color: var(--accent-red); /* Car & General Blue */
+    color: #ffffff;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Smooth transition for the hover scale */
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Scaling Effect */
+.stage-1:hover {
+    transform: scale(1.03); /* Scales up nicely */
+    background-color: #0b3d82;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. The Dropdown Menu (.stage-2) */
+.stage-2 {
+    display: none;
+    list-style: none;
+    
+    /* This fixes the "starts from behind" alignment issue */
+    padding: 0; 
+    margin: 8px 0 0 0; /* Adds a clean gap below the button */
+    
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    overflow: hidden; /* Ensures child elements don't spill out of rounded corners */
+}
+
+/* Class added by your JavaScript to reveal it */
+.stage-2.active {
+    display: block; 
+}
+
+/* 4. Dropdown Inner Links */
+.stage-2 li a {
+    display: block;
+    padding: 12px 20px;
+    color: #333333;
+    text-decoration: none;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+/* Inner Link Hover Effect */
+.stage-2 li a:hover {
+    background-color: #e2e8f0;
+    color: #d9232e; /* Brand highlight color */
+    padding-left: 25px; /* Slight slide-right effect for a premium feel */
+}
+
+/* Remove bottom border from the very last link */
+.stage-2 li:last-child a {
+    border-bottom: none;
+}
+/*.sidebar-items ul{
+    list-style: none;
+}
+.menu{
+    position: absolute;
+}
+
+.sidebar-heading{
+    text-align: center;
+}
+
+.stage-1{
+    text-decoration: none;
+    color: var(--text-dark);
+    border-bottom: 2px solid #d1d1d1;
+}
+
+.stage-2{
+    display: none;
+    top: 100%;
+    left: 0;
+
+}
+.goes-down, .stage-2{
+    position: relative;
+}*/
 
 /* Footer Section */
 .footer {
