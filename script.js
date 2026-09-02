@@ -56,14 +56,27 @@ navLinks.forEach(link => {
 });
 
 //PRODUCTS SIDEBAR LOGIC
-const stage1 = document.querySelectorAll('.stage-1');
-const stage2 = document.querySelector('.stage-2');
+const stage1Links = document.querySelectorAll('.stage-1');
+const stage2Menus = document.querySelectorAll('.stage-2');
 
-stage1.forEach(link => {
-    link.addEventListener('click', function(e){
+stage1Links.forEach(link => {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
+        const targetId = this.getAttribute('data-target');
+        const targetMenu = document.getElementById(targetId);
 
-        stage2.style.display = 'block';
+        if (targetMenu) {
+            // Check if the clicked menu is already open
+            const isAlreadyOpen = targetMenu.classList.contains('active');
+
+            // 1. Close all dropdowns
+            stage2Menus.forEach(menu => menu.classList.remove('active'));
+
+            // 2. Open the clicked dropdown only if it wasn't already open (toggle behavior)
+            if (!isAlreadyOpen) {
+                targetMenu.classList.add('active');
+            }
+        }
     });
 });
 

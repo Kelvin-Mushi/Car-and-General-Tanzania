@@ -784,10 +784,9 @@ h3 {
     background-color: #999;
 }
 
-.sidebar-items{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.side-container{
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .sidebar-heading{
@@ -844,11 +843,9 @@ h3 {
     overflow: hidden; /* Ensures child elements don't spill out of rounded corners */
 }
 
-/* Class added by your JavaScript to reveal it */
-.stage-2.active {
-    display: block; 
+.stage-2.active{
+    display: block;
 }
-
 /* 4. Dropdown Inner Links */
 .stage-2 li a {
     display: block;
