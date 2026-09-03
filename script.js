@@ -77,6 +77,8 @@ stage1Links.forEach(link => {
                 targetMenu.classList.add('active');
             }
         }
+
+        window.scroll(0,0);
     });
 });
 
