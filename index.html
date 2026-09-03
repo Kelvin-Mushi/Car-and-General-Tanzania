@@ -39,8 +39,8 @@
         </div>
 
           <div class="container navbar">
-            <ul class="nav-links">
-                <a href="#" class="active">Home</a>
+                <ul class="nav-links">
+                <a href="#" class="main-links active" data-type="all" data-target="all">Home</a>
                 <!--<a href="#our-products">Our Products</a>-->
                 <li class="dropdown">
                   <a href="#" class="nav-btn">Products <i class="fas fa-chevron-down"></i></a>
@@ -67,7 +67,7 @@
                                 </li>
 
                                 <li class="has-flyout-2">
-                                  <a href="#" class="nav-btn">Develon</a>
+                                  <a href="#" class="nav-btn" data-target="develon-section">Develon</a>
                                 </li>
 
                                 <li class="has-flyout-2">
@@ -75,16 +75,16 @@
                                 </li>
 
                                 <li class="has-flyout-2">
-                                  <a href="#">Ingersoll Rand</a>
+                                  <a href="#" class="nav-btn" data-target="ingesoll-section">Ingersoll Rand</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </li>
                 <!--<a href="#">My Orders</a>-->
-                <a href="#dealer-locator">Dealer Locator</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#about-us">About Us</a>
+                <a href="#dealer-locator" class="main-links" data-type="all" data-target="dealer-locator">Dealer Locator</a>
+                <a href="#testimonials" class="main-links" data-type="all" data-target="testimonials">Testimonials</a>
+                <a href="#about-us" class="main-links" data-type="all" data-target="about-us">About Us</a>
               </ul>
           </div>
     </header>
@@ -146,6 +146,7 @@
                 <span class="cg-stat-label">World Brands</span>
               </div>
             </div>
+
           </div>
 
           <!-- Right Column: Interactive Quick-Feature Overlay Cards -->
@@ -282,7 +283,21 @@
 
     </section>
 
-    <!--CUMMINS PRODUCT SECTION-->
+    <div class="emergency">
+        <button>
+            <img src="./logos/cargen_round.png" alt="Cargen">
+        </button>
+
+        <button>
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+
+        <button>
+            <i class="fa-solid fa-phone"></i>
+        </button>
+    </div>
+    
+    <!--KIRLOSKAR PRODUCT SECTION-->
     <section id="kirloskar-section" class="page-section hidden">
       <aside class="scrollable-sidebar">
         <div class="side-container">
@@ -340,6 +355,157 @@
       </main>
 
     </section>
+
+    <!--DEVELON PRODUCT SECTION-->
+    <section id="develon-section" class="page-section hidden">
+      <aside class="scrollable-sidebar">
+        <div class="side-container">
+            <h2 class="sidebar-heading">PRODUCTS</h2>
+            <div class="sidebar-items">
+                <ul class="menu">
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-1">Excavators</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-2">Wheel Loaders</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-3">Attachments</a></li>
+                </ul>
+            </div>
+        </div>
+      </aside>
+
+      <main class="main-product-content">
+
+        <div class="product-display">
+            <div class="product-row">
+                <h1 class="product-title">PRODUCT</h1>
+                <div class="product-image">
+                    <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015213/03+Centrifugal+AC.webp/1d9860cf-e93b-f140-bdb8-6cd192604a8e?t=1740379039618">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>This range includes our reciprocating compressors KCX, 
+                            PCX, Viteza - KZX Engineered Sets and Khione Screw Compressors and Packages. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </main>
+
+    </section>
+
+    <!--CUMMINS PRODUCT SECTION-->
+     <section id="cummins-section" class="page-section hidden">
+      <aside class="scrollable-sidebar">
+        <div class="side-container">
+            <h2 class="sidebar-heading">PRODUCTS</h2>
+            <div class="sidebar-items">
+                <ul class="menu">
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-1">Cummins Power Generation</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-2">Cummins Engines</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-3">Fleet guard</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-3">Valvoline</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-3">After Sales & Service</a></li>
+                </ul>
+            </div>
+        </div>
+      </aside>
+
+      <main class="main-product-content">
+
+        <div class="product-display">
+            <div class="product-row">
+                <h1 class="product-title">PRODUCT</h1>
+                <div class="product-image">
+                    <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015213/03+Centrifugal+AC.webp/1d9860cf-e93b-f140-bdb8-6cd192604a8e?t=1740379039618">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>This range includes our reciprocating compressors KCX, 
+                            PCX, Viteza - KZX Engineered Sets and Khione Screw Compressors and Packages. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </main>
+
+    </section>
+
+    <!--INGERSOLL RAND SECTION-->
+    <section id="ingesoll-section" class="page-section hidden">
+      <aside class="scrollable-sidebar">
+        <div class="side-container">
+            <h2 class="sidebar-heading">PRODUCTS</h2>
+            <div class="sidebar-items">
+                <ul class="menu">
+                    <li class="goes-down">
+                        <a href="#" class="stage-1" data-target="ingersoll-1">Ingersoll Rand</a>
+
+                        <ul class="stage-2" id="ingersoll-1">
+                            <li><a href="#">Air Compressors</a></li>
+                            <li><a href="#">Power Tools</a></li>
+                            <li><a href="#">Lifting Solutions</a></li>
+                        </ul>
+                    </li>
+                    <li class="goes-down">
+                        <a href="#" class="stage-1" data-target="ingersoll-2">Compair</a>
+
+                        <ul class="stage-2" id="ingersoll-2">
+                            <li><a href="#">Compressors</a></li>
+                            <li><a href="#">Compressed Air Dryers</a></li>
+                            <li><a href="#">Air Treatment & accessories</a></li>
+                            <li><a href="#">Industrial Rotary Vane Solutions</a></li>
+                        </ul>
+                    </li>
+                    <li class="goes-down">
+                        <a href="#" class="stage-1" data-target="ingersoll-3">Champion</a>
+
+                        <ul class="stage-2" id="ingersoll-3">
+                            <li><a href="#">Air Compressors</a></li>
+                            <li><a href="#">Air Treatment Systems</a></li>
+                        </ul>
+                    </li>
+                    <li class="goes-down">
+                        <a href="#" class="stage-1" data-target="ingersoll-4">Aro</a>
+
+                        <ul class="stage-2" id="ingersoll-4">
+                            <li><a href="#">Pumps</a></li>
+                            <li><a href="#">Lubrication Equipments</a></li>
+                            <li><a href="#">Filter Regulator Lubricatos</a></li>
+                            <li><a href="#">Pneumatic Valves & Cylinders</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </aside>
+
+      <main class="main-product-content">
+
+        <div class="product-display">
+            <div class="product-row">
+                <h1 class="product-title">PRODUCT</h1>
+                <div class="product-image">
+                    <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015213/03+Centrifugal+AC.webp/1d9860cf-e93b-f140-bdb8-6cd192604a8e?t=1740379039618">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>This range includes our reciprocating compressors KCX, 
+                            PCX, Viteza - KZX Engineered Sets and Khione Screw Compressors and Packages. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </main>
+
+    </section>
+
 
     <div class="footer">
         <div class="footer-container">

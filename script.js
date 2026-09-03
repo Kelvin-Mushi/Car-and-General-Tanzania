@@ -1,5 +1,47 @@
 let slideIntervalTimer = null;
 
+//MAKING SURE ALL MY LINKS WORKS WELL
+const allNavLinks = document.querySelectorAll('.nav-links a[data-target]');
+
+allNavLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('data-target');
+    const isMainLink = link.getAttribute('data-type') === 'all';
+
+    if (isMainLink) {
+      // 1. Hide all individual product sections
+      productSections.forEach(section => section.style.display = 'none');
+
+      // 2. Unhide the main page view so anchors (#about-us, etc.) are visible again
+      mainSections.style.display = 'block';
+
+      // 3. Scroll to target anchor if needed
+      if (targetId && targetId !== 'home-section') {
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo(0, 0);
+      }
+
+    } else {
+      // 1. Hide the main landing view
+      mainSections.style.display = 'none';
+
+      // 2. Hide ALL product sections first (fixes stacking/previous content bug)
+      productSections.forEach(section => section.style.display = 'none');
+
+      // 3. Show ONLY the requested product section
+      const activeProduct = document.getElementById(targetId);
+      if (activeProduct) {
+        activeProduct.style.display = 'block';
+        window.scrollTo(0, 0); // Reset scroll position to top
+      }
+    }
+  });
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Slider Logic
     const slides = document.querySelectorAll('.slide');

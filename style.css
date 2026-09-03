@@ -589,6 +589,51 @@ h3{
   line-height: 1.4;
 }
 
+.emergency {
+    position: fixed;
+    bottom: 70px;
+    right: 40px;
+
+    display: flex;
+    gap: 10px;
+
+    z-index: 1000;
+}
+
+.emergency button {
+    width: 90px;
+    height: 90px;
+    padding: 0;
+    border: 0.5px solid var(--accent-red);
+    border-radius: 100%;
+    background-color: var(--accent-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 3px var(--text-dark);
+}
+
+.emergency button:hover{
+    padding-bottom: 15px;
+    transform: scale(1.1);
+}
+
+.emergency button img {
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    border: 0.5px solid white;
+    border-radius: 100%;
+    object-fit: contain;
+}
+
+.emergency button i {
+    font-size: 40px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .cg-hero-container {
@@ -795,10 +840,11 @@ h3 {
 }
 .scrollable-sidebar {
     width: 320px;
-    background-color: #f4f6f8;
+    /*background-color: #f4f6f8;*/
     padding: 0px;
     height: 100%;
     overflow-y: auto;
+    border-right: 1px solid #e2e8f0;
 }
 
 /* Custom Scrollbar Styling */
@@ -834,16 +880,12 @@ h3 {
 /* 2. The Button (.stage-1) */
 .stage-1 {
     display: block; /* Forces full width and stable layout */
-    /*background-color:  #ffffff;
-    color: #1e293b;*/
-    background-color: #e2e8f0;
     color: var(--text-dark);
-    border: 1px solid #e2e8f0;
+    border: 1px solid transparent;
     padding: 14px 20px;
     border-left: 6px solid var(--accent-red);
     text-decoration: none;
     font-weight: normal;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     
     /* Smooth transition for the hover scale */
     transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
