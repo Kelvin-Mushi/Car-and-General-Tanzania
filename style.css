@@ -764,7 +764,6 @@ h3 {
 .scrollable-sidebar {
     width: 320px;
     background-color: #f4f6f8;
-    border-left: 2px solid #d1d1d1;
     padding: 0px;
     height: 100%;
     overflow-y: auto;
@@ -784,23 +783,15 @@ h3 {
     background-color: #999;
 }
 
-.side-container{
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
 .sidebar-heading{
     text-align: left;
-    color: var(--text-dark);
+    color: var(--accent-red);
     padding: 20px;
     background-color: #f8fafc;
     /*background: linear-gradient(10deg, var(--accent-red), var(--primary-blue));*/
     margin-bottom: 10px;
 }
 
-.main-product-head{
-   color: var(--accent-red);
-}
 /* 1. Parent Container (Prevents multiple buttons from touching) */
 .goes-down {
     list-style: none;
@@ -811,12 +802,16 @@ h3 {
 /* 2. The Button (.stage-1) */
 .stage-1 {
     display: block; /* Forces full width and stable layout */
-    background-color: var(--accent-red); /* Car & General Blue */
-    color: #ffffff;
+    /*background-color:  #ffffff;
+    color: #1e293b;*/
+    background-color: #e2e8f0;
+    color: var(--text-dark);
+    border: 1px solid #e2e8f0;
     padding: 14px 20px;
+    border-left: 6px solid var(--accent-red);
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     
     /* Smooth transition for the hover scale */
     transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
@@ -825,7 +820,8 @@ h3 {
 /* Hover Scaling Effect */
 .stage-1:hover {
     transform: scale(1.03); /* Scales up nicely */
-    background-color: #0b3d82;
+    /*background-color: #f8fafc;*/
+    border-color: #cbd5e1;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -867,32 +863,70 @@ h3 {
 .stage-2 li:last-child a {
     border-bottom: none;
 }
-/*.sidebar-items ul{
-    list-style: none;
-}
-.menu{
-    position: absolute;
+
+.product-display{
+    width:100%;
+    height:100%;
 }
 
-.sidebar-heading{
-    text-align: center;
+.product-row{
+    height: 600px;
+    width:100%;
+    /*background-color: #fbfcfd;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
 }
 
-.stage-1{
-    text-decoration: none;
-    color: var(--text-dark);
-    border-bottom: 2px solid #d1d1d1;
+.product-image{
+    height: 400px;
+    width: 800px;
+    background-color: #f4f6f8;
+    
+    /*border-radius: 30px 30px 0px 0px;*/
 }
 
-.stage-2{
-    display: none;
-    top: 100%;
-    left: 0;
-
+.product-image img{
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
-.goes-down, .stage-2{
-    position: relative;
-}*/
+
+.product-details{
+    width: 800px;
+    height: auto;
+    border: 2px solid #f4f6f8;
+}
+
+.product-details button{
+    margin: 10px;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    background-color: var(--accent-red);
+    color: white;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+.product-details button:hover{
+    border-color: var(--accent-red);
+    background-color: transparent;
+    transform: scale(1.01);
+    color: var(--accent-red);
+}
+
+.product-description p{
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: medium;
+    transition: 0.3s ease;
+}
+
+.product-description p:hover{
+    padding-left: 20px;
+}
 
 /* Footer Section */
 .footer {
