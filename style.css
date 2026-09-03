@@ -1047,10 +1047,15 @@ h3 {
     text-decoration: none;
     margin-bottom: 10px;
     display: block;
+    transition: 0.3s ease;
 }
 
-.footer-column a:hover {
+.footer-column a:hover{
     text-decoration: underline;
+}
+
+.footer-column p:hover{
+    padding-left: 15px;
 }
 
 .social-icons {
