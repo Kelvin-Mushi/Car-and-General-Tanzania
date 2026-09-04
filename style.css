@@ -601,8 +601,8 @@ h3{
 }
 
 .emergency button {
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     padding: 0;
     border: 0.5px solid var(--accent-red);
     border-radius: 100%;
@@ -622,8 +622,8 @@ h3{
 }
 
 .emergency button img {
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     background-color: white;
     border: 0.5px solid white;
     border-radius: 100%;
@@ -631,7 +631,7 @@ h3{
 }
 
 .emergency button i {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 /* Responsive adjustments */
@@ -822,10 +822,11 @@ h3 {
 /*PRODUCTS SECTIONS
 ===========================================================
 */
+
 .page-section{
   display: flex;
   width:100%;
-  height: 80vh;
+  height: 100vh;
   margin: 5px 10px;
   overflow: hidden;
 }
@@ -861,13 +862,14 @@ h3 {
     background-color: #999;
 }
 
-.sidebar-heading{
-    text-align: left;
+.product-title{
+    font-weight: bold;
+    font-size: larger !important;
+    background-color: #f4f6f8;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 10px 10px 0px 0px;
     color: var(--accent-red);
-    padding: 20px;
-    background-color: #f8fafc;
-    /*background: linear-gradient(10deg, var(--accent-red), var(--primary-blue));*/
-    margin-bottom: 10px;
 }
 
 /* 1. Parent Container (Prevents multiple buttons from touching) */
@@ -883,34 +885,32 @@ h3 {
     color: var(--text-dark);
     border: 1px solid transparent;
     padding: 14px 20px;
-    border-left: 6px solid var(--accent-red);
     text-decoration: none;
     font-weight: normal;
-    
-    /* Smooth transition for the hover scale */
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    transition: 0.3s ease;
 }
 
 /* Hover Scaling Effect */
 .stage-1:hover {
-    transform: scale(1.03); /* Scales up nicely */
-    /*background-color: #f8fafc;*/
-    border-color: #cbd5e1;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding-left: 10px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.stage-1.active{
+    border-left: 6px solid var(--accent-red);
+    font-weight: 600;
 }
 
 /* 3. The Dropdown Menu (.stage-2) */
 .stage-2 {
     display: none;
     list-style: none;
-    
-    /* This fixes the "starts from behind" alignment issue */
     padding: 0; 
-    margin: 8px 0 0 0; /* Adds a clean gap below the button */
-    
+    margin: 8px 0 0 0;
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
-    overflow: hidden; /* Ensures child elements don't spill out of rounded corners */
+    overflow: hidden;
 }
 
 .stage-2.active{
@@ -920,7 +920,7 @@ h3 {
 .stage-2 li a {
     display: block;
     padding: 12px 20px;
-    color: #333333;
+    color: var(--text-muted);
     text-decoration: none;
     border-bottom: 1px solid #e2e8f0;
     transition: background-color 0.2s ease, padding-left 0.2s ease;
@@ -933,6 +933,11 @@ h3 {
     padding-left: 25px; /* Slight slide-right effect for a premium feel */
 }
 
+.stage-2 li a.active{
+    color: var(--accent-red);
+    padding-left: 30px;
+}
+
 /* Remove bottom border from the very last link */
 .stage-2 li:last-child a {
     border-bottom: none;
@@ -942,6 +947,11 @@ h3 {
 .product-display{
     width:100%;
     height:100%;
+    display: none;
+}
+
+.product-display.active{
+    display: block;
 }
 
 .product-row{
@@ -955,9 +965,28 @@ h3 {
     margin: 15px;
 }
 
-.product-title{
-    color: var(--primary-blue);
-    margin-bottom: 5px;
+.develon-logo img {
+    height: 29px;
+    width: auto;
+    display: block;
+    transition: 0.3s ease;
+    margin: 15px;
+}
+
+.develon-logo img:hover{
+    padding-left: 15px;
+}
+
+.product-logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+    transition: 0.3s ease;
+    margin: 15px;
+}
+
+.product-logo img:hover{
+    padding-left: 15px;
 }
 
 .product-image{

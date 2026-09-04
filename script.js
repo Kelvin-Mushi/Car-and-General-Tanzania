@@ -1,6 +1,5 @@
 let slideIntervalTimer = null;
 
-//MAKING SURE ALL MY LINKS WORKS WELL
 const allNavLinks = document.querySelectorAll('.nav-links a[data-target]');
 
 allNavLinks.forEach(link => {
@@ -11,12 +10,12 @@ allNavLinks.forEach(link => {
 
     if (isMainLink) {
       // 1. Hide all individual product sections
-      productSections.forEach(section => section.style.display = 'none');
+      productSections.forEach(section => section.classList.add('hidden'));
 
-      // 2. Unhide the main page view so anchors (#about-us, etc.) are visible again
+      // 2. Show main landing view
       mainSections.style.display = 'block';
 
-      // 3. Scroll to target anchor if needed
+      // 3. Scroll handling
       if (targetId && targetId !== 'home-section') {
         const targetEl = document.getElementById(targetId);
         if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
@@ -28,14 +27,14 @@ allNavLinks.forEach(link => {
       // 1. Hide the main landing view
       mainSections.style.display = 'none';
 
-      // 2. Hide ALL product sections first (fixes stacking/previous content bug)
-      productSections.forEach(section => section.style.display = 'none');
+      // 2. Hide ALL product sections first
+      productSections.forEach(section => section.classList.add('hidden'));
 
       // 3. Show ONLY the requested product section
       const activeProduct = document.getElementById(targetId);
       if (activeProduct) {
-        activeProduct.style.display = 'block';
-        window.scrollTo(0, 0); // Reset scroll position to top
+        activeProduct.classList.remove('hidden'); // Preserves display: flex from CSS
+        window.scrollTo(0, 0);
       }
     }
   });
@@ -124,6 +123,48 @@ stage1Links.forEach(link => {
     });
 });
 
+//active button logic for stage 1 btn
+const sidebarLinks = document.querySelectorAll('.stage-1');
+
+stage1Links.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    stage1Links.forEach(item => item.classList.remove('active'));
+    link.classList.add('active');
+
+    //deactivating my stage 2 links and their displays when a different stage 1 btn is clicked
+    stage2Links.forEach(item => item.classList.remove('active'));
+    productDisplay.forEach(display => display.classList.remove('active'));
+  });
+});
+
+
+const productDisplay = document.querySelectorAll('.product-display');
+const stage2Links = document.querySelectorAll('.sub-link');
+
+//stage 2 links click logic
+stage2Links.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    stage2Links.forEach(item => item.classList.remove('active'));
+    this.classList.add('active');
+
+    // ALWAYS hide all product displays first
+    productDisplay.forEach(display => display.classList.remove('active'));
+
+    // Get target ID and show corresponding display (if it exists)
+    const targetId = this.getAttribute('data-target');
+    
+    if (targetId) {
+      const targetDisplay = document.getElementById(targetId);
+      if (targetDisplay) {
+        targetDisplay.classList.add('active');
+      }
+    }
+  });
+});
 
 // Update Current Year in Footer
 document.addEventListener('DOMContentLoaded', () => {

@@ -43,7 +43,7 @@
                 <a href="#" class="main-links active" data-type="all" data-target="all">Home</a>
                 <!--<a href="#our-products">Our Products</a>-->
                 <li class="dropdown">
-                  <a href="#" class="nav-btn">Products <i class="fas fa-chevron-down"></i></a>
+                  <a href="#">Products <i class="fas fa-chevron-down"></i></a>
             
                     <!-- Level 2: First Flyout Menu -->
                     <ul class="submenu level-1">
@@ -54,7 +54,7 @@
                             <ul class="submenu level-2">
                                 <li><a href="#" class="nav-btn"> TVS 2 Wheelers</a></li>
                                 <li><a href="#" class="nav-btn">TVS 3 Wheelers</a></li>
-                                <li><a href="#" class="nav-btn">MRF Tyres</a></li>
+                                <li><a href="#" class="nav-btn" data-target="mrf-section">MRF Tyres</a></li>
                             </ul>
                         </li>
                         
@@ -301,31 +301,33 @@
     <section id="kirloskar-section" class="page-section hidden">
       <aside class="scrollable-sidebar">
         <div class="side-container">
-            <h2 class="sidebar-heading">PRODUCTS</h2>
+            <div class="product-logo">
+                <img src="./products_logos/kirloscar_chillers.png">
+            </div>
             <div class="sidebar-items">
                 <ul class="menu">
                     <li class="goes-down">
                         <a href="#" class="stage-1" data-target="kirloskar-1">Kirloskar Pneumatic Company Ltd</a>
 
                         <ul class="stage-2" id="kirloskar-1">
-                            <li><a href="#">Gas Compressors</a></li>
-                            <li><a href="#">Booster Compressors</a></li>
-                            <li><a href="#">Refrigeration Compressors</a></li>
+                            <li><a href="#" class="sub-link" data-target="pneumatic-compressors">Gas Compressors</a></li>
+                            <li><a href="#" class="sub-link">Booster Compressors</a></li>
+                            <li><a href="#" class="sub-link">Refrigeration Compressors</a></li>
                         </ul>
                     </li>
                     <li class="goes-down">
                         <a href="#" class="stage-1" data-target="kirloskar-2">Kirloskar Chillers Private Ltd</a>
 
                         <ul class="stage-2" id="kirloskar-2">
-                            <li><a href="#">Chillers</a></li>
-                            <li><a href="#">Heat Pumps</a></li>
+                            <li><a href="#" class="sub-link">Chillers</a></li>
+                            <li><a href="#" class="sub-link">Heat Pumps</a></li>
                         </ul>
                     </li>
                     <li class="goes-down">
                         <a href="#" class="stage-1" data-target="kirloskar-3">Kirloskar Oil Engines Ltd</a>
 
                         <ul class="stage-2" id="kirloskar-3">
-                            <li><a href="#">Gas Generators</a></li>
+                            <li><a href="#" class="sub-link">Gas Generators</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -335,9 +337,9 @@
 
       <main class="main-product-content">
 
-        <div class="product-display">
+        <div class="product-display" id="pneumatic-compressors">
             <div class="product-row">
-                <h1 class="product-title">PRODUCT</h1>
+                <h1 class="product-title">Centrifugal Air Compressor</h1>
                 <div class="product-image">
                     <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015213/03+Centrifugal+AC.webp/1d9860cf-e93b-f140-bdb8-6cd192604a8e?t=1740379039618">
                 </div>
@@ -351,6 +353,41 @@
                     </div>
                 </div>
             </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Screw Air Compressor</h1>
+                <div class="product-image">
+                    <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015203/01b+Screw+AC+Main+Image.webp/a21977dc-640b-1fa9-6525-ba7ea652fe87?version=1.0&t=1740378954996">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Oil Injected Screw Compressors
+                        ,Diesel Engine Driven Portable Screw Compressors
+                        ,Waterwell Screw Compressors</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Reciprocating Air & Gas Compressors</h1>
+                <div class="product-image">
+                    <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015203/01c+Reciprocating+AC+Main+Image.webp/4a95cd6f-f466-fbaa-c16c-e57bd514737e?version=1.0&t=1740378954764">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Reciprocating Gas Compressors
+                        ,Vertical Reciprocating Compressors
+                        ,PET Compressors
+                        ,Compressors for Railway Brake Systems
+                        ,Reciprocating Horizontal Balanced Opposed Air Compressors</p>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
       </main>
 
@@ -360,7 +397,9 @@
     <section id="develon-section" class="page-section hidden">
       <aside class="scrollable-sidebar">
         <div class="side-container">
-            <h2 class="sidebar-heading">PRODUCTS</h2>
+            <div class="develon-logo">
+                <img src="./products_logos/develonlogo.png">
+            </div>
             <div class="sidebar-items">
                 <ul class="menu">
                     <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-1">Excavators</a></li>
@@ -398,7 +437,9 @@
      <section id="cummins-section" class="page-section hidden">
       <aside class="scrollable-sidebar">
         <div class="side-container">
-            <h2 class="sidebar-heading">PRODUCTS</h2>
+            <div class="product-logo">
+                <img src="./products_logos/cumminspower.png">
+            </div>
             <div class="sidebar-items">
                 <ul class="menu">
                     <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-1">Cummins Power Generation</a></li>
@@ -438,46 +479,87 @@
     <section id="ingesoll-section" class="page-section hidden">
       <aside class="scrollable-sidebar">
         <div class="side-container">
-            <h2 class="sidebar-heading">PRODUCTS</h2>
+            <div class="product-logo">
+                <img src="./products_logos/ingersoll.png">
+            </div>
             <div class="sidebar-items">
                 <ul class="menu">
                     <li class="goes-down">
                         <a href="#" class="stage-1" data-target="ingersoll-1">Ingersoll Rand</a>
 
                         <ul class="stage-2" id="ingersoll-1">
-                            <li><a href="#">Air Compressors</a></li>
-                            <li><a href="#">Power Tools</a></li>
-                            <li><a href="#">Lifting Solutions</a></li>
+                            <li><a href="#" class="sub-link">Air Compressors</a></li>
+                            <li><a href="#" class="sub-link">Power Tools</a></li>
+                            <li><a href="#" class="sub-link">Lifting Solutions</a></li>
                         </ul>
                     </li>
                     <li class="goes-down">
                         <a href="#" class="stage-1" data-target="ingersoll-2">Compair</a>
 
                         <ul class="stage-2" id="ingersoll-2">
-                            <li><a href="#">Compressors</a></li>
-                            <li><a href="#">Compressed Air Dryers</a></li>
-                            <li><a href="#">Air Treatment & accessories</a></li>
-                            <li><a href="#">Industrial Rotary Vane Solutions</a></li>
+                            <li><a href="#" class="sub-link">Compressors</a></li>
+                            <li><a href="#" class="sub-link">Compressed Air Dryers</a></li>
+                            <li><a href="#" class="sub-link">Air Treatment & accessories</a></li>
+                            <li><a href="#" class="sub-link">Industrial Rotary Vane Solutions</a></li>
                         </ul>
                     </li>
                     <li class="goes-down">
                         <a href="#" class="stage-1" data-target="ingersoll-3">Champion</a>
 
                         <ul class="stage-2" id="ingersoll-3">
-                            <li><a href="#">Air Compressors</a></li>
-                            <li><a href="#">Air Treatment Systems</a></li>
+                            <li><a href="#" class="sub-link">Air Compressors</a></li>
+                            <li><a href="#" class="sub-link">Air Treatment Systems</a></li>
                         </ul>
                     </li>
                     <li class="goes-down">
                         <a href="#" class="stage-1" data-target="ingersoll-4">Aro</a>
 
                         <ul class="stage-2" id="ingersoll-4">
-                            <li><a href="#">Pumps</a></li>
-                            <li><a href="#">Lubrication Equipments</a></li>
-                            <li><a href="#">Filter Regulator Lubricatos</a></li>
-                            <li><a href="#">Pneumatic Valves & Cylinders</a></li>
+                            <li><a href="#" class="sub-link">Pumps</a></li>
+                            <li><a href="#" class="sub-link">Lubrication Equipments</a></li>
+                            <li><a href="#" class="sub-link">Filter Regulator Lubricatos</a></li>
+                            <li><a href="#" class="sub-link">Pneumatic Valves & Cylinders</a></li>
                         </ul>
                     </li>
+                </ul>
+            </div>
+        </div>
+      </aside>
+
+      <main class="main-product-content">
+
+        <div class="product-display">
+            <div class="product-row">
+                <h1 class="product-title">PRODUCT</h1>
+                <div class="product-image">
+                    <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015213/03+Centrifugal+AC.webp/1d9860cf-e93b-f140-bdb8-6cd192604a8e?t=1740379039618">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>This range includes our reciprocating compressors KCX, 
+                            PCX, Viteza - KZX Engineered Sets and Khione Screw Compressors and Packages. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </main>
+
+    </section>
+
+    <!--MRF TIRES SECTION-->
+    <section id="mrf-section" class="page-section hidden">
+      <aside class="scrollable-sidebar">
+        <div class="side-container">
+            <div class="product-logo">
+                <img src="./products_logos/mrflogo.png">
+            </div>
+            <div class="sidebar-items">
+                <ul class="menu">
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-1">Two Wheeler Tyres</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-2">Three Wheeler Tyres</a></li>
                 </ul>
             </div>
         </div>
@@ -514,9 +596,9 @@
             </div>
             <div class="footer-column">
                 <h4>Quick Links</h4>
-                <p><a href="#">Home</a></p>
-                <p><a href="#about-us">About Us</a></p>
-                <p><a href="#contact-us">Contact Us</a></p>
+                <p><a href="#" data-type="all" data-target="all" class="main-links">Home</a></p>
+                <p><a href="#about-us" data-type="all" data-target="about-us" class="main-links">About Us</a></p>
+                <p><a href="#contact-us" data-type="all" data-target="contact-us" class="main-links">Contact Us</a></p>
             </div>
             <div class="footer-column">
                 <h4>Legal</h4>
