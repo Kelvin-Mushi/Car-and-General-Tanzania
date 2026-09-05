@@ -3,7 +3,7 @@
     --accent-red: #ec1111;
     --light-bg: #f4f6f9;
     --card-bg: #eef4f9;
-    --text-dark: #2c3e50;
+    --text-dark: #000000;
     --text-muted: #666666;
 }
 
@@ -57,7 +57,7 @@ h3{
 
 /* Main Navigation Header */
 .main-header {
-    background: #ffffff;
+    background: white;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -85,8 +85,8 @@ h3{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 5px;
     padding: 10px 20px;
 }
 
@@ -135,24 +135,19 @@ h3{
     transition: all 0.3s ease;
 }
 
-.login-btn {
-    color: var(--primary-blue);
-    border: 1px solid var(--primary-blue);
+.login-btn i{
+    color: var(--text-dark);
     transition: 0.3s ease;
+    font-size: 25px;
+    border: 2px solid var(--text-dark);
+    border-radius: 100%;
+    padding: 7px;
 }
 
-.login-btn:hover{
+.login-btn i:hover{
     transform: scale(1.2);
-}
-
-.signup-btn {
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-red));
-    color: #ffffff;
-    transition: transform 2sec ease;
-}
-
-.signup-btn:hover{
-    transform: scale(1.1);
+    color: var(--accent-red);
+    border-color: var(--accent-red);
 }
 
 /*NAVIGATION STYLING*/
@@ -172,7 +167,6 @@ h3{
     padding: 12px 20px;
     color: var(--text-dark);
     text-decoration: none;
-    background-color: #ffffff;
     white-space: nowrap;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
@@ -269,6 +263,7 @@ h3{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .slide-overlay {
@@ -362,12 +357,11 @@ h3{
 #cg-hero-section {
   position: relative;
   width: 100%;
-  min-height: 88vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-color: #0d1117;
-  color: #ffffff;
+  color:black;
 }
 
 /* Background Image with Dark Opacity Layer */
@@ -456,7 +450,7 @@ h3{
 
 .cg-hero-description {
   font-size: 1.15rem;
-  color: #cbd5e1;
+  color: black;
   line-height: 1.6;
   max-width: 580px;
   margin-bottom: 35px;
@@ -520,12 +514,12 @@ h3{
   display: block;
   font-size: 1.8rem;
   font-weight: 800;
-  color: #ffffff;
+  color:black;
 }
 
 .cg-stat-label {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color:var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -579,13 +573,13 @@ h3{
   margin: 0 0 4px 0;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #ffffff;
+  color: black;
 }
 
 .cg-card-info p {
   margin: 0;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   line-height: 1.4;
 }
 
@@ -666,11 +660,6 @@ h3 {
     color: var(--text-dark);
 }
 
-.services-section {
-    padding: 50px 0;
-    background: var(--light-bg);
-}
-
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -717,7 +706,6 @@ h3 {
 /* About Section */
 .about-section {
     padding: 60px 0;
-    background: #FFF1F2;
 }
 
 .about-content {
@@ -755,7 +743,6 @@ h3 {
 /* Contact Form */
 .contact-section {
     padding: 60px 0;
-    background: var(--light-bg);
 }
 
 .contact-content {
@@ -803,9 +790,8 @@ h3 {
 }
 
 /* Dealer Locator & Testimonials */
-.locator-section, .testimonials-section {
+.testimonials-section {
     padding: 60px 0;
-    background: var(--light-bg);
 }
 
 .section-title {
@@ -855,7 +841,7 @@ h3 {
 }
 .scrollable-sidebar {
     width: 320px;
-    /*background-color: #f4f6f8;*/
+    position: sticky;
     padding: 0px;
     height: 100%;
     overflow-y: auto;

@@ -93,6 +93,12 @@ navLinks.forEach(link => {
 
     mainSections.style.display = 'none';
     document.getElementById(targetId).classList.remove('hidden');
+
+    //deactivating stage 1 links and it's sublinks
+    stage1Links.forEach(item => item.classList.remove('active'));
+    stage2Links.forEach(item => item.classList.remove('active'));
+    stage2Menus.forEach(menu => menu.classList.remove('active'));
+    productDisplay.forEach(display => display.classList.remove('active'));
   });
 });
 
