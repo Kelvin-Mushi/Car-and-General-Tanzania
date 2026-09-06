@@ -99,6 +99,7 @@ navLinks.forEach(link => {
     stage2Links.forEach(item => item.classList.remove('active'));
     stage2Menus.forEach(menu => menu.classList.remove('active'));
     productDisplay.forEach(display => display.classList.remove('active'));
+
   });
 });
 
@@ -142,10 +143,15 @@ stage1Links.forEach(link => {
     //deactivating my stage 2 links and their displays when a different stage 1 btn is clicked
     stage2Links.forEach(item => item.classList.remove('active'));
     productDisplay.forEach(display => display.classList.remove('active'));
+
+    //placing landing page back when a different stage 1 btn is clicked
+    if (productsHomePage) {
+      productsHomePage.classList.remove('hidden');
+    }
   });
 });
 
-
+const productsHomePage = document.getElementById('products-home');
 const productDisplay = document.querySelectorAll('.product-display');
 const stage2Links = document.querySelectorAll('.sub-link');
 
@@ -156,6 +162,11 @@ stage2Links.forEach(link => {
 
     stage2Links.forEach(item => item.classList.remove('active'));
     this.classList.add('active');
+
+    //hide landing page
+    if (productsHomePage) {
+      productsHomePage.classList.add('hidden');
+    }
 
     // ALWAYS hide all product displays first
     productDisplay.forEach(display => display.classList.remove('active'));
@@ -225,3 +236,12 @@ window.addEventListener('click', (e) => {
         termsModal.style.display = 'none';
     }
 });
+
+//products moving pointer
+const productSubtitle = document.querySelector('.product-subtitle');
+
+setInterval(() => {
+    if (productSubtitle) {
+        productSubtitle.style.paddingRight = '10px'; 
+    }
+}, 2000);
