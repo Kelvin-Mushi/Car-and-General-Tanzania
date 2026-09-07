@@ -237,29 +237,3 @@ window.addEventListener('click', (e) => {
     }
 });
 
-<<<<<<< HEAD
-//image slide for product home page
-const productHomeSlide = document.querySelector('.products-home-background');
-let imageUrls = [
-    './products_slide/cummins.webp',
-    './products_slide/develon.webp',
-    './products_slide/fleetguard.webp',
-    './products_slide/ingersoll.webp',
-    './products_slide/kirloscar.webp',
-];
-
-setInterval(() => {
-    const subTitle = document.querySelector('.product-subtitle');
-    subTitle.style.paddingLeft = '20px'; // Slide in the subtitle
-
-    const randomIndex = Math.floor(Math.random() * imageUrls.length);
-    productHomeSlide.style.backgroundImage = `url('${imageUrls[randomIndex]}')`;
-}, 3000); // Change image every 5 seconds 
-
-setInterval(() => {
-    const subTitle = document.querySelector('.product-subtitle');
-    subTitle.style.paddingLeft = '30px'; // Slide out the subtitle
-}, 1500); // Slide out after 1.5 seconds
-=======
-
->>>>>>> 3c469f9132eb41143f36d6064267a8e3cce32e94
