@@ -237,11 +237,4 @@ window.addEventListener('click', (e) => {
     }
 });
 
-//products moving pointer
-const productSubtitle = document.querySelector('.product-subtitle');
 
-setInterval(() => {
-    if (productSubtitle) {
-        productSubtitle.style.paddingRight = '10px'; 
-    }
-}, 2000);
