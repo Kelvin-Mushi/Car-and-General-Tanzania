@@ -237,6 +237,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
+<<<<<<< HEAD
 //image slide for product home page
 const productHomeSlide = document.querySelector('.products-home-background');
 let imageUrls = [
@@ -259,3 +260,6 @@ setInterval(() => {
     const subTitle = document.querySelector('.product-subtitle');
     subTitle.style.paddingLeft = '30px'; // Slide out the subtitle
 }, 1500); // Slide out after 1.5 seconds
+=======
+
+>>>>>>> 3c469f9132eb41143f36d6064267a8e3cce32e94
