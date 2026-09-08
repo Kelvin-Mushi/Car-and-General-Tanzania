@@ -1,239 +1,262 @@
-let slideIntervalTimer = null;
 
-const allNavLinks = document.querySelectorAll('.nav-links a[data-target]');
+function renderRoute(targetId) {
+  if (!targetId) return;
 
-allNavLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute('data-target');
-    const isMainLink = link.getAttribute('data-type') === 'all';
+  const allPageSections = document.querySelectorAll('.page-section');
+  const allProductDisplays = document.querySelectorAll('.product-display');
+  const mainSections = document.getElementById('all');
+  const productsHomePage = document.getElementById('products-home');
+  const subLinks = document.querySelectorAll('.sub-link');
 
-    if (isMainLink) {
-      // 1. Hide all individual product sections
-      productSections.forEach(section => section.classList.add('hidden'));
+  // 1. Synchronize sub-link active highlights
+  subLinks.forEach(link => {
+    const linkTarget = link.getAttribute('data-route') || link.getAttribute('data-target');
+    if (linkTarget === targetId) {
+      link.classList.add('active');
 
-      // 2. Show main landing view
-      mainSections.style.display = 'block';
-
-      // 3. Scroll handling
-      if (targetId && targetId !== 'home-section') {
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.scrollTo(0, 0);
+      // Expand parent sidebar dropdown if closed
+      const parentMenu = link.closest('.stage-2');
+      if (parentMenu) {
+        document.querySelectorAll('.stage-2').forEach(menu => menu.classList.remove('active'));
+        parentMenu.classList.add('active');
       }
-
     } else {
-      // 1. Hide the main landing view
-      mainSections.style.display = 'none';
-
-      // 2. Hide ALL product sections first
-      productSections.forEach(section => section.classList.add('hidden'));
-
-      // 3. Show ONLY the requested product section
-      const activeProduct = document.getElementById(targetId);
-      if (activeProduct) {
-        activeProduct.classList.remove('hidden'); // Preserves display: flex from CSS
-        window.scrollTo(0, 0);
-      }
+      link.classList.remove('active');
     }
   });
-});
 
+  // Case A: Returning to Main Landing View (Homepage)
+  if (targetId === 'all' || targetId === 'home-section') {
+    allPageSections.forEach(sec => sec.classList.add('hidden'));
+    allProductDisplays.forEach(display => display.classList.remove('active'));
+    if (mainSections) mainSections.style.display = 'block';
+    window.scrollTo(0, 0);
+    return;
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Slider Logic
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentSlide = 0;
+  // Hide the global landing view
+  if (mainSections) mainSections.style.display = 'none';
 
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+  // Case B: Opening a top-level Page Section (e.g., Kirloscar main category page)
+  const targetSection = document.getElementById(targetId);
+  if (targetSection && targetSection.classList.contains('page-section')) {
+    // 1. Hide all other page sections
+    allPageSections.forEach(sec => sec.classList.add('hidden'));
+    targetSection.classList.remove('hidden');
 
-        currentSlide = (index + slides.length) % slides.length;
-        
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-    }
-
-    nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
-    prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => showSlide(index));
-    });
-
-    // Auto Advance Slider every 5 Seconds
-    setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000);
-
-    // Dealer Card Selection Highlight
-    const dealerCards = document.querySelectorAll('.dealer-card');
-    dealerCards.forEach(card => {
-        card.addEventListener('click', () => {
-            dealerCards.forEach(c => c.classList.remove('active'));
-            card.classList.add('active');
-        });
-    });
-});
-
-//PRODUCTS SECTION LOGIC
-const navLinks = document.querySelectorAll('.nav-btn');
-const productSections = document.querySelectorAll('.page-section');
-const mainSections = document.getElementById('all');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    const targetId = this.getAttribute('data-target');
-
-    mainSections.style.display = 'none';
-    document.getElementById(targetId).classList.remove('hidden');
-
-    //deactivating stage 1 links and it's sublinks
-    stage1Links.forEach(item => item.classList.remove('active'));
-    stage2Links.forEach(item => item.classList.remove('active'));
-    stage2Menus.forEach(menu => menu.classList.remove('active'));
-    productDisplay.forEach(display => display.classList.remove('active'));
-
-  });
-});
-
-//PRODUCTS SIDEBAR LOGIC
-const stage1Links = document.querySelectorAll('.stage-1');
-const stage2Menus = document.querySelectorAll('.stage-2');
-
-stage1Links.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('data-target');
-        const targetMenu = document.getElementById(targetId);
-
-        if (targetMenu) {
-            // Check if the clicked menu is already open
-            const isAlreadyOpen = targetMenu.classList.contains('active');
-
-            // 1. Close all dropdowns
-            stage2Menus.forEach(menu => menu.classList.remove('active'));
-
-            // 2. Open the clicked dropdown only if it wasn't already open (toggle behavior)
-            if (!isAlreadyOpen) {
-                targetMenu.classList.add('active');
-            }
-        }
-
-        window.scroll(0,0);
-    });
-});
-
-//active button logic for stage 1 btn
-const sidebarLinks = document.querySelectorAll('.stage-1');
-
-stage1Links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    stage1Links.forEach(item => item.classList.remove('active'));
-    link.classList.add('active');
-
-    //deactivating my stage 2 links and their displays when a different stage 1 btn is clicked
-    stage2Links.forEach(item => item.classList.remove('active'));
-    productDisplay.forEach(display => display.classList.remove('active'));
-
-    //placing landing page back when a different stage 1 btn is clicked
+    // 2. RESET PRODUCT DETAILS: Clear old product display states and show products-home
+    allProductDisplays.forEach(display => display.classList.remove('active'));
     if (productsHomePage) {
       productsHomePage.classList.remove('hidden');
     }
-  });
-});
 
-const productsHomePage = document.getElementById('products-home');
-const productDisplay = document.querySelectorAll('.product-display');
-const stage2Links = document.querySelectorAll('.sub-link');
+    window.scrollTo(0, 0);
+    return;
+  }
 
-//stage 2 links click logic
-stage2Links.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
+  // Case C: Opening a specific Product Detail view (clicked from sidebar sub-links)
+  const targetDisplay = document.getElementById(targetId);
+  if (targetDisplay && targetDisplay.classList.contains('product-display')) {
+    // Hide the category introduction container
+    if (productsHomePage) productsHomePage.classList.add('hidden');
 
-    stage2Links.forEach(item => item.classList.remove('active'));
-    this.classList.add('active');
+    // Hide previous product detail displays and reveal only the requested one
+    allProductDisplays.forEach(display => display.classList.remove('active'));
+    targetDisplay.classList.add('active');
 
-    //hide landing page
-    if (productsHomePage) {
-      productsHomePage.classList.add('hidden');
-    }
+    window.scrollTo(0, 0);
+  }
+}
 
-    // ALWAYS hide all product displays first
-    productDisplay.forEach(display => display.classList.remove('active'));
+/**
+ * Pushes view state into history and updates address bar hash
+ */
+function navigateTo(targetId) {
+  renderRoute(targetId);
+  history.pushState({ targetId }, '', `#${targetId}`);
+}
 
-    // Get target ID and show corresponding display (if it exists)
-    const targetId = this.getAttribute('data-target');
+// Global Click Listener: Handles routing & anchor scrolling seamlessly
+document.addEventListener('click', (e) => {
+  const routeLink = e.target.closest('[data-route], [data-target], a[href^="#"]');
+  
+  if (!routeLink) return;
+
+  // 1. Skip stage-1 accordion headers so sidebar dropdowns open/close normally
+  if (routeLink.classList.contains('stage-1')) return;
+
+  // 2. Read target from attributes or href anchor
+  const dataTarget = routeLink.getAttribute('data-route') || routeLink.getAttribute('data-target');
+  const hrefTarget = routeLink.getAttribute('href');
+
+  // CASE A: Standard Anchor Link (e.g., href="#about-us")
+  if (!dataTarget && hrefTarget && hrefTarget.startsWith('#')) {
+    const targetId = hrefTarget.replace('#', '');
     
-    if (targetId) {
-      const targetDisplay = document.getElementById(targetId);
-      if (targetDisplay) {
-        targetDisplay.classList.add('active');
+    if (targetId && targetId !== '') {
+      e.preventDefault();
+
+      const mainSections = document.getElementById('all');
+      if (mainSections) mainSections.style.display = 'block';
+
+      const allPageSections = document.querySelectorAll('.page-section');
+      allPageSections.forEach(sec => sec.classList.add('hidden'));
+
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth' });
+        history.pushState({ targetId }, '', `#${targetId}`);
       }
     }
-  });
+    return;
+  }
+
+  // CASE B: Router Link (data-route or data-target)
+  if (dataTarget) {
+    e.preventDefault();
+    navigateTo(dataTarget);
+  }
 });
 
-// Update Current Year in Footer
+// Browser Back & Forward Event Listener
+window.addEventListener('popstate', (e) => {
+  if (e.state && e.state.targetId) {
+    renderRoute(e.state.targetId);
+  } else if (window.location.hash) {
+    const hashTarget = window.location.hash.replace('#', '');
+    renderRoute(hashTarget);
+  } else {
+    // Default fallback to home view on initial back
+    renderRoute('all');
+  }
+});
+
+
+// ==========================================================================
+// 2. SIDEBAR DROPDOWNS & UI TOGGLES
+// ==========================================================================
+
 document.addEventListener('DOMContentLoaded', () => {
-    const yearSpan = document.getElementById('current-year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+  // Restore initial section on direct URL load or refresh
+  const initialHash = window.location.hash.replace('#', '');
+  if (initialHash) {
+    renderRoute(initialHash);
+  }
+
+  const stage1Links = document.querySelectorAll('.stage-1');
+  const stage2Menus = document.querySelectorAll('.stage-2');
+  const stage2Links = document.querySelectorAll('.sub-link');
+  const productDisplay = document.querySelectorAll('.product-display');
+  const productsHomePage = document.getElementById('products-home');
+
+  // Accordion Dropdowns for Sidebar
+  stage1Links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('data-target');
+      const targetMenu = document.getElementById(targetId);
+
+      if (targetMenu) {
+        const isAlreadyOpen = targetMenu.classList.contains('active');
+        stage2Menus.forEach(menu => menu.classList.remove('active'));
+        if (!isAlreadyOpen) {
+          targetMenu.classList.add('active');
+        }
+      }
+
+      stage1Links.forEach(item => item.classList.remove('active'));
+      this.classList.add('active');
+
+      stage2Links.forEach(item => item.classList.remove('active'));
+      productDisplay.forEach(display => display.classList.remove('active'));
+
+      if (productsHomePage) productsHomePage.classList.remove('hidden');
+      window.scrollTo(0, 0);
+    });
+  });
+
+  // Slider Logic
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    if (!slides.length) return;
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+  }
+
+  if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+  if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index));
+  });
+
+  setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 5000);
+
+  // Dealer Card Highlight
+  const dealerCards = document.querySelectorAll('.dealer-card');
+  dealerCards.forEach(card => {
+    card.addEventListener('click', () => {
+      dealerCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+
+  // Footer Year
+  const yearSpan = document.getElementById('current-year');
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
 
-//Privacy Policy Page
+
+// ==========================================================================
+// 3. MODALS (PRIVACY POLICY & TERMS)
+// ==========================================================================
+
 const privacyLink = document.getElementById('privacy-link');
 const privacyModal = document.getElementById('privacy-modal');
 const closeModal = document.getElementById('close-modal');
 
-// Open modal on click
-privacyLink.addEventListener('click', (e) => {
+if (privacyLink && privacyModal) {
+  privacyLink.addEventListener('click', (e) => {
     e.preventDefault();
     privacyModal.style.display = 'flex';
-});
+  });
+}
 
-// Close modal on 'X' click
-closeModal.addEventListener('click', () => {
+if (closeModal && privacyModal) {
+  closeModal.addEventListener('click', () => {
     privacyModal.style.display = 'none';
-});
+  });
+}
 
-// Close modal when clicking anywhere outside the card
-window.addEventListener('click', (e) => {
-    if (e.target === privacyModal) {
-        privacyModal.style.display = 'none';
-    }
-});
-
-//Terms and Conditions Page
 const termsLink = document.getElementById('terms-link');
 const termsModal = document.getElementById('terms-modal');
 const closeModal2 = document.getElementById('close-modal2');
 
-// Open modal on click
-termsLink.addEventListener('click', (e) => {
+if (termsLink && termsModal) {
+  termsLink.addEventListener('click', (e) => {
     e.preventDefault();
     termsModal.style.display = 'flex';
-});
+  });
+}
 
-// Close modal on 'X' click
-closeModal2.addEventListener('click', () => {
+if (closeModal2 && termsModal) {
+  closeModal2.addEventListener('click', () => {
     termsModal.style.display = 'none';
-});
+  });
+}
 
-// Close modal when clicking anywhere outside the card
 window.addEventListener('click', (e) => {
-    if (e.target === termsModal) {
-        termsModal.style.display = 'none';
-    }
+  if (privacyModal && e.target === privacyModal) privacyModal.style.display = 'none';
+  if (termsModal && e.target === termsModal) termsModal.style.display = 'none';
 });
-
