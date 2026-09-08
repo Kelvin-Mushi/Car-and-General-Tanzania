@@ -1078,7 +1078,7 @@ h3 {
 .stage-1:hover {
     padding-left: 10px;
     font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 6px white;
 }
 
 .stage-1.active{
