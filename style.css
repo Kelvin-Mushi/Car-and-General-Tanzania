@@ -1119,8 +1119,8 @@ h3 {
   min-height: 100vh; /* Adjust height to fit your section */
   overflow: hidden;
 }
-.products-home.hidden{
-    display: none;
+.products-home.hidden, #products-home.hidden{
+    display: none !important;
 }
 
 /* Background spans the full area sitting behind everything */
@@ -1162,12 +1162,12 @@ h3 {
 .product-display{
     width:100%;
     height:100%;
-    display: none;
+    display: none !important;
     transition: 0.3s ease;
 }
 
 .product-display.active{
-    display: block;
+    display: block !important;
 }
 
 .product-row{

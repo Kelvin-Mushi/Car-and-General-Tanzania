@@ -1,68 +1,74 @@
 
+/**
+ * Universal Function to route views, handle standalone stage-1 links,
+ * and keep active sidebar states synchronized without collision.
+ */
 function renderRoute(targetId) {
   if (!targetId) return;
 
   const allPageSections = document.querySelectorAll('.page-section');
   const allProductDisplays = document.querySelectorAll('.product-display');
   const mainSections = document.getElementById('all');
-  const productsHomePage = document.getElementById('products-home');
-  const subLinks = document.querySelectorAll('.sub-link');
+  const allProductsHomePages = document.querySelectorAll('.products-home');
+  const allSidebarLinks = document.querySelectorAll('.stage-1, .sub-link');
+  const allStage2Menus = document.querySelectorAll('.stage-2');
 
-  // 1. Synchronize sub-link active highlights
-  subLinks.forEach(link => {
-    const linkTarget = link.getAttribute('data-route') || link.getAttribute('data-target');
-    if (linkTarget === targetId) {
-      link.classList.add('active');
-
-      // Expand parent sidebar dropdown if closed
-      const parentMenu = link.closest('.stage-2');
-      if (parentMenu) {
-        document.querySelectorAll('.stage-2').forEach(menu => menu.classList.remove('active'));
-        parentMenu.classList.add('active');
-      }
-    } else {
-      link.classList.remove('active');
-    }
-  });
-
-  // Case A: Returning to Main Landing View (Homepage)
+  // Case A: Homepage Landing View
   if (targetId === 'all' || targetId === 'home-section') {
     allPageSections.forEach(sec => sec.classList.add('hidden'));
     allProductDisplays.forEach(display => display.classList.remove('active'));
+    allSidebarLinks.forEach(link => link.classList.remove('active'));
+    allStage2Menus.forEach(menu => menu.classList.remove('active'));
     if (mainSections) mainSections.style.display = 'block';
     window.scrollTo(0, 0);
     return;
   }
 
-  // Hide the global landing view
   if (mainSections) mainSections.style.display = 'none';
 
-  // Case B: Opening a top-level Page Section (e.g., Kirloscar main category page)
+  // Case B: Opening a Main Section (e.g., cummins-section)
   const targetSection = document.getElementById(targetId);
   if (targetSection && targetSection.classList.contains('page-section')) {
-    // 1. Hide all other page sections
     allPageSections.forEach(sec => sec.classList.add('hidden'));
     targetSection.classList.remove('hidden');
 
-    // 2. RESET PRODUCT DETAILS: Clear old product display states and show products-home
+    // Hide all individual product displays & reveal intro section
     allProductDisplays.forEach(display => display.classList.remove('active'));
-    if (productsHomePage) {
-      productsHomePage.classList.remove('hidden');
-    }
+    allProductsHomePages.forEach(home => home.classList.remove('hidden'));
+
+    allStage2Menus.forEach(menu => menu.classList.remove('active'));
+    allSidebarLinks.forEach(link => link.classList.remove('active'));
 
     window.scrollTo(0, 0);
     return;
   }
 
-  // Case C: Opening a specific Product Detail view (clicked from sidebar sub-links)
+  // Case C: Opening a Specific Product Display (e.g., power-gen, engines)
   const targetDisplay = document.getElementById(targetId);
   if (targetDisplay && targetDisplay.classList.contains('product-display')) {
-    // Hide the category introduction container
-    if (productsHomePage) productsHomePage.classList.add('hidden');
+    // 1. Force the page section containing this display to be visible
+    const parentSection = targetDisplay.closest('.page-section');
+    if (parentSection) {
+      allPageSections.forEach(sec => sec.classList.add('hidden'));
+      parentSection.classList.remove('hidden');
+    }
 
-    // Hide previous product detail displays and reveal only the requested one
+    // 2. Hide ALL category intro homes
+    allProductsHomePages.forEach(home => home.classList.add('hidden'));
+
+    // 3. Hide all other product displays and activate target
     allProductDisplays.forEach(display => display.classList.remove('active'));
     targetDisplay.classList.add('active');
+
+    // 4. Highlight active link
+    allSidebarLinks.forEach(link => {
+      const linkTarget = link.getAttribute('data-route') || link.getAttribute('data-target');
+      if (linkTarget === targetId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
 
     window.scrollTo(0, 0);
   }
@@ -76,23 +82,24 @@ function navigateTo(targetId) {
   history.pushState({ targetId }, '', `#${targetId}`);
 }
 
-// Global Click Listener: Handles routing & anchor scrolling seamlessly
+/// Global Click Listener: Intercepts routing, anchors, and standalone links
 document.addEventListener('click', (e) => {
   const routeLink = e.target.closest('[data-route], [data-target], a[href^="#"]');
-  
   if (!routeLink) return;
 
-  // 1. Skip stage-1 accordion headers so sidebar dropdowns open/close normally
-  if (routeLink.classList.contains('stage-1')) return;
+  // 1. ACCORDION GUARD: Skip ONLY stage-1 links that actually toggle a stage-2 dropdown
+  if (routeLink.classList.contains('stage-1') && !routeLink.classList.contains('no-dropdown')) {
+    const parentLi = routeLink.closest('li');
+    const hasDropdown = parentLi && parentLi.querySelector('.stage-2');
+    if (hasDropdown) return; // Exit and let your accordion toggle logic handle it
+  }
 
-  // 2. Read target from attributes or href anchor
   const dataTarget = routeLink.getAttribute('data-route') || routeLink.getAttribute('data-target');
   const hrefTarget = routeLink.getAttribute('href');
 
-  // CASE A: Standard Anchor Link (e.g., href="#about-us")
+  // 2. CASE A: Standard Anchor Scrolling (e.g., href="#about-us")
   if (!dataTarget && hrefTarget && hrefTarget.startsWith('#')) {
     const targetId = hrefTarget.replace('#', '');
-    
     if (targetId && targetId !== '') {
       e.preventDefault();
 
@@ -111,7 +118,7 @@ document.addEventListener('click', (e) => {
     return;
   }
 
-  // CASE B: Router Link (data-route or data-target)
+  // 3. CASE B: Single-Page Application Router
   if (dataTarget) {
     e.preventDefault();
     navigateTo(dataTarget);
@@ -149,9 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const productDisplay = document.querySelectorAll('.product-display');
   const productsHomePage = document.getElementById('products-home');
 
-  // Accordion Dropdowns for Sidebar
+  // Accordion Dropdowns for Sidebar (ONLY for links with dropdowns)
   stage1Links.forEach(link => {
     link.addEventListener('click', function(e) {
+      // If it's a standalone link with no dropdown, skip this listener completely!
+      if (this.classList.contains('no-dropdown')) return;
+
       e.preventDefault();
       const targetId = this.getAttribute('data-target');
       const targetMenu = document.getElementById(targetId);
