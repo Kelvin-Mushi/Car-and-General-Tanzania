@@ -270,3 +270,44 @@ window.addEventListener('click', (e) => {
   if (privacyModal && e.target === privacyModal) privacyModal.style.display = 'none';
   if (termsModal && e.target === termsModal) termsModal.style.display = 'none';
 });
+
+
+// Array of background image for products page URLs
+const backgroundImages = [
+  'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80',
+  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80',
+  'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80'
+];
+
+let currentImageIndex = 0;
+const targetOpacity = '0.2'; // Sets your desired peak transparency
+
+const allPageSections = document.querySelectorAll('.page-section');
+
+// Inject dedicated background layers into each .page-section
+allPageSections.forEach(section => {
+  const bgLayer = document.createElement('div');
+  bgLayer.className = 'page-section-bg';
+  bgLayer.style.backgroundImage = `url("${backgroundImages[0]}")`;
+  bgLayer.style.opacity = targetOpacity;
+  section.prepend(bgLayer);
+});
+
+function rotateBackgrounds() {
+  currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+  const nextImageUrl = backgroundImages[currentImageIndex];
+
+  document.querySelectorAll('.page-section-bg').forEach(bg => {
+    // Subtle dip towards 0.08 reveals slightly more of the base background during transition
+    bg.style.opacity = '0.2'; 
+    
+    setTimeout(() => {
+      bg.style.backgroundImage = `url("${nextImageUrl}")`;
+      // Return back to target transparency
+      bg.style.opacity = targetOpacity; 
+    }, 750);
+  });
+}
+
+// Rotate images every 6 seconds
+setInterval(rotateBackgrounds, 5000);

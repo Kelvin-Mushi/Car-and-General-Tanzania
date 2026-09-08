@@ -855,6 +855,23 @@ h3 {
   margin: 0;
   overflow: visible;
   align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+/* Background overlay layer */
+.page-section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size:cover; /* Fits width while keeping scale manageable */
+  background-position: center top; /* Centers subject details */
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
+  z-index: -1;
+  filter: brightness(0.45);
+  opacity: 0.2;
 }
 .page-section.hidden{
   display: none;
@@ -878,7 +895,6 @@ h3 {
   justify-content: center;
   align-items: flex-start; /* Forces all children to align left */
   text-align: left; /* Overrides any inherited center-alignment */
-  background-color: #ffffff;
 }
 
 /* 2. Header container: Ensure text and badges align left */
@@ -1131,9 +1147,6 @@ h3 {
   width: 100%;
   height: 100%;
   z-index: 1;
-  /* background: url('https://images.lonelyplanetitalia.it/static/places/dar-es-salaam-3666.jpg?q=80&p=slider&s=4c0c0a231f0ad1383f7b415b140f36ef'); */
-  background-size: cover;
-  background-position: center;
   transition:0.3s ease;
 }
 
