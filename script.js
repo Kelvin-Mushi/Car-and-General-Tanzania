@@ -299,7 +299,7 @@ function rotateBackgrounds() {
 
   document.querySelectorAll('.page-section-bg').forEach(bg => {
     // Subtle dip towards 0.08 reveals slightly more of the base background during transition
-    bg.style.opacity = '0.2'; 
+    bg.style.opacity = '0.1'; 
     
     setTimeout(() => {
       bg.style.backgroundImage = `url("${nextImageUrl}")`;
@@ -311,3 +311,617 @@ function rotateBackgrounds() {
 
 // Rotate images every 6 seconds
 setInterval(rotateBackgrounds, 5000);
+
+
+/*TVS PRODUCT SECTION===============================================================================
+==================================================================================================*/
+document.addEventListener("DOMContentLoaded", () => {
+
+    const tvsPage =
+        document.querySelector("#tvsProductPage");
+
+    if (!tvsPage) return;
+
+
+    /* =====================================================
+       HERO SLIDER
+    ====================================================== */
+
+    const heroSlides =
+        tvsPage.querySelectorAll(".tvs-hero-slide");
+
+    const heroDots =
+        tvsPage.querySelectorAll(".tvs-hero-dots button");
+
+    const nextHero =
+        tvsPage.querySelector(".tvs-next");
+
+    const prevHero =
+        tvsPage.querySelector(".tvs-prev");
+
+    let currentHero = 0;
+
+    let heroTimer;
+
+
+    function showHero(index) {
+
+        currentHero =
+            (index + heroSlides.length)
+            % heroSlides.length;
+
+        heroSlides.forEach((slide, i) => {
+
+            slide.classList.toggle(
+                "active",
+                i === currentHero
+            );
+
+        });
+
+
+        heroDots.forEach((dot, i) => {
+
+            dot.classList.toggle(
+                "active",
+                i === currentHero
+            );
+
+        });
+
+    }
+
+
+    function startHeroTimer() {
+
+        clearInterval(heroTimer);
+
+        heroTimer = setInterval(() => {
+
+            showHero(currentHero + 1);
+
+        }, 6000);
+
+    }
+
+
+    nextHero.addEventListener("click", () => {
+
+        showHero(currentHero + 1);
+
+        startHeroTimer();
+
+    });
+
+
+    prevHero.addEventListener("click", () => {
+
+        showHero(currentHero - 1);
+
+        startHeroTimer();
+
+    });
+
+
+    heroDots.forEach((dot, index) => {
+
+        dot.addEventListener("click", () => {
+
+            showHero(index);
+
+            startHeroTimer();
+
+        });
+
+    });
+
+
+    startHeroTimer();
+
+
+    /* =====================================================
+       SMOOTH NAVIGATION
+    ====================================================== */
+
+    tvsPage
+        .querySelectorAll(".tvs-anchor-nav a")
+        .forEach(link => {
+
+            link.addEventListener("click", event => {
+
+                event.preventDefault();
+
+                const target =
+                    document.querySelector(
+                        link.getAttribute("href")
+                    );
+
+                if (!target) return;
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            });
+
+        });
+
+
+    /* =====================================================
+       360 DEGREE VIEWER
+    ====================================================== */
+
+    const viewer =
+        tvsPage.querySelector(".tvs-360-viewer");
+
+    const viewerImage =
+        tvsPage.querySelector("#tvs360Image");
+
+    const frameCount = 20;
+
+    const framePath =
+        "assets/tvs/raider/360/frame-";
+
+
+    const frames = [];
+
+    let currentFrame = 0;
+
+    let startX = 0;
+
+    let isDragging = false;
+
+
+    /*
+        PRELOAD FRAMES
+    */
+
+    viewer.classList.add("loading");
+
+
+    for (let i = 1; i <= frameCount; i++) {
+
+        const image = new Image();
+
+        const frameNumber =
+            String(i).padStart(2, "0");
+
+        image.src =
+            `${framePath}${frameNumber}.webp`;
+
+        frames.push(image);
+
+    }
+
+
+    Promise.all(
+        frames.map(image => {
+
+            return new Promise(resolve => {
+
+                image.onload = resolve;
+
+                image.onerror = resolve;
+
+            });
+
+        })
+    ).then(() => {
+
+        viewer.classList.remove("loading");
+
+    });
+
+
+    function showFrame(frame) {
+
+        currentFrame =
+            (frame + frameCount)
+            % frameCount;
+
+        const image =
+            frames[currentFrame];
+
+        if (image && image.complete) {
+
+            viewerImage.src = image.src;
+
+        }
+
+    }
+
+
+    function startDrag(x) {
+
+        isDragging = true;
+
+        startX = x;
+
+    }
+
+
+    function moveDrag(x) {
+
+        if (!isDragging) return;
+
+        const difference =
+            x - startX;
+
+        /*
+            Adjust sensitivity here.
+
+            Smaller number =
+            motorcycle rotates faster.
+
+        */
+
+        const sensitivity = 7;
+
+        if (Math.abs(difference) >= sensitivity) {
+
+            if (difference > 0) {
+
+                showFrame(currentFrame - 1);
+
+            } else {
+
+                showFrame(currentFrame + 1);
+
+            }
+
+            startX = x;
+
+        }
+
+    }
+
+
+    function stopDrag() {
+
+        isDragging = false;
+
+    }
+
+
+    /* MOUSE */
+
+    viewer.addEventListener(
+        "mousedown",
+        event => {
+
+            startDrag(event.clientX);
+
+        }
+    );
+
+
+    window.addEventListener(
+        "mousemove",
+        event => {
+
+            moveDrag(event.clientX);
+
+        }
+    );
+
+
+    window.addEventListener(
+        "mouseup",
+        stopDrag
+    );
+
+
+    /* TOUCH */
+
+    viewer.addEventListener(
+        "touchstart",
+        event => {
+
+            startDrag(
+                event.touches[0].clientX
+            );
+
+        },
+        { passive: true }
+    );
+
+
+    viewer.addEventListener(
+        "touchmove",
+        event => {
+
+            moveDrag(
+                event.touches[0].clientX
+            );
+
+        },
+        { passive: true }
+    );
+
+
+    viewer.addEventListener(
+        "touchend",
+        stopDrag
+    );
+
+
+    /* =====================================================
+       FEATURES
+    ====================================================== */
+
+    const features = [
+
+        {
+            title: "Stylish Design",
+
+            category: "CONVENIENCE",
+
+            image:
+                "assets/tvs/raider/features/convinience-1.png",
+
+            description:
+                "Built to satisfy all your motocycle needs."
+        },
+
+        {
+            title: "Ecothrust Engine",
+
+            category: "PERFOMANCE",
+
+            image:
+                "assets/tvs/raider/features/engine.png",
+
+            description:
+                "Durable engine that gives more power and more trips per fill"
+        },
+
+        {
+            title: "Superior Rear Suspension",
+
+            category: "SAFETY",
+
+            image:
+                "assets/tvs/raider/features/safety-1.png",
+
+            description:
+                "Hydraulic shocks for a comfortable ride even at higher loads."
+        }
+
+    ];
+
+
+    const featureImage =
+        tvsPage.querySelector("#tvsFeatureImage");
+
+    const featureTitle =
+        tvsPage.querySelector("#tvsFeatureTitle");
+
+    const featureDescription =
+        tvsPage.querySelector("#tvsFeatureDescription");
+
+    const featureCategory =
+        tvsPage.querySelector(".tvs-feature-category");
+
+    const featureButtons =
+        tvsPage.querySelectorAll(".tvs-feature-btn");
+
+    const featureNumber =
+        tvsPage.querySelector(".tvs-feature-number");
+
+
+    featureButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const index =
+                Number(button.dataset.feature);
+
+            const feature =
+                features[index];
+
+            featureButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+
+            featureImage.style.opacity = "0";
+
+
+            setTimeout(() => {
+
+                featureImage.src =
+                    feature.image;
+
+                featureTitle.textContent =
+                    feature.title;
+
+                featureDescription.textContent =
+                    feature.description;
+
+                featureCategory.textContent =
+                    feature.category;
+
+                featureNumber.textContent =
+                    String(index + 1)
+                    .padStart(2, "0");
+
+                featureImage.style.opacity = "1";
+
+            }, 220);
+
+        });
+
+    });
+
+
+    /* =====================================================
+       COLOUR SELECTOR
+    ====================================================== */
+
+    const colourButtons =
+        tvsPage.querySelectorAll(
+            ".tvs-colour-option"
+        );
+
+    const colourImage =
+        tvsPage.querySelector("#tvsColourImage");
+
+    const colourName =
+        tvsPage.querySelector("#tvsColourName");
+
+
+    colourButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const image =
+                button.dataset.image;
+
+            const name =
+                button.dataset.name;
+
+
+            colourButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+
+            colourImage.classList.add(
+                "tvs-colour-changing"
+            );
+
+
+            setTimeout(() => {
+
+                colourImage.src = image;
+
+                colourName.textContent =
+                    name;
+
+                colourImage.classList.remove(
+                    "tvs-colour-changing"
+                );
+
+            }, 250);
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const animatedElements =
+        tvsPage.querySelectorAll(
+            ".tvs-section-heading, " +
+            ".tvs-feature-showcase, " +
+            ".tvs-colour-showcase, " +
+            ".tvs-spec-card, " +
+            ".tvs-spare-card"
+        );
+
+
+    const revealObserver =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "tvs-visible"
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: .12
+            }
+        );
+
+
+    animatedElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /* =====================================================
+       HERO IMAGE PARALLAX
+    ====================================================== */
+
+    const hero =
+        tvsPage.querySelector(".tvs-hero");
+
+
+    hero.addEventListener(
+        "mousemove",
+        event => {
+
+            const rect =
+                hero.getBoundingClientRect();
+
+            const x =
+                (event.clientX - rect.left)
+                / rect.width
+                - .5;
+
+            const y =
+                (event.clientY - rect.top)
+                / rect.height
+                - .5;
+
+
+            const activeImage =
+                tvsPage.querySelector(
+                    ".tvs-hero-slide.active img"
+                );
+
+
+            if (!activeImage) return;
+
+
+            activeImage.style.transform =
+                `translate(${x * 12}px, ${y * 8}px) scale(1.02)`;
+
+        }
+    );
+
+
+    hero.addEventListener(
+        "mouseleave",
+        () => {
+
+            const activeImage =
+                tvsPage.querySelector(
+                    ".tvs-hero-slide.active img"
+                );
+
+            if (!activeImage) return;
+
+            activeImage.style.transform =
+                "translate(0,0) scale(1)";
+
+        }
+    );
+
+
+});
