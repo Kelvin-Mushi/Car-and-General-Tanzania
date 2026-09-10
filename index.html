@@ -1374,822 +1374,194 @@
 
     <!--TVS TWO WHEELER SECTION------------------------------------------->
     <section id="2-wheeler-section" class="page-section hidden">
+        <section id="tvs-product-page" class="tvs-page">
 
-<section class="tvs-product-page" id="tvsProductPage">
-
-    <!-- =====================================================
-         PRODUCT NAVIGATION
-    ====================================================== -->
-
-    <div class="tvs-product-nav">
-
-        <div class="tvs-product-brand">
-            <!-- Replace with your actual TVS logo -->
+    <!-- ==================== PRODUCT NAVIGATION ==================== -->
+    <header class="tvs-product-nav">
+        <div class="tvs-nav-brand">
             <img src="assets/tvs/tvs-logo.png" alt="TVS">
+            <div>
+                <span>TVS MOTOR</span>
+                <h1 id="tvsNavProduct">Explore Our Products</h1>
+            </div>
         </div>
 
-        <div class="tvs-product-name">
-            <span>TVS MOTORCYCLES</span>
-            <h1></h1>
-        </div>
-
-        <nav class="tvs-anchor-nav">
-
-            <a href="#tvs-360">
-                <i class="fa-solid fa-rotate"></i>
-                <span>360° View</span>
-            </a>
-
-            <a href="#tvs-features">
-                <i class="fa-solid fa-star"></i>
-                <span>Features</span>
-            </a>
-
-            <a href="#tvs-colours">
-                <i class="fa-solid fa-palette"></i>
-                <span>Colours</span>
-            </a>
-
-            <a href="#tvs-specifications">
-                <i class="fa-solid fa-list-check"></i>
-                <span>Specifications</span>
-            </a>
-
-            <a href="#tvs-spares">
-                <i class="fa-solid fa-gears"></i>
-                <span>Spare Parts</span>
-            </a>
-
+        <nav class="tvs-quick-links" id="tvsQuickLinks">
+            <a href="#tvs-360">360° View</a>
+            <a href="#tvs-features">Features</a>
+            <a href="#tvs-colours">Colours</a>
+            <a href="#tvs-specifications">Specifications</a>
+            <a href="#tvs-spares">Spare Parts</a>
         </nav>
+    </header>
 
-    </div>
+    <!-- ==================== HERO ==================== -->
+    <section class="tvs-hero" id="tvsHero">
+        <div class="tvs-hero-slides" id="tvsHeroSlides"></div>
 
-
-    <!-- =====================================================
-         HERO SLIDER
-    ====================================================== -->
-
-    <section class="tvs-hero">
-
-        <div class="tvs-hero-track">
-
-            <!-- SLIDE 1 -->
-            <article class="tvs-hero-slide active">
-
-                <div class="tvs-hero-content">
-
-                    <span class="tvs-eyebrow">
-                        TVS MOTORCYCLES
-                    </span>
-
-                    <h2>
-                        Built to be
-                        <strong>Different.</strong>
-                    </h2>
-
-                    <p>
-                        Experience performance, technology
-                        and everyday confidence with TVS.
-                    </p>
-
-                    <a href="#tvs-360" class="tvs-gradient-btn">
-                        Explore the bike
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-                <div class="tvs-hero-image">
-
-                    <img
-                        src="assets/tvs/raider/hero-01.webp"
-                        alt="TVS Raider"
-                    >
-
-                </div>
-
-            </article>
-
-
-            <!-- SLIDE 2 -->
-            <article class="tvs-hero-slide">
-
-                <div class="tvs-hero-content">
-
-                    <span class="tvs-eyebrow">
-                        PERFORMANCE
-                    </span>
-
-                    <h2>
-                        Ride with
-                        <strong>Confidence.</strong>
-                    </h2>
-
-                    <p>
-                        Smart technology meets dynamic
-                        performance.
-                    </p>
-
-                    <a href="#tvs-features" class="tvs-gradient-btn">
-                        Discover features
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-                <div class="tvs-hero-image">
-
-                    <img
-                        src="assets/tvs/raider/hero-02.webp"
-                        alt="TVS Raider"
-                    >
-
-                </div>
-
-            </article>
-
-
-            <!-- SLIDE 3 -->
-            <article class="tvs-hero-slide">
-
-                <div class="tvs-hero-content">
-
-                    <span class="tvs-eyebrow">
-                        TVS TECHNOLOGY
-                    </span>
-
-                    <h2>
-                        Made for
-                        <strong>Every Journey.</strong>
-                    </h2>
-
-                    <p>
-                        Designed around the way you ride.
-                    </p>
-
-                    <a href="#tvs-specifications" class="tvs-gradient-btn">
-                        View specifications
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </div>
-
-                <div class="tvs-hero-image">
-
-                    <img
-                        src="assets/tvs/raider/hero-03.webp"
-                        alt="TVS Raider"
-                    >
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- HERO ARROWS -->
-
-        <button class="tvs-hero-arrow tvs-prev">
+        <button class="tvs-hero-arrow tvs-hero-prev" id="tvsHeroPrev" aria-label="Previous">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
-
-        <button class="tvs-hero-arrow tvs-next">
+        <button class="tvs-hero-arrow tvs-hero-next" id="tvsHeroNext" aria-label="Next">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
 
-
-        <!-- HERO DOTS -->
-
-        <div class="tvs-hero-dots">
-
-            <button class="active"></button>
-            <button></button>
-            <button></button>
-
-        </div>
-
+        <div class="tvs-hero-dots" id="tvsHeroDots"></div>
     </section>
 
-
-    <!-- =====================================================
-         360 DEGREE VIEW
-    ====================================================== -->
-
-    <section class="tvs-section tvs-360-section" id="tvs-360">
-
+    <!-- ==================== CATEGORY SELECTOR ==================== -->
+    <section class="tvs-selector">
         <div class="tvs-section-heading">
-
-            <span class="tvs-small-label">
-                EXPLORE EVERY ANGLE
-            </span>
-
-            <h2>
-                <span>360°</span> View
-            </h2>
-
-            <p>
-                Drag the motorcycle to explore it from every angle.
-            </p>
-
+            <span>EXPLORE TVS</span>
+            <h2>Choose your <b>ride.</b></h2>
+            <p>Select a category to explore our range of TVS motorcycles and three-wheelers.</p>
         </div>
 
+        <div class="tvs-category-buttons">
+            <button class="tvs-category-btn" data-category="2-wheeler">
+                <span class="tvs-category-icon"><i class="fa-solid fa-motorcycle"></i></span>
+                <span class="tvs-category-text">
+                    <small>EXPLORE</small>
+                    <strong>2-Wheelers</strong>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
 
-        <div class="tvs-360-viewer">
+            <button class="tvs-category-btn" data-category="3-wheeler">
+                <span class="tvs-category-icon"><i class="fa-solid fa-truck"></i></span>
+                <span class="tvs-category-text">
+                    <small>EXPLORE</small>
+                    <strong>3-Wheelers</strong>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
 
-            <div class="tvs-360-glow"></div>
+        <div class="tvs-category-products" id="tvsCategoryProducts"></div>
+    </section>
 
-            <img
-                id="tvs360Image"
-                src="assets/tvs/raider/360/frame-01.webp"
-                alt="TVS 360 degree view"
-                draggable="false"
-            >
+    <!-- ==================== SELECTED PRODUCT DETAILS ==================== -->
+    <main class="tvs-details" id="tvsDetails">
 
-            <div class="tvs-360-hint">
+        <div class="tvs-selected-banner">
+            <span>NOW VIEWING</span>
+            <strong id="tvsSelectedName">TVS</strong>
+            <button id="tvsBackToProducts">
+                <i class="fa-solid fa-arrow-left"></i> Change Product
+            </button>
+        </div>
 
-                <i class="fa-solid fa-arrows-left-right"></i>
+        <!-- ==================== 360 VIEW ==================== -->
+        <section class="tvs-detail-section tvs-360-section" id="tvs-360">
+            <div class="tvs-section-heading">
+                <span>360° EXPERIENCE</span>
+                <h2>See it from <b>every angle.</b></h2>
+                <p>Drag the motorcycle to explore it from every angle.</p>
+            </div>
 
-                <span>
+            <div class="tvs-360-viewer" id="tvs360Viewer">
+                <div class="tvs-360-loading" id="tvs360Loading">
+                    <i class="fa-solid fa-spinner"></i>
+                    <span>Loading 360° view...</span>
+                </div>
+
+                <img id="tvs360Image" src="" alt="360 degree product view">
+                <div class="tvs-360-hint">
+                    <i class="fa-solid fa-arrows-left-right"></i>
                     Drag to rotate
-                </span>
+                </div>
+            </div>
+        </section>
 
+        <!-- ==================== FEATURES ==================== -->
+        <section class="tvs-detail-section tvs-features-section" id="tvs-features">
+            <div class="tvs-section-heading">
+                <span>DESIGNED FOR YOU</span>
+                <h2>Features that <b>matter.</b></h2>
+                <p>Explore the technology, convenience and performance features of this TVS product.</p>
             </div>
 
-            <div class="tvs-360-loading">
-                Loading 360° experience...
+            <div class="tvs-feature-layout">
+                <div class="tvs-feature-image">
+                    <img id="tvsFeatureImage" src="" alt="">
+                    <span id="tvsFeatureNumber">01</span>
+                </div>
+
+                <div class="tvs-feature-content">
+                    <span id="tvsFeatureCategory">FEATURE</span>
+                    <h3 id="tvsFeatureTitle">Feature</h3>
+                    <p id="tvsFeatureDescription"></p>
+                    <div class="tvs-feature-controls" id="tvsFeatureControls"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== COLOURS ==================== -->
+        <section class="tvs-detail-section tvs-colours-section" id="tvs-colours">
+            <div class="tvs-section-heading">
+                <span>MAKE IT YOURS</span>
+                <h2>Choose your <b>colour.</b></h2>
+                <p>Available colours for this model.</p>
             </div>
 
-        </div>
+            <div class="tvs-colour-display">
+                <div class="tvs-colour-image">
+                    <img id="tvsColourImage" src="" alt="">
+                </div>
 
+                <div class="tvs-colour-info">
+                    <span>AVAILABLE COLOUR</span>
+                    <h3 id="tvsColourName">Colour</h3>
+                    <div class="tvs-colour-options" id="tvsColourOptions"></div>
+                </div>
+            </div>
+        </section>
 
-        <div class="tvs-360-bottom">
-
-            <div>
-                <i class="fa-solid fa-rotate"></i>
-                <span>360° interactive view</span>
+        <!-- ==================== SPECIFICATIONS ==================== -->
+        <section class="tvs-detail-section tvs-spec-section" id="tvs-specifications">
+            <div class="tvs-section-heading">
+                <span>TECHNICAL DETAILS</span>
+                <h2>Specifications <b>at a glance.</b></h2>
+                <p>Everything you need to know about this TVS model.</p>
             </div>
 
-            <div>
-                <i class="fa-solid fa-hand-pointer"></i>
-                <span>Drag / swipe</span>
+            <div class="tvs-spec-table" id="tvsSpecTable"></div>
+        </section>
+
+        <!-- ==================== SPARE PARTS ==================== -->
+        <section class="tvs-detail-section tvs-spares-section" id="tvs-spares">
+            <div class="tvs-section-heading">
+                <span>GENUINE PARTS</span>
+                <h2>Keep it <b>running.</b></h2>
+                <p>Explore genuine spare parts available for this model.</p>
             </div>
 
-            <div>
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <span>Explore details</span>
+            <div class="tvs-spares-grid" id="tvsSparesGrid"></div>
+        </section>
+
+        <!-- ==================== YOU MAY ALSO LIKE ==================== -->
+        <section class="tvs-detail-section tvs-related-section">
+            <div class="tvs-section-heading">
+                <span>KEEP EXPLORING</span>
+                <h2>You may also <b>like.</b></h2>
+                <p>Discover more TVS products.</p>
             </div>
 
-        </div>
+            <div class="tvs-related-wrap">
+                <button class="tvs-related-arrow" id="tvsRelatedPrev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
 
-    </section>
+                <div class="tvs-related-slider" id="tvsRelatedSlider"></div>
 
-
-    <!-- =====================================================
-         FEATURES
-    ====================================================== -->
-
-    <section class="tvs-section tvs-features-section" id="tvs-features">
-
-        <div class="tvs-section-heading">
-
-            <span class="tvs-small-label">
-                SMARTER EVERY DAY
-            </span>
-
-            <h2>
-                Features that
-                <span>move you.</span>
-            </h2>
-
-            <p>
-                Designed with practical technology and
-                features that make every ride better.
-            </p>
-
-        </div>
-
-
-        <div class="tvs-feature-showcase">
-
-            <!-- IMAGE -->
-
-            <div class="tvs-feature-image">
-
-                <img
-                    id="tvsFeatureImage"
-                    src="assets/tvs/raider/features/convinience-1.png"
-                    alt="Convenience"
-                >
-
-                <div class="tvs-feature-number">
-                    01
-                </div>
-
+                <button class="tvs-related-arrow" id="tvsRelatedNext">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
+        </section>
 
-
-            <!-- CONTENT -->
-
-            <div class="tvs-feature-content">
-
-                <span class="tvs-feature-category">
-                    CONVENIENCE
-                </span>
-
-                <h3 id="tvsFeatureTitle">
-                    Stylish Design
-                </h3>
-
-                <p id="tvsFeatureDescription">
-                    Designed to satisfy all your motorcycle needs
-                </p>
-
-
-                <div class="tvs-feature-controls">
-
-                    <button
-                        class="tvs-feature-btn active"
-                        data-feature="0"
-                    >
-                        <span>01</span>
-                        Convenience
-                    </button>
-
-                    <button
-                        class="tvs-feature-btn"
-                        data-feature="1"
-                    >
-                        <span>02</span>
-                        Perfomance
-                    </button>
-
-                    <button
-                        class="tvs-feature-btn"
-                        data-feature="2"
-                    >
-                        <span>03</span>
-                        Safety
-                    </button>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         COLOURS
-    ====================================================== -->
-
-    <section class="tvs-section tvs-colours-section" id="tvs-colours">
-
-        <div class="tvs-section-heading">
-
-            <span class="tvs-small-label">
-                MAKE IT YOURS
-            </span>
-
-            <h2>
-                Choose your
-                <span>colour.</span>
-            </h2>
-
-            <p>
-                Find the colour that matches your style.
-            </p>
-
-        </div>
-
-
-        <div class="tvs-colour-showcase">
-
-            <!-- MAIN IMAGE -->
-
-            <div class="tvs-colour-bike">
-
-                <img
-                    id="tvsColourImage"
-                    src="assets/tvs/raider/colours/black.webp"
-                    alt="TVS HLX Black"
-                >
-
-            </div>
-
-
-            <!-- COLOUR INFORMATION -->
-
-            <div class="tvs-colour-info">
-
-                <span>AVAILABLE COLOUR</span>
-
-                <h3 id="tvsColourName">
-                    Midnight Black
-                </h3>
-
-                <p>
-                    Select a colour to preview the motorcycle.
-                </p>
-
-
-                <div class="tvs-colour-options">
-
-                    <button
-                        class="tvs-colour-option active"
-                        data-name="Fiery Red"
-                        data-image="assets/tvs/raider/colours/red.webp"
-                        style="--colour:#d82c2c;"
-                    ></button>
-
-                    <button
-                        class="tvs-colour-option"
-                        data-name="Black"
-                        data-image="assets/tvs/raider/colours/black.webp"
-                        style="--colour:#171717;"
-                    ></button>
-
-                    <button
-                        class="tvs-colour-option"
-                        data-name="Blue"
-                        data-image="assets/tvs/raider/colours/blue.webp"
-                        style="--colour:#1d4d91;"
-                    ></button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SPECIFICATIONS
-    ====================================================== -->
-
-    <section
-        class="tvs-section tvs-specifications-section"
-        id="tvs-specifications"
-    >
-
-        <div class="tvs-section-heading">
-
-            <span class="tvs-small-label">
-                
-            </span>
-
-            <h2>
-                Technical
-                <span>Specifications.</span>
-            </h2>
-
-            <p>
-                Everything you need to know about this 2 wheeler.
-            </p>
-
-        </div>
-
-
-        <div class="tvs-spec-card">
-
-            <div class="tvs-spec-header">
-
-                <div>
-                    <span>HLX 125</span>
-                    <h3>Specifications</h3>
-                </div>
-
-                <i class="fa-solid fa-microchip"></i>
-
-            </div>
-
-
-            <div class="tvs-spec-table">
-
-                <div class="tvs-spec-row">
-                    <span>Engine Type</span>
-                    <strong>4 Smoke Natural Air Cooled</strong>
-                </div>
-
-                <div class="tvs-spec-row">
-                    <span>Engine Displacement</span>
-                    <strong>124.53cc</strong>
-                </div>
-
-                <div class="tvs-spec-row">
-                    <span>Maximum Power</span>
-                    <strong>8.09 kW @8000 rpm</strong>
-                </div>
-
-                <div class="tvs-spec-row">
-                    <span>Maximum Torque</span>
-                    <strong>10.8 Nm @5500 rpm</strong>
-                </div>
-
-                <div class="tvs-spec-row">
-                    <span>Starting</span>
-                    <strong>Electric Start & Kick Start</strong>
-                </div>
-
-                <div class="tvs-spec-row">
-                    <span>Clutch & Transmission</span>
-                    <strong>Wet Type Plate</strong>
-                </div>
-
-                <div class="tvs-spec-row">
-                    <span>Transmission</span>
-                    <strong>4 Speed Constant Mesh </strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SPARE PARTS
-    ====================================================== -->
-
-    <section class="tvs-section tvs-spares-section" id="tvs-spares">
-
-        <div class="tvs-section-heading">
-
-            <span class="tvs-small-label">
-                KEEP IT RUNNING
-            </span>
-
-            <h2>
-                Genuine
-                <span>Spare Parts.</span>
-            </h2>
-
-            <p>
-                Genuine TVS parts engineered to keep your
-                motorcycle performing at its best.
-            </p>
-
-        </div>                                             
-
-
-        <div class="tvs-spares-grid">
-                                                                    
-            <article class="tvs-spare-card">
-
-                <div class="tvs-spare-image">
-
-                    <img
-                        src="https://m.media-amazon.com/images/I/51WgK5QlPbS._AC_UL450_SY450_QL70_.jpg"
-                        alt="Cables"
-                    >
-
-                </div>
-
-                <div class="tvs-spare-content">
-
-                    <span>ENGINE</span>
-
-                    <h3>Cables</h3>
-
-                    <p>
-                        Genuine replacement Cables.
-                    </p>
-
-                    <button>
-                        <span>View part</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <article class="tvs-spare-card">
-
-                <div class="tvs-spare-image">
-
-                    <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqPu6VqaLqQ6Sh3CTHofBLuqaOZI1FJPRLRYFeuNNSVA&s=10"
-                        alt="Clutch Plates"
-                    >
-
-                </div>
-
-                <div class="tvs-spare-content">
-
-                    <span>ENGINE</span>
-
-                    <h3>Clutch Plates</h3>
-
-                    <p>
-                        Genuine replacement Clutch Plates.
-                    </p>
-
-                    <button>
-                        <span>View part</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-
-            <article class="tvs-spare-card">
-
-                <div class="tvs-spare-image">
-
-                    <img
-                        src="https://s.alicdn.com/@sc04/kf/H08641aa6221a4d4e9755613bf6e3a0a8w/Moto-FA165-Rear-Motorbike-Spare-Parts-Motorcycle-Brake-Pads-for-TVS-Apache-RTR-160-180-Cc-200.png_300x300.jpg"
-                        alt="Brake Pad"
-                    >
-
-                </div>
-
-                <div class="tvs-spare-content">
-
-                    <span>BRAKING</span>
-
-                    <h3>Brake Pads</h3>
-
-                    <p>
-                        Genuine TVS brake components.
-                    </p>
-
-                    <button>
-                        <span>View part</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         YOU MAY ALSO LIKE
-    ====================================================== -->
-
-    <section class="tvs-section tvs-related-section">
-
-        <div class="tvs-section-heading">
-
-            <span class="tvs-small-label">
-                EXPLORE MORE
-            </span>
-
-            <h2>
-                You may also
-                <span>like.</span>
-            </h2>
-
-        </div>
-
-
-        <div class="tvs-related-slider">
-
-            <div class="tvs-related-track">
-
-                <article class="tvs-related-card">
-
-                    <div>
-                        <span>TVS</span>
-                        <h3>HLX 125 4G</h3>
-                    </div>
-
-                    <img
-                        src="assets/tvs/related/hlx_125_4G_11.webp"
-                        alt="TVS Apache"
-                    >
-
-                    <a href="#">
-                        Explore
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <article class="tvs-related-card">
-
-                    <div>
-                        <span>TVS</span>
-                        <h3>HLX 125 5G</h3>
-                    </div>
-
-                    <img
-                        src="assets/tvs/related/hlx_125_5G_6.webp"
-                        alt="TVS HLX"
-                    >
-
-                    <a href="#">
-                        Explore
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <article class="tvs-related-card">
-
-                    <div>
-                        <span>TVS</span>
-                        <h3>150x</h3>
-                    </div>
-
-                    <img
-                        src="assets/tvs/related/hlx_150x_6.webp"
-                        alt="TVS 150x"
-                    >
-
-                    <a href="#">
-                        Explore
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-
-                <article class="tvs-related-card">
-
-                    <div>
-                        <span>TVS</span>
-                        <h3>King - Petrol</h3>
-                    </div>
-
-                    <img
-                        src="assets/tvs/related/tvs-king-petrol.webp"
-                        alt="TVS King"
-                    >
-
-                    <a href="#">
-                        Explore
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-                <article class="tvs-related-card">
-
-                    <div>
-                        <span>TVS</span>
-                        <h3>King Deluxe CNG</h3>
-                    </div>
-
-                    <img
-                        src="assets/tvs/related/tvs-cng.webp"
-                        alt="TVS King"
-                    >
-
-                    <a href="#">
-                        Explore
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-                <article class="tvs-related-card">
-
-                    <div>
-                        <span>TVS</span>
-                        <h3>XL 100</h3>
-                    </div>
-
-                    <img
-                        src="assets/tvs/related/xl_100_green_6.webp"
-                        alt="TVS XL100"
-                    >
-
-                    <a href="#">
-                        Explore
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
+    </main>
 </section>
-
-
-<!-- Font Awesome icons -->
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
->
     </section>
     <!--END TVS TWO WHEELER SECTION--------------------------------------->
 
