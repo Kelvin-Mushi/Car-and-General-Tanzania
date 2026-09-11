@@ -347,33 +347,27 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             features: [
                 {
-                    title: "USB Phone Charger",
-                    category: "CONVENIENCE",
-                    image: "assets/tvs/hlx1254g/features/usb.webp",
-                    description: "Keep your phone powered while you're on the move."
+                    title: "Superior Rear Suspension",
+                    category: "SAFETY",
+                    image: "assets/tvs/hlx1254g/features/safety-1.png",
+                    description: "Keeps your ride safe."
                 },
                 {
-                    title: "Fuel Gauge",
-                    category: "CONVENIENCE",
-                    image: "assets/tvs/hlx1254g/features/fuel-gauge.webp",
-                    description: "Monitor your fuel level easily while riding."
+                    title: "Ecothrust Engine",
+                    category: "PERFOMANCE",
+                    image: "assets/tvs/hlx1254g/features/engine.png",
+                    description: "Gives you confidence on any envrionment."
                 },
                 {
                     title: "Comfortable Seating",
                     category: "COMFORT",
-                    image: "assets/tvs/hlx1254g/features/seating.webp",
+                    image: "assets/tvs/hlx1254g/features/convinience-1.png",
                     description: "Designed to provide a comfortable riding experience."
-                },
-                {
-                    title: "Modern Lighting",
-                    category: "LIGHTING",
-                    image: "assets/tvs/hlx1254g/features/lights.webp",
-                    description: "Lighting designed to provide visibility and a distinctive appearance."
                 }
             ],
             colours: [
                 {
-                    name: "Fiery Red",
+                    name: "Flame Red",
                     hex: "#c9202b",
                     image: "assets/tvs/hlx1254g/colours/red.webp"
                 },
@@ -383,282 +377,624 @@ document.addEventListener("DOMContentLoaded", () => {
                     image: "assets/tvs/hlx1254g/colours/black.webp"
                 },
                 {
-                    name: "Royal Blue",
+                    name: "Polyster Blue",
                     hex: "#214f96",
                     image: "assets/tvs/hlx1254g/colours/blue.webp"
                 }
             ],
             specifications: [
-                ["Engine Type", "Single Cylinder"],
-                ["Engine Displacement", "125 cc"],
-                ["Maximum Power", "8.1 kW"],
-                ["Maximum Torque", "10.8 Nm"],
-                ["Fuel Capacity", "12 Litres"],
-                ["Transmission", "5 Speed"],
-                ["Front Brake", "Disc"],
-                ["Rear Brake", "Drum"]
+                ["Engine Type", "4 Stroke Natural Air Cooled"],
+                ["Engine Displacement", "124.53CC"],
+                ["Maximum Power", "8.09 kW @8000 rpm"],
+                ["Maximum Torque", "10.8 Nm@5500rpm"],
+                ["Starting", "Electric Start and Kick Start"],
+                ["Transmission", "4 Speed Constant Mesh"],
+                ["Clutch & Transmission", "Wet Type Plate"]
             ],
             spares: [
                 {
-                    name: "Oil Filter",
+                    name: "Cables",
                     category: "ENGINE",
-                    image: "assets/tvs/hlx1254g/spares/oil-filter.webp",
-                    description: "Genuine replacement oil filter."
+                    image: "assets/tvs/hlx1254g/spares/cables.png",
+                    description: "Genuine replacement Cables."
                 },
                 {
-                    name: "Air Filter",
+                    name: "Clutch Plates",
                     category: "ENGINE",
-                    image: "assets/tvs/hlx1254g/spares/air-filter.webp",
-                    description: "Genuine replacement air filter."
+                    image: "assets/tvs/hlx1254g/spares/clutch-plates.png",
+                    description: "Genuine replacement Clutch Plates."
                 },
                 {
-                    name: "Brake Pads",
+                    name: "cylinder-block",
                     category: "BRAKING",
-                    image: "assets/tvs/hlx1254g/spares/brake-pads.webp",
-                    description: "Genuine replacement brake components."
+                    image: "assets/tvs/hlx1254g/spares/cylinder-block.png",
+                    description: "Genuine replacement cylinder-block."
                 }
             ]
         },
 
-        tvssport: {
-            name: "TVS Sport",
+        hlx150x: {
+            name: "TVS HLX 150X",
             category: "2-wheeler",
             type: "MOTORCYCLE",
-            cardImage: "assets/tvs/sport/card.webp",
+            cardImage: "assets/tvs/hlx150x/card.webp",
             hero: [
                 {
-                    image: "assets/tvs/sport/hero-01.webp",
-                    title: "TVS Sport",
+                    image: "assets/tvs/hlx150x/hero-01.webp",
+                    title: "TVS hlx150x",
                     text: "Efficient, practical and ready for everyday life."
                 },
                 {
-                    image: "assets/tvs/sport/hero-02.webp",
+                    image: "assets/tvs/hlx150x/hero-02.webp",
                     title: "Go further",
                     text: "A motorcycle designed around everyday mobility."
                 }
             ],
             frames: {
-                path: "assets/tvs/sport/360/frame-",
-                count: 36,
+                path: "assets/tvs/hlx150x/360/frame-",
+                count: 15,
                 extension: "webp"
             },
             features: [
                 {
-                    title: "Fuel Gauge",
-                    category: "CONVENIENCE",
-                    image: "assets/tvs/sport/features/fuel.webp",
+                    title: "Analog Display",
+                    category: "TECHNOLOGY",
+                    image: "assets/tvs/hlx150x/features/convinience-3.png",
                     description: "Know your fuel level at a glance."
                 },
                 {
                     title: "USB Charger",
                     category: "CONVENIENCE",
-                    image: "assets/tvs/sport/features/usb.webp",
+                    image: "assets/tvs/hlx150x/features/convinience-2.png",
                     description: "Charge compatible devices while travelling."
+                },
+                {
+                    title: "Powerful Engine",
+                    category: "PERFOMANCE",
+                    image: "assets/tvs/hlx150x/features/perfomance-1.png",
+                    description: "Gives you confidence to go anywhere."
+                }
+            ],
+            colours: [
+                {
+                    name: "Midnight Black",
+                    hex: "#171717",
+                    image: "assets/tvs/hlx150x/colours/hlx-150x-black.webp"
+                },
+                {
+                    name: "Flame Red",
+                    hex: "#d52630",
+                    image: "assets/tvs/hlx150x/colours/hlx-150x-red.webp"
+                },
+                {
+                    name: "Polyster Blue",
+                    hex: "#0b2edc",
+                    image: "assets/tvs/hlx150x/colours/hlx-150x-blue.webp"
+                }
+            ],
+            specifications: [
+                ["Engine Type", "4 Stroke Natural Air Cooled"],
+                ["Engine Displacement", "147.49CC"],
+                ["Maximum Power", "8.9kw@7500rpm"],
+                ["Maximum Torque", "12.3Nm@5000rpm"],
+                ["Starting", "Electric Start and Kick Start"],
+                ["Transmission", "5 Speed Constant Mesh"],
+                ["Clutch & Transmission", "Wet, Multi-Disk Type Plate"]
+            ],
+            spares: [
+                {
+                    name: "Cylinder Block",
+                    category: "ENGINE",
+                    image: "assets/tvs/hlx150x/spares/cylinder-block-genuine.png",
+                    description: "Genuine TVS replacement Cylinder Block."
+                },
+                {
+                    name: "Engine Oil",
+                    category: "ENGINE",
+                    image: "assets/tvs/hlx150x/spares/engine-oil-genuine.png",
+                    description: "Genuine TVS replacement Engine Oil."
+                },
+                {
+                    name: "Valves",
+                    category: "ENGINE",
+                    image: "assets/tvs/hlx150x/spares/valve-genuine.png",
+                    description: "Genuine TVS replacement Valves."
+                }
+            ]
+        },
+
+        hlx1255g: {
+            name: "TVS HLX 125 5G",
+            category: "2-wheeler",
+            type: "MOTORCYCLE",
+            cardImage: "assets/tvs/hlx1255g/card.webp",
+            hero: [
+                {
+                    image: "assets/tvs/hlx1255g/hero-01.webp",
+                    title: "TVS hlx1255g",
+                    text: "Efficient, practical and ready for everyday life."
+                },
+                {
+                    image: "assets/tvs/hlx1255g/hero-02.webp",
+                    title: "Go further",
+                    text: "A motorcycle designed around everyday mobility."
+                }
+            ],
+            frames: {
+                path: "assets/tvs/hlx1255g/360/frame-",
+                count: 15,
+                extension: "webp"
+            },
+            features: [
+                {
+                    title: "Lights",
+                    category: "SAFETY",
+                    image: "assets/tvs/hlx1255g/features/safety-2.png",
+                    description: "Ride comfortably day and night."
+                },
+                {
+                    title: "Strong Carrier",
+                    category: "CONVENIENCE",
+                    image: "assets/tvs/hlx1255g/features/convinience-6.png",
+                    description: "Heavy load? Issue solved."
                 }
             ],
             colours: [
                 {
                     name: "Black",
                     hex: "#171717",
-                    image: "assets/tvs/sport/colours/black.webp"
+                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-black.webp"
+                },
+                {
+                    name: "Black",
+                    hex: "#171717",
+                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-black1.webp"
+                },
+                {
+                    name: "Black",
+                    hex: "#0922e7",
+                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-blue.webp"
+                },
+                {
+                    name: "Black",
+                    hex: "#0c21e3",
+                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-blue2.webp"
                 },
                 {
                     name: "Red",
                     hex: "#d52630",
-                    image: "assets/tvs/sport/colours/red.webp"
+                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-red.webp"
+                },
+                {
+                    name: "Red",
+                    hex: "#d52630",
+                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-red2.webp"
                 }
             ],
             specifications: [
-                ["Engine Type", "Single Cylinder"],
-                ["Engine Displacement", "110 cc"],
-                ["Fuel Capacity", "10 Litres"],
-                ["Transmission", "4 Speed"]
+                ["Engine Type", "4 Stroke Natural Air Cooled"],
+                ["Engine Displacement", "125CC"],
+                ["Maximum Power", "8.5 kw @ 8500 rpm"],
+                ["Maximum Torque", "11 Nm@6500rpm"],
+                ["Starting", "Electric Start and Kick Start"],
+                ["Transmission", "5 Speed Constant Mesh"]
             ],
             spares: [
                 {
-                    name: "Oil Filter",
+                    name: "Spark Plug",
                     category: "ENGINE",
-                    image: "assets/tvs/sport/spares/oil-filter.webp",
-                    description: "Genuine TVS replacement part."
+                    image: "assets/tvs/hlx1255g/spares/spark-plug-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "TSL Lamp",
+                    category: "LIGHTS",
+                    image: "assets/tvs/hlx1255g/spares/tsl-lamp-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "Valves",
+                    category: "LIGHTS",
+                    image: "assets/tvs/hlx1255g/spares/valve-genuine.png",
+                    description: "Genuine TVS replacement Valves."
                 }
             ]
         },
 
-        tvsapache: {
-            name: "TVS Apache",
+        hlxplus: {
+            name: "TVS HLX PLUS",
             category: "2-wheeler",
             type: "MOTORCYCLE",
-            cardImage: "assets/tvs/apache/card.webp",
+            cardImage: "assets/tvs/hlxplus/card.webp",
             hero: [
                 {
-                    image: "assets/tvs/apache/hero-01.webp",
-                    title: "TVS Apache",
+                    image: "assets/tvs/hlxplus/hero-01.webp",
+                    title: "TVS hlxplus",
                     text: "Performance-inspired engineering for riders who want more."
                 },
                 {
-                    image: "assets/tvs/apache/hero-02.webp",
+                    image: "assets/tvs/hlxplus/hero-02.webp",
                     title: "Born to perform",
                     text: "A bold motorcycle with a distinctive character."
                 }
             ],
             frames: {
-                path: "assets/tvs/apache/360/frame-",
-                count: 36,
+                path: "assets/tvs/hlxplus/360/frame-",
+                count: 14,
                 extension: "webp"
             },
             features: [
                 {
-                    title: "LED Headlamp",
-                    category: "LIGHTING",
-                    image: "assets/tvs/apache/features/led.webp",
-                    description: "Distinctive lighting with excellent road visibility."
+                    title: "Powerful Engine",
+                    category: "PERFOMANCE",
+                    image: "assets/tvs/hlxplus/features/perfomance-1.png",
+                    description: "Gives. you confidence to go anywhere."
                 },
                 {
-                    title: "Digital Display",
+                    title: "Analog Display",
                     category: "TECHNOLOGY",
-                    image: "assets/tvs/apache/features/display.webp",
+                    image: "assets/tvs/hlxplus/features/convinience-3.png",
                     description: "Important riding information presented clearly."
+                },
+                {
+                    title: "USB Charger",
+                    category: "TECHNOLOGY",
+                    image: "assets/tvs/hlxplus/features/convinience-2.png",
+                    description: "Keeps your devices charged."
                 }
             ],
             colours: [
                 {
                     name: "Red",
                     hex: "#d8202c",
-                    image: "assets/tvs/apache/colours/red.webp"
+                    image: "assets/tvs/hlxplus/colours/hlx-plus-red.webp"
                 },
                 {
                     name: "Black",
                     hex: "#111111",
-                    image: "assets/tvs/apache/colours/black.webp"
+                    image: "assets/tvs/hlxplus/colours/hlx-plus-black.webp"
+                },
+                {
+                    name: "Blue",
+                    hex: "#0821e2",
+                    image: "assets/tvs/hlxplus/colours/hlx-plus-blue.webp"
                 }
             ],
             specifications: [
-                ["Engine Type", "Single Cylinder"],
-                ["Engine Displacement", "160 cc"],
-                ["Fuel Capacity", "12 Litres"],
-                ["Transmission", "5 Speed"]
+                ["Engine Type", "4 Stroke Natural Air Cooled"],
+                ["Engine Displacement", "99.7 CC"],
+                ["Maximum Power", "5.53 kw @ 7000rpm"],
+                ["Maximum Torque", "8.2 Nm @ 5000 rpm"],
+                ["Starting", "Electric Start and Kick Start"],
+                ["Transmission", "4 Speed Constant Mesh"],
+                ["Clutch & Transmission", "Wet, Multi disc Type"]
             ],
             spares: [
                 {
-                    name: "Air Filter",
+                    name: "Spark Plug",
                     category: "ENGINE",
-                    image: "assets/tvs/apache/spares/air-filter.webp",
-                    description: "Genuine TVS replacement air filter."
+                    image: "assets/tvs/hlxplus/spares/spark-plug-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "TSL Lamp",
+                    category: "LIGHTS",
+                    image: "assets/tvs/hlxplus/spares/tsl-lamp-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "valves",
+                    category: "LIGHTS",
+                    image: "assets/tvs/hlxplus/spares/valve-genuine.png",
+                    description: "Genuine TVS replacement valves."
                 }
             ]
         },
 
-        tvsking: {
-            name: "TVS King",
-            category: "3-wheeler",
-            type: "THREE WHEELER",
-            cardImage: "assets/tvs/king/card.webp",
+         xl100: {
+            name: "TVS XL100 Heavy-Duty",
+            category: "2-wheeler",
+            type: "MOTORCYCLE",
+            cardImage: "assets/tvs/xl100/card.webp",
             hero: [
                 {
-                    image: "assets/tvs/king/hero-01.webp",
-                    title: "TVS King",
+                    image: "assets/tvs/xl100/hero-01.webp",
+                    title: "TVS xl100",
+                    text: "Performance-inspired engineering for riders who want more."
+                },
+                {
+                    image: "assets/tvs/xl100/hero-02.webp",
+                    title: "Born to perform",
+                    text: "A bold motorcycle with a distinctive character."
+                }
+            ],
+            frames: {
+                path: "assets/tvs/xl100/360/frame-",
+                count: 15,
+                extension: "webp"
+            },
+            features: [
+                {
+                    title: "Comfortable Seat",
+                    category: "COMFORT",
+                    image: "assets/tvs/xl100/features/Comfort.webp",
+                    description: "Design to provide a less fatigue journey."
+                },
+                {
+                    title: "Durability",
+                    category: "CONVENIENCE",
+                    image: "assets/tvs/xl100/features/Durability.webp",
+                    description: "Built for heavy duty rides."
+                },
+                {
+                    title: "I-Touch Start",
+                    category: "STARTING",
+                    image: "assets/tvs/xl100/features/i-touch-start.webp",
+                    description: "Starting Made Easy."
+                }
+            ],
+            colours: [
+                {
+                    name: "Red",
+                    hex: "#d8202c",
+                    image: "assets/tvs/xl100/colours/hlx-100-red.webp"
+                },
+                {
+                    name: "Black",
+                    hex: "#111111",
+                    image: "assets/tvs/xl100/colours/hlx-100-black.webp"
+                },
+                {
+                    name: "Blue",
+                    hex: "#0821e2",
+                    image: "assets/tvs/xl100/colours/hlx-100-blue.webp"
+                },
+                {
+                    name: "Green",
+                    hex: "#219a0e",
+                    image: "assets/tvs/xl100/colours/hlx-100-green.webp"
+                }
+            ],
+            specifications: [
+                ["Engine Type", "Single cylinder, 4 stroke, air cooled spark ignition engine"],
+                ["Engine Displacement", "99.7 CC"],
+                ["Maximum Power", "3.2 kW @ 6000 rpm"],
+                ["Maximum Torque", "6.5 Nm @ 3500 rpm"]
+            ],
+            spares: [
+                {
+                    name: "Spark Plug",
+                    category: "ENGINE",
+                    image: "assets/tvs/xl100/spares/spark-plug-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "TSL Lamp",
+                    category: "LIGHTS",
+                    image: "assets/tvs/xl100/spares/tsl-lamp-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "valves",
+                    category: "LIGHTS",
+                    image: "assets/tvs/xl100/spares/valve-genuine.png",
+                    description: "Genuine TVS replacement valves."
+                }
+            ]
+        },
+
+
+        tvscargo: {
+            name: "TVS CARGO",
+            category: "3-wheeler",
+            type: "THREE WHEELER",
+            cardImage: "assets/tvs/tvscargo/card.webp",
+            hero: [
+                {
+                    image: "assets/tvs/tvscargo/hero-01.webp",
+                    title: "TVS tvscargo",
                     text: "Built for business, mobility and everyday transport."
                 },
                 {
-                    image: "assets/tvs/king/hero-02.webp",
+                    image: "assets/tvs/tvscargo/hero-02.webp",
                     title: "Move more",
                     text: "Practical three-wheeler performance for demanding journeys."
                 }
             ],
             frames: {
-                path: "assets/tvs/king/360/frame-",
+                path: "assets/tvs/tvscargo/360/frame-",
                 count: 36,
                 extension: "webp"
             },
             features: [
                 {
-                    title: "Comfortable Seating",
+                    title: "I-touch Start",
+                    category: "START",
+                    image: "assets/tvs/tvscargo/features/convinience-1.png",
+                    description: "Designed with everyday driver comfort in mind."
+                },
+                {
+                    title: "Audio Player",
+                    category: "TECHNOLOGY",
+                    image: "assets/tvs/tvscargo/features/convinience-4.png",
+                    description: "Designed to help you spend more time on the road."
+                },
+                {
+                    title: "Easy Reverse gear",
+                    category: "COVENIENCE",
+                    image: "assets/tvs/tvscargo/features/convinience-3.png",
+                    description: "Designed with everyday driver comfort in mind."
+                }
+            ],
+            colours: [
+                {
+                    name: "White",
+                    hex: "#f4f6f8",
+                    image: "assets/tvs/tvscargo/colours/tvs-cargo-white.webp"
+                },
+                {
+                    name: "Yellow",
+                    hex: "#efdc10",
+                    image: "assets/tvs/tvscargo/colours/tvs-cargo-yellow.webp"
+                }
+            ],
+            specifications: [
+                ["Engine Type", " Stroke, Liquid cooled, Single Cylinder"],
+                ["Starting", "Electric (ISG) and Hand Start"],
+                ["Engine Displacement", "225.8 cc"],
+                ["Maximum Power", "7.8 kW(10 bhp) @ 4750 rpm"],
+                ["Max Speed", "65 ± 2 km/h"],
+                ["Maximum Torque", "18.5 Nm @ 3000 rpm"],
+                ["Transmission", "Manual 4 Speed, 1 Reverse"]
+            ],
+            spares: [
+                {
+                    name: "Spark Plug",
+                    category: "ENGINE",
+                    image: "assets/tvs/tvscargo/spares/spark-plug-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "TSL Lamp",
+                    category: "LIGHTS",
+                    image: "assets/tvs/tvscargo/spares/tsl-lamp-genuine.png",
+                    description: "Genuine TVS replacement TSL Lamp."
+                },
+                {
+                    name: "Valves",
+                    category: "LIGHTS",
+                    image: "assets/tvs/tvscargo/spares/valve-genuine.png",
+                    description: "Genuine TVS replacement Valves."
+                }
+            ]
+        },
+
+        tvsking: {
+            name: "TVS King Deluxe",
+            category: "3-wheeler",
+            type: "THREE WHEELER",
+            cardImage: "assets/tvs/tvsking/card.webp",
+            hero: [
+                {
+                    image: "assets/tvs/tvsking/hero-01.webp",
+                    title: "TVS tvsking",
+                    text: "Built for business, mobility and everyday transport."
+                },
+                {
+                    image: "assets/tvs/tvsking/hero-02.webp",
+                    title: "Move more",
+                    text: "Practical three-wheeler performance for demanding journeys."
+                }
+            ],
+            frames: {
+                path: "assets/tvs/tvsking/360/frame-",
+                count: 13,
+                extension: "webp"
+            },
+            features: [
+                {
+                    title: "Driver Footrest",
                     category: "COMFORT",
-                    image: "assets/tvs/king/features/seating.webp",
+                    image: "assets/tvs/tvsking/features/comfort.png",
                     description: "Designed with everyday driver and passenger comfort in mind."
                 },
                 {
-                    title: "Large Fuel Tank",
-                    category: "EFFICIENCY",
-                    image: "assets/tvs/king/features/fuel.webp",
-                    description: "Designed to help you spend more time on the road."
+                    title: "3 Stage Air Filtration",
+                    category: "DURABILITY",
+                    image: "assets/tvs/tvsking/features/durability-1.png",
+                    description: "Designed to for Durability."
+                },
+                {
+                    title: "3 Stage Air Filtration",
+                    category: "DURABILITY",
+                    image: "assets/tvs/tvsking/features/durability-1.png",
+                    description: "Designed to for Durability."
                 }
             ],
             colours: [
                 {
                     name: "Blue",
                     hex: "#245291",
-                    image: "assets/tvs/king/colours/blue.webp"
+                    image: "assets/tvs/tvsking/colours/tvs-king-blue.webp"
                 },
                 {
                     name: "Red",
                     hex: "#d5202c",
-                    image: "assets/tvs/king/colours/red.webp"
+                    image: "assets/tvs/tvsking/colours/tvs-king-red.webp"
+                },
+                {
+                    name: "Green",
+                    hex: "#088d0b",
+                    image: "assets/tvs/tvsking/colours/tvs-king-green.webp"
                 }
             ],
             specifications: [
-                ["Engine Type", "Single Cylinder"],
-                ["Engine Displacement", "199 cc"],
-                ["Fuel Capacity", "16 Litres"],
-                ["Transmission", "4 Speed"]
+                ["Engine Type", "4 Stroke, Single Cylinder Air Cooled, Spark ignition Si-Engine"],
+                ["Starting", "Electric (ISG) and Hand Start"],
+                ["Engine Displacement", "199.26 cc"],
+                ["Maximum Power", "7.5 Kw @ rpm 5500"],
+                ["Maximum Torque", "15.5 Nm @ 3250 rpm"],
+                ["Transmission", "4 Forward and 1 Reverse speed Constant Mesh Fork and Cam type Shift mechanism"],
+                ["Ignition System", "DC Digital TCI"]
             ],
             spares: [
                 {
-                    name: "Air Filter",
+                    name: "Spark Plug",
                     category: "ENGINE",
-                    image: "assets/tvs/king/spares/air-filter.webp",
-                    description: "Genuine TVS replacement air filter."
+                    image: "assets/tvs/tvsking/spares/plug.webp",
+                    description: "Genuine TVS replacement Spark Plug."
                 },
                 {
-                    name: "Oil Filter",
+                    name: "Piston Rings",
                     category: "ENGINE",
-                    image: "assets/tvs/king/spares/oil-filter.webp",
-                    description: "Genuine TVS replacement oil filter."
+                    image: "assets/tvs/tvsking/spares/piston-rings-genuine.png",
+                    description: "Genuine TVS replacement Piston Rings."
                 }
             ]
         },
 
-        tvskingdeluxe: {
-            name: "TVS King Deluxe",
+        tvscng: {
+            name: "King Deluxe plus CNG",
             category: "3-wheeler",
             type: "THREE WHEELER",
-            cardImage: "assets/tvs/king-deluxe/card.webp",
+            cardImage: "assets/tvs/tvscng/card.webp",
             hero: [
                 {
-                    image: "assets/tvs/king-deluxe/hero-01.webp",
+                    image: "assets/tvs/tvscng/hero-01.webp",
                     title: "TVS King Deluxe",
                     text: "Practical mobility with a premium everyday experience."
                 }
             ],
             frames: {
-                path: "assets/tvs/king-deluxe/360/frame-",
-                count: 36,
+                path: "assets/tvs/tvscng/360/frame-",
+                count: 12,
                 extension: "webp"
             },
             features: [
                 {
                     title: "Passenger Comfort",
                     category: "COMFORT",
-                    image: "assets/tvs/king-deluxe/features/seating.webp",
+                    image: "assets/tvs/tvscng/features/comfort-2.png",
                     description: "A practical cabin designed around everyday passenger needs."
                 },
                 {
-                    title: "Durable Design",
-                    category: "DURABILITY",
-                    image: "assets/tvs/king-deluxe/features/durability.webp",
-                    description: "Engineered for demanding everyday commercial use."
+                    title: "30 Litre/5Kg CNG Tank",
+                    category: "CONVENIENCE",
+                    image: "assets/tvs/tvscng/features/convinience-2.png",
+                    description: "Capacity to do business for full day with one full tank of gas."
+                },
+                {
+                    title: "Brighter HeadLamp",
+                    category: "SAFETY",
+                    image: "assets/tvs/tvscng/features/safety-1.png",
+                    description: "Brighter light for better visibilty at night."
                 }
             ],
             colours: [
                 {
-                    name: "Blue",
-                    hex: "#234f91",
-                    image: "assets/tvs/king-deluxe/colours/blue.webp"
-                },
-                {
-                    name: "White",
-                    hex: "#eeeeee",
-                    image: "assets/tvs/king-deluxe/colours/white.webp"
+                    name: "Green",
+                    hex: "#47bb08",
+                    image: "assets/tvs/tvscng/colours/tvs-cng-green.webp"
                 }
             ],
             specifications: [
@@ -669,10 +1005,16 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             spares: [
                 {
-                    name: "Air Filter",
+                    name: "Spark Plug",
                     category: "ENGINE",
-                    image: "assets/tvs/king-deluxe/spares/air-filter.webp",
-                    description: "Genuine TVS replacement air filter."
+                    image: "assets/tvs/tvscng/spares/spark-plug-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "Valves",
+                    category: "ENGINE",
+                    image: "assets/tvs/tvscng/spares/valve-genuine.png",
+                    description: "Genuine TVS replacement Valves."
                 }
             ]
         }
