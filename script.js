@@ -1,10 +1,18 @@
-
-/**
- * Universal Function to route views, handle standalone stage-1 links,
- * and keep active sidebar states synchronized without collision.
- */
 function renderRoute(targetId) {
   if (!targetId) return;
+
+  // Reset TVS category cards whenever the route changes
+  const tvsCategoryProducts = document.querySelector("#tvsCategoryProducts");
+  const tvsCategoryButtons = document.querySelectorAll(".tvs-category-btn");
+
+  if (tvsCategoryProducts) {
+    tvsCategoryProducts.classList.remove("open");
+    tvsCategoryProducts.innerHTML = "";
+  }
+
+  tvsCategoryButtons.forEach(button => {
+    button.classList.remove("active");
+  });
 
   const allPageSections = document.querySelectorAll('.page-section');
   const allProductDisplays = document.querySelectorAll('.product-display');
@@ -21,6 +29,7 @@ function renderRoute(targetId) {
     allStage2Menus.forEach(menu => menu.classList.remove('active'));
     if (mainSections) mainSections.style.display = 'block';
     window.scrollTo(0, 0);
+
     return;
   }
 
@@ -84,6 +93,7 @@ function navigateTo(targetId) {
 
 /// Global Click Listener: Intercepts routing, anchors, and standalone links
 document.addEventListener('click', (e) => {
+    
   const routeLink = e.target.closest('[data-route], [data-target], a[href^="#"]');
   if (!routeLink) return;
 
@@ -172,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isAlreadyOpen) {
           targetMenu.classList.add('active');
         }
+        
       }
 
       stage1Links.forEach(item => item.classList.remove('active'));
@@ -359,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     description: "Gives you confidence on any envrionment."
                 },
                 {
-                    title: "Comfortable Seating",
+                    title: "Stylish Design",
                     category: "COMFORT",
                     image: "assets/tvs/hlx1254g/features/convinience-1.png",
                     description: "Designed to provide a comfortable riding experience."
@@ -1175,6 +1186,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         categoryProducts.classList.add("open");
+
+        setTimeout(() => {
+        const navbarOffset = 100;
+
+        const position =
+            categoryProducts.getBoundingClientRect().top +
+            window.scrollY -
+            navbarOffset;
+
+        window.scrollTo({
+            top: position,
+            behavior: "smooth"
+        });
+    }, 100);
     }
 
     /* =====================================================

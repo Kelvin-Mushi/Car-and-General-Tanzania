@@ -1809,6 +1809,9 @@ h3 {
     height:65px;
     object-fit:contain;
 }
+.tvs-selector{
+    min-height: 50vh;
+}
 
 .tvs-nav-brand span,
 .tvs-section-heading>span,
@@ -2210,6 +2213,7 @@ h3 {
     width:90%;
     height:90%;
     object-fit:contain;
+    transform: translateY(-150px);
     pointer-events:none;
 }
 
