@@ -828,12 +828,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     category: "DURABILITY",
                     image: "assets/tvs/tvsking/features/durability-1.png",
                     description: "Designed to for Durability."
-                },
-                {
-                    title: "3 Stage Air Filtration",
-                    category: "DURABILITY",
-                    image: "assets/tvs/tvsking/features/durability-1.png",
-                    description: "Designed to for Durability."
                 }
             ],
             colours: [
@@ -1426,8 +1420,138 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =====================================================
        YOU MAY ALSO LIKE
     ===================================================== */
+    /* =====================================================
+   YOU MAY ALSO LIKE
+===================================================== */
 
-    function renderRelated(currentId) {
+function renderRelated(currentId) {
+    const slider = document.querySelector("#tvsRelatedSlider");
+
+    slider.innerHTML = "";
+
+    Object.entries(tvsProducts).forEach(([id, product]) => {
+        if (id === currentId) return;
+
+        const card = document.createElement("article");
+        card.className = "tvs-related-card";
+
+        card.innerHTML = `
+            <img src="${product.cardImage}" alt="${product.name}">
+            <div>
+                <small>${product.type}</small>
+                <h3>${product.name}</h3>
+            </div>
+        `;
+
+        card.addEventListener("click", () => loadProduct(id));
+
+        slider.appendChild(card);
+    });
+
+    /*
+       Start automatic sliding after the cards
+       have been rendered.
+    */
+    startRelatedAutoSlide();
+}
+
+
+/* =====================================================
+   RELATED PRODUCTS - AUTOMATIC SLIDER
+===================================================== */
+
+let relatedAutoSlide = null;
+
+function startRelatedAutoSlide() {
+
+    const slider = document.querySelector("#tvsRelatedSlider");
+
+    if (!slider) return;
+
+    if (relatedAutoSlide) {
+        cancelAnimationFrame(relatedAutoSlide);
+    }
+
+    let lastTime = 0;
+
+    function move(timestamp) {
+
+        if (!lastTime) {
+            lastTime = timestamp;
+        }
+
+        const elapsed = timestamp - lastTime;
+
+        if (!relatedPaused && elapsed >= 20) {
+
+            slider.scrollLeft += 1;
+
+            lastTime = timestamp;
+        }
+
+        if (
+            slider.scrollLeft + slider.clientWidth >=
+            slider.scrollWidth - 2
+        ) {
+            slider.scrollLeft = 0;
+        }
+
+        relatedAutoSlide = requestAnimationFrame(move);
+    }
+
+    relatedAutoSlide = requestAnimationFrame(move);
+}
+
+
+/* =====================================================
+   PAUSE WHILE HOVERING
+===================================================== */
+
+const relatedSlider = document.querySelector("#tvsRelatedSlider");
+
+let relatedPaused = false;
+
+if (relatedSlider) {
+
+    relatedSlider.addEventListener("mouseenter", () => {
+        relatedPaused = true;
+    });
+
+    relatedSlider.addEventListener("mouseleave", () => {
+        relatedPaused = false;
+    });
+}
+
+
+/* =====================================================
+   MANUAL PREVIOUS BUTTON
+===================================================== */
+
+document.querySelector("#tvsRelatedPrev").addEventListener("click", () => {
+
+    const slider = document.querySelector("#tvsRelatedSlider");
+
+    slider.scrollBy({
+        left: -350,
+        behavior: "smooth"
+    });
+});
+
+
+/* =====================================================
+   MANUAL NEXT BUTTON
+===================================================== */
+
+document.querySelector("#tvsRelatedNext").addEventListener("click", () => {
+
+    const slider = document.querySelector("#tvsRelatedSlider");
+
+    slider.scrollBy({
+        left: 350,
+        behavior: "smooth"
+    });
+});
+    /*function renderRelated(currentId) {
         const slider = document.querySelector("#tvsRelatedSlider");
         slider.innerHTML = "";
 
@@ -1448,7 +1572,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.addEventListener("click", () => loadProduct(id));
             slider.appendChild(card);
         });
-    }
+    }*/
 
     document.querySelector("#tvsRelatedPrev").addEventListener("click", () => {
         document.querySelector("#tvsRelatedSlider").scrollBy({
