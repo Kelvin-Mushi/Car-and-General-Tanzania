@@ -794,92 +794,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ]
         },
 
-
-        tvscargo: {
-            name: "TVS CARGO",
-            category: "3-wheeler",
-            type: "THREE WHEELER",
-            cardImage: "assets/tvs/tvscargo/card.webp",
-            hero: [
-                {
-                    image: "assets/tvs/tvscargo/hero-01.webp",
-                    title: "TVS tvscargo",
-                    text: "Built for business, mobility and everyday transport."
-                },
-                {
-                    image: "assets/tvs/tvscargo/hero-02.webp",
-                    title: "Move more",
-                    text: "Practical three-wheeler performance for demanding journeys."
-                }
-            ],
-            frames: {
-                path: "assets/tvs/tvscargo/360/frame-",
-                count: 36,
-                extension: "webp"
-            },
-            features: [
-                {
-                    title: "I-touch Start",
-                    category: "START",
-                    image: "assets/tvs/tvscargo/features/convinience-1.png",
-                    description: "Designed with everyday driver comfort in mind."
-                },
-                {
-                    title: "Audio Player",
-                    category: "TECHNOLOGY",
-                    image: "assets/tvs/tvscargo/features/convinience-4.png",
-                    description: "Designed to help you spend more time on the road."
-                },
-                {
-                    title: "Easy Reverse gear",
-                    category: "COVENIENCE",
-                    image: "assets/tvs/tvscargo/features/convinience-3.png",
-                    description: "Designed with everyday driver comfort in mind."
-                }
-            ],
-            colours: [
-                {
-                    name: "White",
-                    hex: "#f4f6f8",
-                    image: "assets/tvs/tvscargo/colours/tvs-cargo-white.webp"
-                },
-                {
-                    name: "Yellow",
-                    hex: "#efdc10",
-                    image: "assets/tvs/tvscargo/colours/tvs-cargo-yellow.webp"
-                }
-            ],
-            specifications: [
-                ["Engine Type", " Stroke, Liquid cooled, Single Cylinder"],
-                ["Starting", "Electric (ISG) and Hand Start"],
-                ["Engine Displacement", "225.8 cc"],
-                ["Maximum Power", "7.8 kW(10 bhp) @ 4750 rpm"],
-                ["Max Speed", "65 ± 2 km/h"],
-                ["Maximum Torque", "18.5 Nm @ 3000 rpm"],
-                ["Transmission", "Manual 4 Speed, 1 Reverse"]
-            ],
-            spares: [
-                {
-                    name: "Spark Plug",
-                    category: "ENGINE",
-                    image: "assets/tvs/tvscargo/spares/spark-plug-genuine.png",
-                    description: "Genuine TVS replacement Spark Plug."
-                },
-                {
-                    name: "TSL Lamp",
-                    category: "LIGHTS",
-                    image: "assets/tvs/tvscargo/spares/tsl-lamp-genuine.png",
-                    description: "Genuine TVS replacement TSL Lamp."
-                },
-                {
-                    name: "Valves",
-                    category: "LIGHTS",
-                    image: "assets/tvs/tvscargo/spares/valve-genuine.png",
-                    description: "Genuine TVS replacement Valves."
-                }
-            ]
-        },
-
         tvsking: {
             name: "TVS King Deluxe",
             category: "3-wheeler",
@@ -1025,6 +939,91 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "Valves",
                     category: "ENGINE",
                     image: "assets/tvs/tvscng/spares/valve-genuine.png",
+                    description: "Genuine TVS replacement Valves."
+                }
+            ]
+        },
+
+        tvscargo: {
+            name: "TVS CARGO",
+            category: "3-wheeler",
+            type: "THREE WHEELER",
+            cardImage: "assets/tvs/tvscargo/card.webp",
+            hero: [
+                {
+                    image: "assets/tvs/tvscargo/hero-01.webp",
+                    title: "TVS tvscargo",
+                    text: "Built for business, mobility and everyday transport."
+                },
+                {
+                    image: "assets/tvs/tvscargo/hero-02.webp",
+                    title: "Move more",
+                    text: "Practical three-wheeler performance for demanding journeys."
+                }
+            ],
+            frames: {
+                path: "assets/tvs/tvscargo/360/frame-",
+                count: 36,
+                extension: "webp"
+            },
+            features: [
+                {
+                    title: "I-touch Start",
+                    category: "START",
+                    image: "assets/tvs/tvscargo/features/convinience-1.png",
+                    description: "Designed with everyday driver comfort in mind."
+                },
+                {
+                    title: "Audio Player",
+                    category: "TECHNOLOGY",
+                    image: "assets/tvs/tvscargo/features/convinience-4.png",
+                    description: "Designed to help you spend more time on the road."
+                },
+                {
+                    title: "Easy Reverse gear",
+                    category: "COVENIENCE",
+                    image: "assets/tvs/tvscargo/features/convinience-3.png",
+                    description: "Designed with everyday driver comfort in mind."
+                }
+            ],
+            colours: [
+                {
+                    name: "White",
+                    hex: "#f4f6f8",
+                    image: "assets/tvs/tvscargo/colours/tvs-cargo-white.webp"
+                },
+                {
+                    name: "Yellow",
+                    hex: "#efdc10",
+                    image: "assets/tvs/tvscargo/colours/tvs-cargo-yellow.webp"
+                }
+            ],
+            specifications: [
+                ["Engine Type", " Stroke, Liquid cooled, Single Cylinder"],
+                ["Starting", "Electric (ISG) and Hand Start"],
+                ["Engine Displacement", "225.8 cc"],
+                ["Maximum Power", "7.8 kW(10 bhp) @ 4750 rpm"],
+                ["Max Speed", "65 ± 2 km/h"],
+                ["Maximum Torque", "18.5 Nm @ 3000 rpm"],
+                ["Transmission", "Manual 4 Speed, 1 Reverse"]
+            ],
+            spares: [
+                {
+                    name: "Spark Plug",
+                    category: "ENGINE",
+                    image: "assets/tvs/tvscargo/spares/spark-plug-genuine.png",
+                    description: "Genuine TVS replacement Spark Plug."
+                },
+                {
+                    name: "TSL Lamp",
+                    category: "LIGHTS",
+                    image: "assets/tvs/tvscargo/spares/tsl-lamp-genuine.png",
+                    description: "Genuine TVS replacement TSL Lamp."
+                },
+                {
+                    name: "Valves",
+                    category: "LIGHTS",
+                    image: "assets/tvs/tvscargo/spares/valve-genuine.png",
                     description: "Genuine TVS replacement Valves."
                 }
             ]
