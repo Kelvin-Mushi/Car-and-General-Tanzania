@@ -12,22 +12,13 @@
      
     <header class="main-header">
         <div class="top-bar">
-            <p>TOLL FREE +255 2200000 </p> <p>FIND DEALERS <i class="fas fa-chevron-down"></i></p>
+            <p><i class="fa-solid fa-phone"></i>TOLL FREE 0800724600</p> <p><i class="fa-solid fa-envelope"></i>info@cargen.com</p> <p><i class="fa-solid fa-location-dot"></i>Branch Locator</p> <p><i class="fa-solid fa-location"></i>Select Country</p>
         </div>
 
         <div class="branding">
              <div class="logo">
                 <img src="./logos/cargen_logo.png" alt="Cargen_Logo">
             </div>
-            <!--<div class="products-icons">
-                <img src="./product_icons/air-compressor.png">
-                <img src="./product_icons/compressor.png">
-                <img src="./product_icons/digger.png">
-                <img src="./product_icons/electric-generator.png">
-                <img src="./product_icons/fuel.png">
-                <img src="./product_icons/motor.png">
-                <img src="./product_icons/tuktuk.png">
-            </div>-->
     
             <div class="navbar">
                 <ul class="nav-links">
@@ -74,7 +65,36 @@
                 <!--<a href="#">My Orders</a>-->
                 <a href="#dealer-locator" class="main-links" >Dealer Locator</a>
                 <a href="#testimonials" class="main-links" >Testimonials</a>
-                <a href="#about-us" class="main-links" >About Us</a>
+
+                <li class="dropdown">
+                  <a href="#about-us" class="main-links" >About Us <i class="fas fa-chevron-down"></i></a>
+            
+                    <!-- Level 2: First Flyout Menu -->
+                    <ul class="submenu level-1">
+                        <li> <a href="#" class="nav-btn">History</a> </li>
+                        
+                        <li class="has-flyout">
+                            <a href="#" class="nav-btn">Company Policies<i class="fas fa-chevron-right"></i></a>
+
+                            <ul class="submenu level-2">
+                                <li class="has-flyout-2">
+                                  <a href="#" class="nav-btn" id="privacy-link">Privacy Policy</a> 
+                                </li>
+
+                                <li class="has-flyout-2">
+                                  <a href="#" class="nav-btn" data-target="develon-section" data-route="develon-section">Cookie Policy</a>
+                                </li>
+
+                                <li class="has-flyout-2">
+                                  <a href="#" class="nav-btn" data-target="cummins-section" data-route="cummins-section">Customer Service Policy</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#" class="nav-btn">Management Team</a></li>
+                        <li><a href="#" class="nav-btn">Key Partnerships</a></li>
+                    </ul>
+                </li>
               </ul>
           </div>
 
@@ -102,7 +122,7 @@
             </div>
 
             <div class="slide">
-                <img src="https://www.tvsmotor.com/ke/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-150-5-Gear/Web/banner/01_banner_web.webp" alt="TVS HLX 150X 5 Gear">
+                <img src="https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/banner/HLX_150X_5_GEAR_banner_web.webp" alt="TVS HLX 150X 5 Gear">
                 <div class="slide-overlay">
                     <h1>POWER & RELIABILITY</h1>
                     <p>Discover the high-performance commercial range built for your business.</p>
@@ -1570,6 +1590,12 @@
                 <p>Explore the technology, convenience and performance features of this TVS product.</p>
             </div>
 
+            <div class="feature-btns">
+                <button class="main-feature-btn active">Perfomance</button>
+                <button class="main-feature-btn">Convenience</button>
+                <button class="main-feature-btn">Safety</button>
+            </div>
+
             <div class="tvs-feature-layout">
                 <div class="tvs-feature-image">
                     <img id="tvsFeatureImage" src="" alt="">
@@ -1618,7 +1644,7 @@
         </section>
 
         <!-- ==================== SPARE PARTS ==================== -->
-        <section class="tvs-detail-section tvs-spares-section" id="tvs-spares">
+        <!--<section class="tvs-detail-section tvs-spares-section" id="tvs-spares">
             <div class="tvs-section-heading">
                 <span>GENUINE PARTS</span>
                 <h2>Keep it <b>running.</b></h2>
@@ -1626,7 +1652,7 @@
             </div>
 
             <div class="tvs-spares-grid" id="tvsSparesGrid"></div>
-        </section>
+        </section>-->
 
         <!-- ==================== YOU MAY ALSO LIKE ==================== -->
         <section class="tvs-detail-section tvs-related-section">

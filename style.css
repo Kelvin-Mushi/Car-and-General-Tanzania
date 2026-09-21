@@ -126,25 +126,6 @@ h3{
     padding-left: 15px;
 }
 
-.products-icons {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-}
-
-.products-icons img {
-    height: 38px;
-    width: auto;
-    opacity: 0.15;
-    transition: 0.3s ease;
-}
-
-.products-icons img:hover {
-    opacity: 0.8;
-    padding-bottom: 10px;
-}
-
 .auth {
     display: flex;
     gap: 15px;
@@ -176,7 +157,6 @@ h3{
 }
 
 /*NAVIGATION STYLING*/
-/* --- Base Styles --- */
 .navbar{
   width: 100%;
 }
@@ -1254,15 +1234,12 @@ h3 {
     width: 400px;
     height: auto;
     background-color: var(--card-bg);
-    /*border: 1px solid var(--accent-red);*/
     transition: 0.3s ease;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
 }
-.product-details:hover{
-    border: 1px solid var(--accent-red);
-}
+
 
 .product-details button{
     margin: 10px;
@@ -2307,6 +2284,26 @@ h3 {
     display:flex;
     flex-direction:column;
     gap:8px;
+}
+
+.feature-btns{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    border:1px solid var(--tvs-border);
+    border-radius:12px;
+}
+
+.main-feature-btn{
+    border: 1px solid transparent;
+    color:black;
+    cursor:pointer;
+    transition:.3s;
+    background-color: transparent;
+    padding:15px;
+}
+.main-feature-btn.active{
+    color: var(--accent-red);
 }
 
 .tvs-feature-btn{

@@ -356,24 +356,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 count: 20,
                 extension: "webp"
             },
-            features: [
-                {
-                    title: "Superior Rear Suspension",
-                    category: "SAFETY",
-                    image: "assets/tvs/hlx1254g/features/safety-1.png",
-                    description: "Keeps your ride safe."
-                },
+            performance: [
                 {
                     title: "Ecothrust Engine",
                     category: "PERFOMANCE",
                     image: "assets/tvs/hlx1254g/features/engine.png",
                     description: "Gives you confidence on any envrionment."
+                }
+            ],
+            convenience: [
+                {
+                    title: "USB Phone Charger",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/hlx-125/Features/usb.webp",
+                    description: "Gives you confidence on any envrionment."
                 },
                 {
                     title: "Stylish Design",
-                    category: "COMFORT",
+                    category: "CONVENIENCE",
                     image: "assets/tvs/hlx1254g/features/convinience-1.png",
                     description: "Designed to provide a comfortable riding experience."
+                },
+                {
+                    title: "Fuel Gauge",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/hlx-125/Features/Fuel-meter.webp",
+                    description: "Designed to provide a comfortable riding experience."
+                }
+            ],
+            safety: [
+                {
+                    title: "Superior Rear Suspension",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/hlx-125/Features/susp.webp",
+                    description: "Gives you confidence on any envrionment."
                 }
             ],
             colours: [
@@ -446,24 +462,58 @@ document.addEventListener("DOMContentLoaded", () => {
                 count: 15,
                 extension: "webp"
             },
-            features: [
+            performance: [
                 {
-                    title: "Analog Display",
-                    category: "TECHNOLOGY",
-                    image: "assets/tvs/hlx150x/features/convinience-3.png",
-                    description: "Know your fuel level at a glance."
-                },
-                {
-                    title: "USB Charger",
-                    category: "CONVENIENCE",
-                    image: "assets/tvs/hlx150x/features/convinience-2.png",
-                    description: "Charge compatible devices while travelling."
-                },
-                {
-                    title: "Powerful Engine",
+                    title: "150cc Ecothrust Engine",
                     category: "PERFOMANCE",
-                    image: "assets/tvs/hlx150x/features/perfomance-1.png",
-                    description: "Gives you confidence to go anywhere."
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/Feature/HLX-150-X-F1-engine.webp",
+                    description: "Gives you confidence on any envrionment."
+                }
+            ],
+            convenience: [
+                {
+                    title: "Big Strong Carrier",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/Feature/HLX-150-X-F2-carrier.webp",
+                    description: "Carries more & Heavy loads."
+                },
+                {
+                    title: "USB Phone Charger",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/Feature/HLX-150-X-F3-usb.webp",
+                    description: "Charge devices as ayou go."
+                },
+                {
+                    title: "Fuel Gauge",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/Feature/HLX-5-gear-F4-gear-position.webp",
+                    description: "Designed to provide a comfortable riding experience."
+                },
+                {
+                    title: "Electric Start",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/Feature/HLX-150-X-F5-hand-starter.webp",
+                    description: "Easy starting."
+                }
+            ],
+            safety: [
+                {
+                    title: "Superior Rear shock Suspension",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/Feature/HLX-150-X-F7-susp.webp",
+                    description: "Comfortabilty even ata higher loads."
+                },
+                {
+                    title: "Third Pillon Footrest with Plate",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/Feature/HLX-150-X-F6-footrest.webp",
+                    description: "Better grip and comfortability."
+                },
+                {
+                    title: "Hazard Lamp",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/HLX-150X-5-GEAR/web/Feature/hazard-lamp.webp",
+                    description: "Safe driving at night."
                 }
             ],
             colours: [
@@ -536,18 +586,70 @@ document.addEventListener("DOMContentLoaded", () => {
                 count: 15,
                 extension: "webp"
             },
-            features: [
+            performance: [
                 {
-                    title: "Lights",
-                    category: "SAFETY",
-                    image: "assets/tvs/hlx1255g/features/safety-2.png",
-                    description: "Ride comfortably day and night."
+                    title: "125 cc 5 Gear Ecothrust Engine",
+                    category: "PERFOMANCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/Engine.webp",
+                    description: "Gives you confidence on any envrionment."
+                }
+            ],
+            convenience: [
+                {
+                    title: "New graphics",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/hlx-125/Features/usb.webp",
+                    description: "Makes riders standout."
                 },
                 {
-                    title: "Strong Carrier",
+                    title: "USB Port",
                     category: "CONVENIENCE",
-                    image: "assets/tvs/hlx1255g/features/convinience-6.png",
-                    description: "Heavy load? Issue solved."
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/USB.webp",
+                    description: "Keep phone charged as you go."
+                },
+                {
+                    title: "Fuel Indicator",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/Fuel-Meter.webp",
+                    description: "Accurate identification of fuel levels."
+                },
+                {
+                    title: "Extra stong carrier",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/Carrier.webp",
+                    description: "Easy transportation of loads."
+                },
+                {
+                    title: "Electric Start",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/Electric-Starter.webp",
+                    description: "Faster and smooth starts."
+                },
+                {
+                    title: "Black alloy wheel",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/AlloyWheel.webp",
+                    description: "Premium style."
+                },
+                {
+                    title: "DC Headlamp",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/Headlamp-(1).webp",
+                    description: "Better visibility."
+                }
+            ],
+            safety: [
+                {
+                    title: "Tough and smooth shock absorber",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/Suspension.webp",
+                    description: "Gives you confidence on any envrionment."
+                },
+                {
+                    title: "Hazard lamp",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/Headlamp-(1).webp",
+                    description: "Four side blinkers for clear visibility."
                 }
             ],
             colours: [
@@ -634,24 +736,46 @@ document.addEventListener("DOMContentLoaded", () => {
                 count: 14,
                 extension: "webp"
             },
-            features: [
+            performance: [
                 {
                     title: "Powerful Engine",
                     category: "PERFOMANCE",
-                    image: "assets/tvs/hlxplus/features/perfomance-1.png",
-                    description: "Gives. you confidence to go anywhere."
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HlX-plus/Features/engine.webp",
+                    description: "Gives you confidence on any envrionment."
+                }
+            ],
+            convenience: [
+                {
+                    title: "USB Port",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HlX-plus/Features/USB.webp",
+                    description: "Keep phone charged as you go."
                 },
                 {
-                    title: "Analog Display",
-                    category: "TECHNOLOGY",
-                    image: "assets/tvs/hlxplus/features/convinience-3.png",
-                    description: "Important riding information presented clearly."
+                    title: "Fuel Indicator",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HlX-plus/Features/Fuel-Meter.webp",
+                    description: "Accurate identification of fuel levels."
                 },
                 {
-                    title: "USB Charger",
-                    category: "TECHNOLOGY",
-                    image: "assets/tvs/hlxplus/features/convinience-2.png",
-                    description: "Keeps your devices charged."
+                    title: "Sturdy Pillon carrier",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HlX-plus/Features/Carrier.webp",
+                    description: "Easy transportation of loads."
+                },
+                {
+                    title: "Electric Start",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HLX-125-5G/web/feature/Electric-Starter.webp",
+                    description: "Faster and smooth starts."
+                }
+            ],
+            safety: [
+                {
+                    title: "Superior rear suspension",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/HlX-plus/Features/Susp.webp",
+                    description: "Gives you confidence on any envrionment."
                 }
             ],
             colours: [
@@ -724,24 +848,34 @@ document.addEventListener("DOMContentLoaded", () => {
                 count: 15,
                 extension: "webp"
             },
-            features: [
+            performance: [
                 {
-                    title: "Comfortable Seat",
-                    category: "COMFORT",
-                    image: "assets/tvs/xl100/features/Comfort.webp",
-                    description: "Design to provide a less fatigue journey."
-                },
+                    title: "Powerful 100 cc Engine",
+                    category: "PERFOMANCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/XL-100-Heavy-Duty/web/Feature/engine.webp",
+                    description: "Top notch perfomance."
+                }
+            ],
+            convenience: [
                 {
-                    title: "Durability",
+                    title: "i-touch start",
                     category: "CONVENIENCE",
-                    image: "assets/tvs/xl100/features/Durability.webp",
-                    description: "Built for heavy duty rides."
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/XL-100-Heavy-Duty/web/Feature/i-touch-start.webp",
+                    description: "Instant and silent starting."
+                }
+            ],
+            safety: [
+                {
+                    title: "Front hyraulic suspension",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/XL-100-Heavy-Duty/web/Feature/HEAVY-DUTY-SHOCK-ABSORBER.webp",
+                    description: "Gives you confidence on any envrionment."
                 },
                 {
-                    title: "I-Touch Start",
-                    category: "STARTING",
-                    image: "assets/tvs/xl100/features/i-touch-start.webp",
-                    description: "Starting Made Easy."
+                    title: "Sync braking technology",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/XL-100-Heavy-Duty/web/Feature/DURA-GRIP-TYRE.webp",
+                    description: "Superior braking control."
                 }
             ],
             colours: [
@@ -816,20 +950,60 @@ document.addEventListener("DOMContentLoaded", () => {
                 count: 13,
                 extension: "webp"
             },
-            features: [
+            performance: [
                 {
-                    title: "Driver Footrest",
-                    category: "COMFORT",
-                    image: "assets/tvs/tvsking/features/comfort.png",
-                    description: "Designed with everyday driver and passenger comfort in mind."
+                    title: "3 Stage air filtration",
+                    category: "PERFOMANCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Deluxe/Web/Features/3-Stage-Air-filtration_Red.webp",
+                    description: "Top notch perfomance."
                 },
                 {
-                    title: "3 Stage Air Filtration",
-                    category: "DURABILITY",
-                    image: "assets/tvs/tvsking/features/durability-1.png",
-                    description: "Designed to for Durability."
+                    title: "Ventilated tail door",
+                    category: "PERFOMANCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Deluxe/Web/Features/Ventilated-tail-door_REd.webp",
+                    description: "Better engine cooling."
                 }
             ],
+            convenience: [
+                {
+                    title: "Driver footrest",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Deluxe/Web/Features/driver-footrest_Red.webp",
+                    description: "More comfort to the driver."
+                },
+                {
+                    title: "Easy Reverse Gear",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Deluxe/Web/Features/Easy-Reverse-gear_Red.webp",
+                    description: "Patented reverse gear in hand."
+                },
+                {
+                    title: "Twin Locable Glovebox",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Deluxe/Web/Features/Twin-Locable-Glovebox_Red.webp",
+                    description: "Easy storage of day to day usables."
+                },
+                {
+                    title: "Music System",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Deluxe/Web/Features/Music-System_Red.webp",
+                    description: "Play music on the go. Bluetooth | FM | MP3."
+                }
+            ],
+            safety: [
+                {
+                    title: "Chasis mounted bumper",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Deluxe/Web/Features/Chassis-mounted-bumper_Red.webp",
+                    description: "Gives you confidence on any envrionment."
+                },
+                {
+                    title: "Stylish Bright twin Headlamps",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Deluxe/Web/Features/Stylish-Bright-Twin-Headlamps-latest_Red.webp",
+                    description: "Safe driving at night."
+                }
+            ],    
             colours: [
                 {
                     name: "Blue",
@@ -889,26 +1063,66 @@ document.addEventListener("DOMContentLoaded", () => {
                 count: 12,
                 extension: "webp"
             },
-            features: [
+            performance: [
                 {
-                    title: "Passenger Comfort",
-                    category: "COMFORT",
-                    image: "assets/tvs/tvscng/features/comfort-2.png",
-                    description: "A practical cabin designed around everyday passenger needs."
+                    title: "Powerful 200cc TVS King engine",
+                    category: "PERFOMANCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/engine.webp",
+                    description: "Stronger | Fuel efficiency | Longer life."
+                }
+            ],
+            convenience: [
+                {
+                    title: "King Size Driver seat & Back seat",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/king-size-seat.webp",
+                    description: "More comfort to the driver & Passenger."
+                },
+                {
+                    title: "Tubeless Tyre",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/tubeless_tyre.webp",
+                    description: "Tubeless Tyre with coloured rim."
+                },
+                {
+                    title: "Larger Foldable Mirror",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/foldable_mirror.webp",
+                    description: "Extra wide visibility."
                 },
                 {
                     title: "30 Litre/5Kg CNG Tank",
                     category: "CONVENIENCE",
-                    image: "assets/tvs/tvscng/features/convinience-2.png",
-                    description: "Capacity to do business for full day with one full tank of gas."
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/cng-tank.webp",
+                    description: "Business Full day with one full tank."
                 },
                 {
-                    title: "Brighter HeadLamp",
-                    category: "SAFETY",
-                    image: "assets/tvs/tvscng/features/safety-1.png",
-                    description: "Brighter light for better visibilty at night."
+                    title: "New Trendy Tail Lamp",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/tail-lamp.webp",
+                    description: "Thick bezel & pleasant jewel-type light pattern."
+                },
+                {
+                    title: "New bolder grill & bezel",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/bolderbazel.webp",
+                    description: "Study look."
                 }
             ],
+            safety: [
+                {
+                    title: "Thickest in-class canopy",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/canopy.webp",
+                    description: "Longer lofe 20% extra thickness."
+                },
+                {
+                    title: "Brighter Headlamps",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King-Delux-Plus-CNG/Features/headlamp.webp",
+                    description: "Safe driving at night."
+                }
+            ],    
             colours: [
                 {
                     name: "Green",
@@ -960,24 +1174,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 count: 36,
                 extension: "webp"
             },
-            features: [
+            performance: [
                 {
-                    title: "I-touch Start",
-                    category: "START",
-                    image: "assets/tvs/tvscargo/features/convinience-1.png",
-                    description: "Designed with everyday driver comfort in mind."
-                },
+                    title: "3 Stage air filtration",
+                    category: "PERFOMANCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King_Kargo_225LC/Features/3-starge-air-filtration.webp",
+                    description: "Enhances durability."
+                }
+            ],
+            convenience: [
                 {
-                    title: "Audio Player",
-                    category: "TECHNOLOGY",
-                    image: "assets/tvs/tvscargo/features/convinience-4.png",
-                    description: "Designed to help you spend more time on the road."
+                    title: "I-touch start",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King_Kargo_225LC/Features/1-Touch-Start.webp",
+                    description: "Instant silent start."
                 },
                 {
                     title: "Easy Reverse gear",
-                    category: "COVENIENCE",
-                    image: "assets/tvs/tvscargo/features/convinience-3.png",
-                    description: "Designed with everyday driver comfort in mind."
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King_Kargo_225LC/Features/Easy-reverse-gear.webp",
+                    description: "Retented reverse gear in hand."
+                },
+                {
+                    title: "Music Player",
+                    category: "CONVENIENCE",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King_Kargo_225LC/Features/Music-player.webp",
+                    description: "Music on the go."
+                }
+            ],
+            safety: [
+                {
+                    title: "Larger Foldable Mirror",
+                    category: "SAFETY",
+                    image: "https://www.tvsmotor.com/tz/-/media/Feature/IB/Webp-Images/NewUI/Product/Non-premium/King_Kargo_225LC/Features/Large-foldable-mirror.webp",
+                    description: "Extra wide visibility, Foldable & Sturdy."
                 }
             ],
             colours: [
@@ -1213,7 +1443,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renderFeatures(product);
         renderColours(product);
         renderSpecifications(product);
-        renderSpares(product);
+        //renderSpares(product);
         renderRelated(id);
 
         details.classList.add("visible");
@@ -1305,10 +1535,111 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = document.querySelector("#tvsFeatureTitle");
         const description = document.querySelector("#tvsFeatureDescription");
         const controls = document.querySelector("#tvsFeatureControls");
+        const featureBtn = document.querySelectorAll('.main-feature-btn');
 
-        controls.innerHTML = "";
+        featureBtn.forEach(button =>{
+            button.addEventListener('click', (e)=>{
+                featureBtn.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
-        product.features.forEach((feature, index) => {
+                if(button.innerHTML === "Convenience"){
+                    controls.innerHTML = "";
+
+                        product.convenience.forEach((feature, index) => {
+                            const button = document.createElement("button");
+                            button.className = "tvs-feature-btn";
+                            button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${feature.title}`;
+
+                            button.addEventListener("click", () => {
+                                image.style.opacity = "0";
+
+                                setTimeout(() => {
+                                    image.src = feature.image;
+                                    image.alt = feature.title;
+                                    category.textContent = feature.category;
+                                    title.textContent = feature.title;
+                                    description.textContent = feature.description;
+                                    number.textContent = String(index + 1).padStart(2, "0");
+                                    image.style.opacity = "1";
+                                }, 180);
+
+                                controls.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+                                button.classList.add("active");
+                            });
+
+                            controls.appendChild(button);
+
+                            if (index === 0) button.click();
+                        });
+                }
+
+                if(button.innerHTML === "Perfomance"){
+                    controls.innerHTML = "";
+
+                        product.performance.forEach((feature, index) => {
+                            const button = document.createElement("button");
+                            button.className = "tvs-feature-btn";
+                            button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${feature.title}`;
+
+                            button.addEventListener("click", () => {
+                                image.style.opacity = "0";
+
+                                setTimeout(() => {
+                                    image.src = feature.image;
+                                    image.alt = feature.title;
+                                    category.textContent = feature.category;
+                                    title.textContent = feature.title;
+                                    description.textContent = feature.description;
+                                    number.textContent = String(index + 1).padStart(2, "0");
+                                    image.style.opacity = "1";
+                                }, 180);
+
+                                controls.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+                                button.classList.add("active");
+                            });
+
+                            controls.appendChild(button);
+
+                            if (index === 0) button.click();
+                        });
+                }
+
+                if(button.innerHTML === "Safety"){
+                    controls.innerHTML = "";
+
+                        product.safety.forEach((feature, index) => {
+                            const button = document.createElement("button");
+                            button.className = "tvs-feature-btn";
+                            button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${feature.title}`;
+
+                            button.addEventListener("click", () => {
+                                image.style.opacity = "0";
+
+                                setTimeout(() => {
+                                    image.src = feature.image;
+                                    image.alt = feature.title;
+                                    category.textContent = feature.category;
+                                    title.textContent = feature.title;
+                                    description.textContent = feature.description;
+                                    number.textContent = String(index + 1).padStart(2, "0");
+                                    image.style.opacity = "1";
+                                }, 180);
+
+                                controls.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+                                button.classList.add("active");
+                            });
+
+                            controls.appendChild(button);
+
+                            if (index === 0) button.click();
+                        });
+                }
+            });
+        });
+
+       controls.innerHTML = "";
+
+        product.performance.forEach((feature, index) => {
             const button = document.createElement("button");
             button.className = "tvs-feature-btn";
             button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${feature.title}`;
@@ -1396,7 +1727,7 @@ document.addEventListener("DOMContentLoaded", () => {
        SPARE PARTS
     ===================================================== */
 
-    function renderSpares(product) {
+    /*function renderSpares(product) {
         const grid = document.querySelector("#tvsSparesGrid");
         grid.innerHTML = "";
 
@@ -1415,7 +1746,7 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             grid.appendChild(card);
         });
-    }
+    }*/
 
     /* =====================================================
        YOU MAY ALSO LIKE
@@ -1551,28 +1882,6 @@ document.querySelector("#tvsRelatedNext").addEventListener("click", () => {
         behavior: "smooth"
     });
 });
-    /*function renderRelated(currentId) {
-        const slider = document.querySelector("#tvsRelatedSlider");
-        slider.innerHTML = "";
-
-        Object.entries(tvsProducts).forEach(([id, product]) => {
-            if (id === currentId) return;
-
-            const card = document.createElement("article");
-            card.className = "tvs-related-card";
-
-            card.innerHTML = `
-                <img src="${product.cardImage}" alt="${product.name}">
-                <div>
-                    <small>${product.type}</small>
-                    <h3>${product.name}</h3>
-                </div>
-            `;
-
-            card.addEventListener("click", () => loadProduct(id));
-            slider.appendChild(card);
-        });
-    }*/
 
     document.querySelector("#tvsRelatedPrev").addEventListener("click", () => {
         document.querySelector("#tvsRelatedSlider").scrollBy({
@@ -1611,7 +1920,7 @@ document.querySelector("#tvsRelatedNext").addEventListener("click", () => {
        QUICK NAVIGATION
     ===================================================== */
 
-    quickLinks.querySelectorAll("a").forEach(link => {
+quickLinks.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", event => {
             if (!currentProductId) {
                 event.preventDefault();
