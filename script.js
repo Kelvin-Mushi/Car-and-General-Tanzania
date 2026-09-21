@@ -654,32 +654,32 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             colours: [
                 {
-                    name: "Black",
+                    name: "Black-1",
                     hex: "#171717",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-black.webp"
                 },
                 {
-                    name: "Black",
+                    name: "Black-2",
                     hex: "#171717",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-black1.webp"
                 },
                 {
-                    name: "Black",
+                    name: "Blue-1",
                     hex: "#0922e7",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-blue.webp"
                 },
                 {
-                    name: "Black",
+                    name: "Blue-2",
                     hex: "#0c21e3",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-blue2.webp"
                 },
                 {
-                    name: "Red",
+                    name: "Red-1",
                     hex: "#d52630",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-red.webp"
                 },
                 {
-                    name: "Red",
+                    name: "Red-2",
                     hex: "#d52630",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-red2.webp"
                 }
@@ -1710,6 +1710,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderSpecifications(product) {
         const table = document.querySelector("#tvsSpecTable");
+        const specBtn = document.querySelectorAll('.main-spec-btn');
+
+        specBtn.forEach(button =>{
+            button.addEventListener('click', (e)=>{
+                specBtn.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+
         table.innerHTML = "";
 
         product.specifications.forEach(spec => {
