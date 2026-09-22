@@ -877,18 +877,16 @@ h3 {
   text-align: left; /* Overrides any inherited center-alignment */
 }
 
-/* 2. Header container: Ensure text and badges align left */
 .intro-header {
   max-width: 800px;
   margin-bottom: 15px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Ensures badge & text stack to the left */
+  align-items: flex-start;
   text-align: left;
 }
 
-/* 3. Intro Badge: Keeps inline-flex for animation + forces left position */
 .intro-badge {
   display: inline-flex; /* REQUIRED for translateX transform animation */
   align-items: center;
@@ -1216,7 +1214,6 @@ h3 {
     width: 400px;
     background-color: var(--card-bg);
     transition: 0.3s ease;
-    /*border: 1px solid var(--accent-red);*/
     border-radius: 10px;
 }
 
@@ -1227,6 +1224,7 @@ h3 {
 .product-image img{
     height: 100%;
     width: auto;
+    align-self: center;
     object-fit: contain;
 }
 

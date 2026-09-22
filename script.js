@@ -1733,6 +1733,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const description = document.querySelector("#tvsFeatureDescription");
         const controls = document.querySelector("#tvsFeatureControls");
         const featureBtn = document.querySelectorAll('.main-feature-btn');
+        const featureLayout = document.querySelector('.tvs-feature-layout');
 
         featureBtn.forEach(button =>{
             button.addEventListener('click', (e)=>{
@@ -1741,6 +1742,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if(button.innerHTML === "Convenience"){
                     controls.innerHTML = "";
+                    featureLayout.style.display = 'grid';
 
                         product.convenience.forEach((feature, index) => {
                             const button = document.createElement("button");
@@ -1771,7 +1773,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 if(button.innerHTML === "Perfomance"){
-                    controls.innerHTML = "";
+                    controls.innerHTML = ""
+                    featureLayout.style.display = 'grid';
 
                         product.performance.forEach((feature, index) => {
                             const button = document.createElement("button");
@@ -1803,6 +1806,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if(button.innerHTML === "Safety"){
                     controls.innerHTML = "";
+                    featureLayout.style.display = 'grid';
 
                         product.safety.forEach((feature, index) => {
                             const button = document.createElement("button");
@@ -1835,33 +1839,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
        controls.innerHTML = "";
-
-        product.performance.forEach((feature, index) => {
-            const button = document.createElement("button");
-            button.className = "tvs-feature-btn";
-            button.innerHTML = `<span>${String(index + 1).padStart(2, "0")}</span>${feature.title}`;
-
-            button.addEventListener("click", () => {
-                image.style.opacity = "0";
-
-                setTimeout(() => {
-                    image.src = feature.image;
-                    image.alt = feature.title;
-                    category.textContent = feature.category;
-                    title.textContent = feature.title;
-                    description.textContent = feature.description;
-                    number.textContent = String(index + 1).padStart(2, "0");
-                    image.style.opacity = "1";
-                }, 180);
-
-                controls.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
-                button.classList.add("active");
-            });
-
-            controls.appendChild(button);
-
-            if (index === 0) button.click();
-        });
+       featureLayout.style.display = 'none';
     }
 
     /* =====================================================
@@ -1988,7 +1966,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         table.innerHTML = "";
 
-        product.specifications.forEach(spec => {
+        /*product.specifications.forEach(spec => {
             const row = document.createElement("div");
             row.className = "tvs-spec-row";
             row.innerHTML = `
@@ -1996,7 +1974,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <strong>${spec[1]}</strong>
             `;
             table.appendChild(row);
-        });
+        });*/
     }
 
     /*          <button class="main-spec-btn active">Engine & Control</button>
