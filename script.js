@@ -418,6 +418,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Transmission", "4 Speed Constant Mesh"],
                 ["Clutch & Transmission", "Wet Type Plate"]
             ],
+            chassisSuspension: [
+                ["Front Suspension", "Telescopic Oil Damped"],
+                ["Rear Suspension", "Hydraulic Shock absorber"]
+            ],
+            electricals: [
+                ["Battery", "12V, 5Ah"],
+                ["Gear Indication", "12V, 1.7Wx5"]
+            ],
+            dimensionWeight: [
+                ["Length", "2000 mm"],
+                ["Width", "745 mm"],
+                ["Height", "1030 mm"],
+                ["Wheel base", "1260 mm"],
+                ["Saddle height", "830 mm"],
+                ["Ground clearance", "180 mm"],
+                ["Vehicle kerb weight", "115 kg"],
+                ["Fuel tank capacity", "12 L"],
+                ["Reserve capacity", "2 L"],
+            ],
+            wheelsBrakes: [
+                ["Front Tyre", '2.75X17, 41P, Duragrip'],
+                ["Rear Tyre", '100/90X17, 51P, Duragrip'],
+                ["Front Brake", '130mm Drum'],
+                ["Rear Brake", '130mm Drum']
+            ],
             spares: [
                 {
                     name: "Cables",
@@ -541,6 +566,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Starting", "Electric Start and Kick Start"],
                 ["Transmission", "5 Speed Constant Mesh"],
                 ["Clutch & Transmission", "Wet, Multi-Disk Type Plate"]
+            ],
+            chassisSuspension: [
+                ["Front Suspension", "Fork Travel, Telescopic"],
+                ["Rear Suspension", "Hydraulic Shock absorber"]
+            ],
+            electricals: [
+                ["Battery", "12V, 5Ah"],
+                ["Gear Indication", "12V, 1.7Wx5"]
+            ],
+            dimensionWeight: [
+                ["Length", "2040 mm"],
+                ["Width", "745 mm"],
+                ["Height", "1150 mm"],
+                ["Wheel base", "1295 mm"],
+                ["Saddle height", "834 mm"],
+                ["Ground clearance", "195 mm"],
+                ["Vehicle kerb weight", "119 kg"],
+                ["Fuel tank capacity", "12 L"],
+                ["Reserve capacity", "2 L"],
+            ],
+            wheelsBrakes: [
+                ["Front Tyre", '2.75X17, 41P, Duragrip'],
+                ["Rear Tyre", '90/90X18, 51P, Duragrip'],
+                ["Front Brake", '130mm Drum Internal Expanding Shoe Type'],
+                ["Rear Brake", '130mm Drum Internal Expanding Shoe Type']
             ],
             spares: [
                 {
@@ -692,6 +742,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Starting", "Electric Start and Kick Start"],
                 ["Transmission", "5 Speed Constant Mesh"]
             ],
+            chassisSuspension: [
+                ["Front Suspension", "Telescopic Oil Damped"],
+                ["Rear Suspension", "Tough & Smooth Suspension"]
+            ],
+            electricals: [
+                ["Battery", "12V, 5Ah"],
+                ["Gear Indication", "12V, 1.7Wx5"]
+            ],
+            dimensionWeight: [
+                ["Length", "2040 mm"],
+                ["Width", "740 mm"],
+                ["Height", "1040 mm"],
+                ["Wheel base", "1293 mm"],
+                ["Saddle height", "790 mm"],
+                ["Ground clearance", "165 mm"],
+                ["Vehicle kerb weight", "121 kg"],
+                ["Fuel tank capacity", "12 L"],
+                ["Reserve capacity", "2 L"],
+            ],
+            wheelsBrakes: [
+                ["Front Tyre", '2.75X17, Tubeless'],
+                ["Rear Tyre", '18 X 3"'],
+                ["Front Brake", '130mm Drum'],
+                ["Rear Brake", '130mm Drum']
+            ],
             spares: [
                 {
                     name: "Spark Plug",
@@ -804,6 +879,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Transmission", "4 Speed Constant Mesh"],
                 ["Clutch & Transmission", "Wet, Multi disc Type"]
             ],
+            chassisSuspension: [
+                ["Front Suspension", "Telescopic Oil Damped"],
+                ["Rear Suspension", "Hydraulic Shock absorber"]
+            ],
+            electricals: [
+                ["Battery", "12V, 5Ah"],
+                ["Gear Indication", "12V, 1.7Wx5"]
+            ],
+            dimensionWeight: [
+                ["Length", "2011 mm"],
+                ["Width", "700 mm"],
+                ["Height", "1050 mm"],
+                ["Wheel base", "1250 mm"],
+                ["Saddle height", "NA"],
+                ["Ground clearance", "160 mm"],
+                ["Vehicle kerb weight", "106 kg"],
+                ["Fuel tank capacity", "12 L"],
+                ["Reserve capacity", "2 L"],
+            ],
+            wheelsBrakes: [
+                ["Front Tyre", '2.75X17'],
+                ["Rear Tyre", '3.00X17'],
+                ["Front Brake", '110 mm Drum'],
+                ["Rear Brake", '110 mm Drum']
+            ],
             spares: [
                 {
                     name: "Spark Plug",
@@ -905,6 +1005,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Engine Displacement", "99.7 CC"],
                 ["Maximum Power", "3.2 kW @ 6000 rpm"],
                 ["Maximum Torque", "6.5 Nm @ 3500 rpm"]
+            ],
+            chassisSuspension: [
+                ["Front", "Telescopic spring type hydraulic"],
+                ["Rear", "Swing arm fitted with hydraulic shock absorbers"]
+            ],
+            electricals: [
+                ["Ignition System", "Electronic Ignition"],
+                ["Head Lamp", "12V, 35/35W x 1"],
+                ["Taillamp", "12V, 5/21W x 1"]
+            ],
+            dimensionWeight: [
+                ["Wheelbase", "1228 mm"],
+                ["Overall Length", "1895 mm"],
+                ["Overall Width", "670 mm"],
+                ["Overall Height", "1077 mm"],
+                ["Fuel Tank Capacity", "4 liters"]
+            ],
+            wheelsBrakes: [
+                ["Front Tyre", '2.50 x 16 - 6PR'],
+                ["Rear Tyre", '2.50 x 16 - 6PR'],
+                ["Front Brake", '80 mm Dia drum'],
+                ["Rear Brake", '110 mm Dia drum']
             ],
             spares: [
                 {
@@ -1030,6 +1152,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Transmission", "4 Forward and 1 Reverse speed Constant Mesh Fork and Cam type Shift mechanism"],
                 ["Ignition System", "DC Digital TCI"]
             ],
+            chassisSuspension: [
+                ["Chassis Type", "Semi Monocoque"],
+                ["Front", "Trailing Arm Type"],
+                ["Rear", "Coil Spring with Co-Axial Hydraulic Damper"]
+            ],
+            electricals: [
+                ["Battery", "12V, 32 Ah"],
+                ["Head Lamp", "12 V, 35/35W*2, Twin head lamp"],
+                ["Tail Lamp, Stop Lamp", "12 V, 21/5W*2"],
+                ["Turn Signal Lamp", "12 V, 10 W*4"],
+                ["Reverse Lamp", "12 V,21 W*1"]
+            ],
+            dimensionWeight: [
+                ["Wheelbase", "1985 mm"],
+                ["Wheel Track", "1150 mm"],
+                ["Overall Length", "2647 mm"],
+                ["Overall Width", "1329 mm"],
+                ["Overall Height", "1740 mm"],
+                ["Fuel Tank Capacity", "15 ± 0.5 litre (Petrol)"],
+                ["Kerb Weight", "347 kg"],
+                ["Ground Clearance", "194mm (Unladen) /165 mm (Laden)"]
+            ],
+            wheelsBrakes: [
+                ["Rim size - Front & Rear", '3.00 D x 8"'],
+                ["Tyre size - Front & Rear", '4.00 – 8, 6 PR'],
+                ["Brakes (Front & Rear)", 'Drum, Hydraulic']
+            ],
             spares: [
                 {
                     name: "Spark Plug",
@@ -1136,6 +1285,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Fuel Capacity", "16 Litres"],
                 ["Transmission", "4 Speed"]
             ],
+            chassisSuspension: [
+                ["Chassis Type", "Semi Monocoque"],
+                ["Front", "Trailing Arm Type"],
+                ["Rear", "Trailing Arm Type"]
+            ],
+            electricals: [
+                ["Battery", "12V, 32 Ah"],
+                ["Head Lamp", "35/35W, DC"]
+            ],
+            dimensionWeight: [
+                ["Wheelbase", "1990 mm"],
+                ["Overall Length", "2647 mm"],
+                ["Overall Width", "1329 mm"],
+                ["Overall Height", "1740 mm"],
+                ["Fuel Tank Capacity", "15 ± 0.5 litre (Petrol)"],
+                ["Kerb Weight", "405 kg"]
+            ],
+            wheelsBrakes: [
+                ["Tyre size - Front & Rear", '4.00 – 8.76E 6PR'],
+                ["Brakes (Front & Rear)", 'Drum, Hydraulic']
+            ],
             spares: [
                 {
                     name: "Spark Plug",
@@ -1230,6 +1400,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Max Speed", "65 ± 2 km/h"],
                 ["Maximum Torque", "18.5 Nm @ 3000 rpm"],
                 ["Transmission", "Manual 4 Speed, 1 Reverse"]
+            ],
+            chassisSuspension: [
+                ["Chassis Type", "Semi Monocoque"],
+                ["Front", "Trailing Arm Type"],
+                ["Rear", "Trailing Arm Type"]
+            ],
+            electricals: [
+                ["Battery", "12V, 32 Ah"],
+                ["Head Lamp", "35/35W, DC"],
+                ["Tail Lamp, Stop Lamp", "21 W, 5W"],
+                ["Turn Signal Lamp", "10 W"],
+                ["Reverse Lamp", "21 W"]
+            ],
+            dimensionWeight: [
+                ["Wheelbase", "1990 mm"],
+                ["Wheel Track", "1150 mm"],
+                ["Overall Length", "3010 mm"],
+                ["Overall Width", "1350 mm"],
+                ["Overall Height", "1720 mm"],
+                ["Fuel Tank Capacity", "15 ± 0.5 litre (Petrol)"],
+                ["Ground Clearance", "169 mm"],
+                ["Kerb Weight with 90% fuel", "345 kg"]
+            ],
+            wheelsBrakes: [
+                ["Rim size - Front & Rear", '.00D x 8"'],
+                ["Tyre size - Front & Rear", '4.00 – 8.76E 6PR'],
+                ["Brakes (Front & Rear)", 'Drum, Hydraulic']
             ],
             spares: [
                 {
@@ -1716,9 +1913,78 @@ document.addEventListener("DOMContentLoaded", () => {
             button.addEventListener('click', (e)=>{
                 specBtn.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
+
+            if(button.textContent.trim() === "Engine & Control"){
+                    table.innerHTML = "";
+
+                    product.specifications.forEach(spec => {
+                    const row = document.createElement("div");
+                    row.className = "tvs-spec-row";
+                    row.innerHTML = `
+                        <span>${spec[0]}</span>
+                        <strong>${spec[1]}</strong>
+                    `;
+                    table.appendChild(row);
+                    });
+                }
+
+                if(button.textContent.trim() === "Chassis & Suspension"){
+                    table.innerHTML = "";
+
+                    product.chassisSuspension.forEach(spec => {
+                    const row = document.createElement("div");
+                    row.className = "tvs-spec-row";
+                    row.innerHTML = `
+                        <span>${spec[0]}</span>
+                        <strong>${spec[1]}</strong>
+                    `;
+                    table.appendChild(row);
+                    });
+                }
+
+                if(button.textContent.trim() === "Electricals"){
+                    table.innerHTML = "";
+
+                    product.electricals.forEach(spec => {
+                    const row = document.createElement("div");
+                    row.className = "tvs-spec-row";
+                    row.innerHTML = `
+                        <span>${spec[0]}</span>
+                        <strong>${spec[1]}</strong>
+                    `;
+                    table.appendChild(row);
+                    });
+                }
+
+                if(button.textContent.trim() === "Dimension & Weight"){
+                    table.innerHTML = "";
+
+                    product.dimensionWeight.forEach(spec => {
+                    const row = document.createElement("div");
+                    row.className = "tvs-spec-row";
+                    row.innerHTML = `
+                        <span>${spec[0]}</span>
+                        <strong>${spec[1]}</strong>
+                    `;
+                    table.appendChild(row);
+                    });
+                }
+
+                if(button.textContent.trim() === "Wheels & Brakes"){
+                    table.innerHTML = "";
+
+                    product.wheelsBrakes.forEach(spec => {
+                    const row = document.createElement("div");
+                    row.className = "tvs-spec-row";
+                    row.innerHTML = `
+                        <span>${spec[0]}</span>
+                        <strong>${spec[1]}</strong>
+                    `;
+                    table.appendChild(row);
+                    });
+                }
             });
         });
-
 
         table.innerHTML = "";
 
@@ -1733,6 +1999,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /*          <button class="main-spec-btn active">Engine & Control</button>
+                <button class="main-spec-btn">Chassis & Suspension</button>
+                <button class="main-spec-btn">Electricals</button>
+                <button class="main-spec-btn">Dimension & Weight</button>
+                <button class="main-spec-btn">Wheels & Brakes</button> */
     /* =====================================================
        SPARE PARTS
     ===================================================== */
