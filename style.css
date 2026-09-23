@@ -1316,8 +1316,9 @@ h3 {
 
 .product-display.active{
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
     gap: 16px;
+    width: 100%;
     align-items: center;
 }
 
@@ -1765,10 +1766,10 @@ h3 {
     height: 90px;
   }
 
-  .product-description {
+  /*.product-description {
     font-size: 1.35rem;
     max-width: 750px;
-  }
+  }*/
 
   .action-btn {
     padding: 18px 36px;
