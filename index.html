@@ -82,7 +82,7 @@
 
                             <ul class="submenu level-2">
                                 <li class="has-flyout-2">
-                                  <a href="#" class="nav-btn" id="privacy-link">Privacy Policy</a> 
+                                  <a href="#" class="nav-btn" id="privacy-link2">Privacy Policy</a> 
                                 </li>
 
                                 <li class="has-flyout-2">
@@ -339,16 +339,16 @@
     </section>
 
     <div class="emergency">
-        <button class="cargen">
+        <button class="cargen" >
             <img src="./logos/cargen_round.png" alt="Cargen">
         </button>
 
-        <button class="whatsapp">
+        <button class="whatsapp" onclick="window.location.href=''">
             <i class="fa-brands fa-whatsapp"></i>
         </button>
 
         <button class="call">
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" onclick="window.location.href='tel:+255685711051'"></i>
         </button>
     </div>
     
@@ -393,23 +393,23 @@
       <main class="main-product-content">
 
     <!--PRODUCT-HOME-PAGE-->
-    <section id="products-home" class="products-home">
-      <div class="products-home-background"></div>
-      
-      <div class="products-home-container">
-            <div class="company-intro-container">
-                <div class="intro-header">
-                    <h1 class="gradient-headline">Powering Progress Across Motion & Industry</h1>
-                    <span class="intro-badge">
-                        <i class="fas fa-arrow-left"></i> Click to Explore Products   .
-                    </span>
-                    <p class="intro-description">
-                    Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class automotive solutions and robust engineering machinery built to perform, endure, and drive your business forward.
-                    </p>
+        <section id="products-home" class="products-home">
+            <div class="products-home-background"></div>
+            
+            <div class="products-home-container">
+                <div class="company-intro-container">
+                    <div class="intro-header">
+                        <h1 class="gradient-headline">Powering Progress Across Motion & Industry</h1>
+                        <span class="intro-badge">
+                            <i class="fas fa-arrow-left"></i> Click to Explore Products   .
+                        </span>
+                        <p class="intro-description">
+                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class Products.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
         <!---------------------------------------KIRLOSKAR PNEUMATIC------------------------------->
         <!--AIR COMPRESSORS-->
         <div class="product-display" id="air-compressors">
@@ -1028,8 +1028,8 @@
             </div>
             <div class="sidebar-items">
                 <ul class="menu">
-                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-1">Excavators</a></li>
-                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-2">Wheel Loaders</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="excavators">Excavators</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="wheel-loaders">Wheel Loaders</a></li>
                     <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-3">Attachments</a></li>
                 </ul>
             </div>
@@ -1049,25 +1049,71 @@
                             <i class="fas fa-arrow-left"></i> Click to Explore Products   .
                         </span>
                         <p class="intro-description">
-                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class automotive solutions and robust engineering machinery built to perform, endure, and drive your business forward.
+                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class products.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="product-display">
+        <div class="product-display" id="excavators">
             <div class="product-row">
-                <h1 class="product-title">PRODUCT</h1>
+                <h1 class="product-title">Crawler Excavators</h1>
                 <div class="product-image">
-                    <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015213/03+Centrifugal+AC.webp/1d9860cf-e93b-f140-bdb8-6cd192604a8e?t=1740379039618">
+                    <img src="https://develon-ce.de/wp-content/uploads/2026/09/DX400HD-9-34223.jpg">
                 </div>
 
                 <div class="product-details">
-                    <button>ADD TO CART</button>
+                    <button>REQUEST QUOTE</button>
                     <div class="product-description">
-                        <p>This range includes our reciprocating compressors KCX, 
-                            PCX, Viteza - KZX Engineered Sets and Khione Screw Compressors and Packages. 
+                        <p>Providing durability and high quality, these machines increase your operation rate and asset value, leading to ultimate satisfaction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Wheel Excavators</h1>
+                <div class="product-image">
+                    <img src="https://develon-ce.de/wp-content/uploads/2026/09/DX100W-7-28561.jpg">
+                </div>
+
+                <div class="product-details">
+                    <button>REQUEST QUOTE</button>
+                    <div class="product-description">
+                        <p>Develon wheel excavators deliver outstanding performance and stability, as well as enhanced fuel efficiency, making it most suitable for this era of high fuel prices.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Mini Excavators</h1>
+                <div class="product-image">
+                    <img src="https://develon-ce.de/wp-content/uploads/2026/09/DX35Z-7K-34930.jpg">
+                </div>
+
+                <div class="product-details">
+                    <button>REQUEST QUOTE</button>
+                    <div class="product-description">
+                        <p>Mini Excavators offer powerful digging capability, great hoisting power, and convenience for diverse work environments, and can be easily controlled in tight space.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="product-display" id="wheel-loaders">
+            <div class="product-row">
+                <h1 class="product-title">Wheel Loaders</h1>
+                <div class="product-image">
+                    <img src="https://develon-ce.de/wp-content/uploads/2026/09/DL200-7-28549.jpg">
+                </div>
+
+                <div class="product-details">
+                    <button>REQUEST QUOTE</button>
+                    <div class="product-description">
+                        <p>Develon wheel loaders offer both exceptional power and speed, allowing these machines to work in difficult conditions.
                         </p>
                     </div>
                 </div>
@@ -1088,8 +1134,7 @@
                 <ul class="menu">
                     <li class="goes-down"><a href="#" class="stage-1" data-target="lawn-mower">Lawn Mowers</a></li>
                     <li class="goes-down"><a href="#" class="stage-1" data-target="genset">Gensets</a></li>
-                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-3">Brush Cutters</a></li>
-                    <li class="goes-down"><a href="#" class="stage-1" data-target="kirloskar-3">Water Pumps</a></li>
+                    <li class="goes-down"><a href="#" class="stage-1" data-target="other-products">Other Products</a></li>
                 </ul>
             </div>
         </div>
@@ -1149,30 +1194,77 @@
 
         <div class="product-display" id="genset">
             <div class="product-row">
-                <h1 class="product-title">Push Mower Engines</h1>
+                <h1 class="product-title">3500 Watt - 8000 Watt Portable Generator</h1>
                 <div class="product-image">
-                    <img src="https://www.briggsandstratton.com/hubfs/briggsandstratton/NA/EN_US/Engines/Push%20Engines/Product%20Images/BAS_E_Series_FR.jpg">
+                    <img src="https://www.briggsandstratton.com/hubfs/briggsandstratton/NA/EN_US/Products/Portable%20Generators/Product%20Images/BAS_PG_030737_5000W_FL.jpg">
                 </div>
 
                 <div class="product-details">
                     <button>ADD TO CART</button>
                     <div class="product-description">
-                        <p>This range includes E Series, EX Series, EXi Series and PXi Series Engines
+                        <p>Power your home essentials with the Briggs & Stratton for safe, reliable backup power during outages.
                         </p>
                     </div>
                 </div>
             </div>
 
             <div class="product-row">
-                <h1 class="product-title">Riding Mower Engines</h1>
+                <h1 class="product-title">P2400 - P4500 Series Invertor Generator</h1>
                 <div class="product-image">
-                    <img src="https://www.briggsandstratton.com/hubfs/briggsandstratton/NA/EN_US/Engines/Ride%20Engines/Product%20Images/BAS_EX_Series_FR%20(1).jpg">
+                    <img src="https://www.briggsandstratton.com/hubfs/briggsandstratton/NA/EN_US/Products/Portable%20Generators/Product%20Images/030802_AUS_P2500_RF.jpg">
                 </div>
 
                 <div class="product-details">
                     <button>ADD TO CART</button>
                     <div class="product-description">
-                        <p>This range includes E Series, EX Series, EXi Series and PXi Series Engines
+                        <p>safety technology, and quiet inverter power safe for sensitive electronics like laptops and phones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Inverter Parallel Kit</h1>
+                <div class="product-image">
+                    <img src="https://www.briggsandstratton.com/hubfs/briggsandstratton/NA/EN_US/Products/Portable%20Generators/Product%20Images/6278-RF-Product-Image.jpg">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Double your power by connecting two inverter generators with the Briggs & Stratton Parallel Kit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-display" id="other-products">
+            <div class="product-row">
+                <h1 class="product-title">Water Pumps</h1>
+                <div class="product-image">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/JB/AB/QA/1037813/briggs-stratton-high-lift-agricultural-water-pump.JPG">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Reliable engine-driven water pumps and transfer pumps designed for irrigation, draining pools, and flood cleanup.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Brush Cutters</h1>
+                <div class="product-image">
+                    <img src="https://cargen.com/wp-content/uploads/2025/09/Brush-cutter-3.png">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Grass cutting, landscaping, grounds maintenance and clearing overgrown vegetation.
                         </p>
                     </div>
                 </div>
@@ -1445,9 +1537,9 @@
                         <a href="#" class="stage-1" data-target="ingersoll-1">Ingersoll Rand</a>
 
                         <ul class="stage-2" id="ingersoll-1">
-                            <li><a href="#" class="sub-link">Air Compressors</a></li>
-                            <li><a href="#" class="sub-link">Power Tools</a></li>
-                            <li><a href="#" class="sub-link">Lifting Solutions</a></li>
+                            <li><a href="#" class="sub-link" data-target="ingersoll-air">Air Compressors</a></li>
+                            <li><a href="#" class="sub-link" data-target="power-tools">Power Tools</a></li>
+                            <li><a href="#" class="sub-link" data-target="dryers">Dryers</a></li>
                         </ul>
                     </li>
                     <li class="goes-down">
@@ -1502,19 +1594,360 @@
                 </div>
             </div>
         </section>
-        <div class="product-display">
+        <!--==========================INGERSOLL=============================-->
+        <div class="product-display" id="ingersoll-air">
             <div class="product-row">
-                <h1 class="product-title">PRODUCT</h1>
+                <h1 class="product-title">Reciprocating Air Compressors</h1>
                 <div class="product-image">
-                    <img src="https://www.kirloskarpneumatic.com/documents/3010307/3015213/03+Centrifugal+AC.webp/1d9860cf-e93b-f140-bdb8-6cd192604a8e?t=1740379039618">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blteefb1d3c2852a7a3/678a4c43aead427ea95de1cb/IRP-Product-Photo-Single-stage-reciprocating-compressor.webp?format=pjpeg&width=700&quality=75&auto=webp">
                 </div>
 
                 <div class="product-details">
                     <button>ADD TO CART</button>
                     <div class="product-description">
-                        <p>This range includes our reciprocating compressors KCX, 
-                            PCX, Viteza - KZX Engineered Sets and Khione Screw Compressors and Packages. 
-                        </p>
+                        <p>Ingersoll Rand has designed reciprocating single stage and two stage air compressors to last a lifetime.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Centrifugal Compressors</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt4d801fa9d7d7d835/67adb6027338cdb7eea66762/IRP-Product-Photo-MSG-Turbo-Air-NX-5000-Compressor-Photo.webp?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Ingersoll Rand centrifugal compressors deliver reliable, oil-free compressed air for operations that demand continuous performance, energy efficiency, and long-term value.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Oil-Flooded Compressors</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt8ceb7a968d7ba50f/67b71609dec8aeadb416c4e0/IRP-Product-Photo-Exterior-right-ng-r-series-200-250-vsd.jpg?auto=webp&width=1000&quality=75">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Built to support 24/7 operations, delivering consistent performance across demanding production environments, since 1870.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Oil-Free Compressors</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/bltecacae2b25700252/67b715bddec8ae79c516c466/IRP-Product-Photo-Exterior-front-E315i.jpg?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Get 100% clean, oil‑free air with uncompromising reliability and efficiency. Backed by over 150 years of innovation and certified to ISO 8573‑1 for the highest air purity.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">High Pressure Compressors</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/bltdf762dc1b73157ca/680a0c33ef6f872ed74980fd/IRP-Product-Photo-Wh-series-centrifugal-compressor.webp?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Meets the unique challenges of PET bottle blowing with advanced technologies tailored to your individual production requirements.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-display" id="power-tools">
+            <div class="product-row">
+                <h1 class="product-title">Assembly Solutions</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/bltd89674ca5491ef9a/blt1efc4bf55936d2e6/68a883ccc4547f2d48e9f0a7/pulse-tools_teaser.jpg?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Explore intelligent, integrated tools and data-driven solutions designed to boost productivity, ensure precise and consistent performance
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Construction Tools</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/bltd89674ca5491ef9a/blta52d9a44e54a9a95/677fe6011f9846abb0209e0b/33skadrillp001ljpg-square.jpg?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Spike Drivers, Rivet Busters, Pavement Breakers, Large Drills, Chipping Hammers, Diggers etc</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Drilling & Bolting Tools</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/bltd89674ca5491ef9a/blta509dbc5d49b1975/67ad2816cfa64292ef71e43f/main-teasers-impact-wrench-square.jpg?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Drills, Impact Wrenches, Ratchet Wrenches, Riveting Tools and High Torque Tools.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Engine Starters & Air Motors</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/bltd89674ca5491ef9a/blt69c885ee698a275e/67ae5e74f88739b970bc4cc0/irst500starterljpg.jpg?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Bearing Motors, Air Starters and Air Motors.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Surface Preparation & Finishing Tools</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/bltd89674ca5491ef9a/blt85d8dbe936fcf1c2/67ae60ee4a18e383f4d0a72d/main-teasers-cutting-tool.jpg?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Whether you need to remove heavy weld slag in an industrial setting, or are tasked with cleaning up a delicate surface, Ingersoll Rand® has the right surface prep tool for the job.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Lifting Solutions</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blt753b86729725ee9d/blt390c2ed8177a3fcf/686fac990e14d26efab7279e/main-thumbnail-bop-handling-system.jpg?format=pjpeg&width=1000&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Winches, Hoists, BOP Lifting Systems, Support Structures, Balancers & Handling Devices.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-display" id="dryers">
+            <div class="product-row">
+                <h1 class="product-title">Cycling-Refrigerated Compressed Dryer</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt6389a25b45f6847e/691466b4f97c8d86769ee6c2/IR-ESD-7500-Cycling-Dryer-left.jpg?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>High‑efficiency cycling refrigerated air dryers deliver consistent, high‑quality dry air while significantly reducing energy consumption during low‑load operation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Non‑Cycling Refrigerated Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt3e9e0206d9de971e/679c82ccc0e755b6c1a1f998/IRP-Product-Photo-ncr-0-2-8-m3-min-7-212-cfm.webp.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>deliver reliable, energy‑efficient drying with low‑GWP refrigerants, helping reduce lifecycle costs while providing clean, dry compressed air.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Subfreezing Compressed Air Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/bltbc31a0a65f48167d/67b716a5dec8ae4da716c589/IRP-en-Product-Photo-Exterior-front-sfseries.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Ingersoll Rand SF Subfreezing Dryers deliver ISO Class 3 compressed air with a ‑20 °C pressure dew point.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Heated Desiccant Compressed Air Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/bltb7da6c8446d8229c/67b716b36cf21aadc1a16c95/IRP-Product-Photo-Exterior-back-heated-blower.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Ingersoll Rand heated blower desiccant dryers deliver ultra‑dry compressed air for critical applications while minimizing energy losses.  </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Heatless Desiccant Compressed Air Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt19a18ac95d6b2b33/6792a2f3edfadc1dd93affae/IRP-Product-Photo-Heatless-Dessicant-Dryer-Group.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Deliver a consistent supply of clean, dry compressed air with a simple and reliable operating principle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Heat-Of Compression Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt0bbcf4a88b8ecccf/67b71565515b1b69049482b4/IRP-en-Product-Photo-Exterior-front-Heat_of_compression_dryers_420-3-680_m3-h.jpg?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Deliver energy‑efficient drying for oil‑free compressed air systems by reusing heat generated during the compression process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Compressed Air Filtration</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt6232cf3be5bb193d/6792a59a593b916a930b29d1/IRP-Product-Photo-f-series-compressed-air-filter.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Designed to remove solid particles, oil aerosols, and contaminants from the air stream, protecting downstream equipment and ensuring consistent air quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--==========================COMPAIR=============================-->
+        <div class="product-display" id="compair-air">
+            <div class="product-row">
+                <h1 class="product-title">Oil Lubricated Air Compressers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta76611689adb5848/blt66743f5714b93434/67ef899fedd8a944a831b47d/l06-with-tank.jpg?format=pjpeg&width=1300&quality=80&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>High‑efficiency cycling refrigerated air dryers deliver consistent, high‑quality dry air while significantly reducing energy consumption during low‑load operation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Non‑Cycling Refrigerated Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt3e9e0206d9de971e/679c82ccc0e755b6c1a1f998/IRP-Product-Photo-ncr-0-2-8-m3-min-7-212-cfm.webp.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>deliver reliable, energy‑efficient drying with low‑GWP refrigerants, helping reduce lifecycle costs while providing clean, dry compressed air.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Subfreezing Compressed Air Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/bltbc31a0a65f48167d/67b716a5dec8ae4da716c589/IRP-en-Product-Photo-Exterior-front-sfseries.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Ingersoll Rand SF Subfreezing Dryers deliver ISO Class 3 compressed air with a ‑20 °C pressure dew point.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Heated Desiccant Compressed Air Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/bltb7da6c8446d8229c/67b716b36cf21aadc1a16c95/IRP-Product-Photo-Exterior-back-heated-blower.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Ingersoll Rand heated blower desiccant dryers deliver ultra‑dry compressed air for critical applications while minimizing energy losses.  </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Heatless Desiccant Compressed Air Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt19a18ac95d6b2b33/6792a2f3edfadc1dd93affae/IRP-Product-Photo-Heatless-Dessicant-Dryer-Group.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Deliver a consistent supply of clean, dry compressed air with a simple and reliable operating principle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Heat-Of Compression Dryers</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt0bbcf4a88b8ecccf/67b71565515b1b69049482b4/IRP-en-Product-Photo-Exterior-front-Heat_of_compression_dryers_420-3-680_m3-h.jpg?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Deliver energy‑efficient drying for oil‑free compressed air systems by reusing heat generated during the compression process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-row">
+                <h1 class="product-title">Compressed Air Filtration</h1>
+                <div class="product-image">
+                    <img src="https://azure-na-images.contentstack.com/v3/assets/blta3c1d56420975795/blt6232cf3be5bb193d/6792a59a593b916a930b29d1/IRP-Product-Photo-f-series-compressed-air-filter.webp?format=pjpeg&width=700&quality=75&auto=webp">
+                </div>
+
+                <div class="product-details">
+                    <button>ADD TO CART</button>
+                    <div class="product-description">
+                        <p>Designed to remove solid particles, oil aerosols, and contaminants from the air stream, protecting downstream equipment and ensuring consistent air quality.</p>
                     </div>
                 </div>
             </div>
@@ -1859,8 +2292,8 @@
             <div class="footer-column">
                 <h4>Quick Links</h4>
                 <p><a href="#" data-type="all" data-target="all" class="main-links">Home</a></p>
-                <p><a href="#about-us" data-type="all" data-target="about-us" class="main-links">About Us</a></p>
-                <p><a href="#contact-us" data-type="all" data-target="contact-us" class="main-links">Contact Us</a></p>
+                <p><a href="#about-us"class="main-links">About Us</a></p>
+                <p><a href="#contact-us"class="main-links">Contact Us</a></p>
             </div>
             <div class="footer-column">
                 <h4>Legal</h4>
@@ -1872,9 +2305,9 @@
                     <p><i class="fas fa-building"></i>  Car and General Trading Limited</p>
                     <p><i class="fas fa-envelope"></i>  P.O.Box 1552,</p> 
                     <p><i class="fas fa-location"></i>  Posta-Azikiwe,Dar es Salaam-Tanzania,</p>
-                    <p><i class="fas fa-phone"></i>  Tel: +255 22 2113016</p>
-                    <p><i class="fas fa-mobile-alt"></i>  Mobile: +255 685711051,</p>
-                    <p><i class="fas fa-envelope"></i>  info@cargen.co.tz</p>
+                    <a href="tel:+255222113016"><i class="fas fa-phone"></i>  Tel: +255 22 2113016</a>
+                    <a href="tel:+255685711051"><i class="fas fa-mobile-alt"></i>  Mobile: +255 685711051</a>
+                    <a href="mailto:info@cargen.co.tz"><i class="fas fa-envelope"></i>  info@cargen.co.tz</p></a>
             </div>
             <div class="footer-column">
                 <h4>Follow Us</h4>

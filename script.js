@@ -244,11 +244,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================================================
 
 const privacyLink = document.getElementById('privacy-link');
+const privacyLink2 = document.getElementById('privacy-link2');
 const privacyModal = document.getElementById('privacy-modal');
 const closeModal = document.getElementById('close-modal');
 
-if (privacyLink && privacyModal) {
+if (privacyLink && privacyModal || privacyLink2 && privacyModal) {
   privacyLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    privacyModal.style.display = 'flex';
+  });
+
+  privacyLink2.addEventListener('click', (e) => {
     e.preventDefault();
     privacyModal.style.display = 'flex';
   });
@@ -284,7 +290,7 @@ window.addEventListener('click', (e) => {
 
 
 // Array of background image for products page URLs
-const backgroundImages = [
+/*const backgroundImages = [
   'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80',
   'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80',
   'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80'
@@ -321,7 +327,7 @@ function rotateBackgrounds() {
 }
 
 // Rotate images every 6 seconds
-setInterval(rotateBackgrounds, 5000);
+setInterval(rotateBackgrounds, 5000);*/
 
 
 /*TVS PRODUCT SECTION===============================================================================
@@ -548,14 +554,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     image: "assets/tvs/hlx150x/colours/hlx-150x-black.webp"
                 },
                 {
-                    name: "Flame Red",
-                    hex: "#d52630",
-                    image: "assets/tvs/hlx150x/colours/hlx-150x-red.webp"
-                },
-                {
                     name: "Polyster Blue",
                     hex: "#0b2edc",
                     image: "assets/tvs/hlx150x/colours/hlx-150x-blue.webp"
+                },
+                {
+                    name: "Flame Red",
+                    hex: "#d52630",
+                    image: "assets/tvs/hlx150x/colours/hlx-150x-red.webp"
                 }
             ],
             specifications: [
@@ -704,32 +710,17 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             colours: [
                 {
-                    name: "Black-1",
-                    hex: "#171717",
-                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-black.webp"
-                },
-                {
-                    name: "Black-2",
+                    name: "Black",
                     hex: "#171717",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-black1.webp"
                 },
                 {
-                    name: "Blue-1",
-                    hex: "#0922e7",
-                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-blue.webp"
-                },
-                {
-                    name: "Blue-2",
+                    name: "Blue",
                     hex: "#0c21e3",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-blue2.webp"
                 },
                 {
-                    name: "Red-1",
-                    hex: "#d52630",
-                    image: "assets/tvs/hlx1255g/colours/hlx-125-5g-red.webp"
-                },
-                {
-                    name: "Red-2",
+                    name: "Red",
                     hex: "#d52630",
                     image: "assets/tvs/hlx1255g/colours/hlx-125-5g-red2.webp"
                 }
@@ -1601,7 +1592,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-            card.addEventListener("click", () => loadProduct(id));
+            card.addEventListener("click", () => {
+                const specBtn = document.querySelectorAll('.main-spec-btn');
+                const featureBtn = document.querySelectorAll('.main-feature-btn');
+
+                featureBtn.forEach(button => button.classList.remove("active"));
+                specBtn.forEach(button => button.classList.remove("active"));
+                loadProduct(id)
+            });
             categoryProducts.appendChild(card);
         });
 
@@ -2033,7 +2031,14 @@ function renderRelated(currentId) {
             </div>
         `;
 
-        card.addEventListener("click", () => loadProduct(id));
+        card.addEventListener("click", () => {
+            const specBtn = document.querySelectorAll('.main-spec-btn');
+            const featureBtn = document.querySelectorAll('.main-feature-btn');
+
+            featureBtn.forEach(button => button.classList.remove("active"));
+            specBtn.forEach(button => button.classList.remove("active"));
+            loadProduct(id)
+        });
 
         slider.appendChild(card);
     });
