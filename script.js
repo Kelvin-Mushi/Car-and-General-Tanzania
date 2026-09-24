@@ -321,6 +321,52 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
 
+/*==============request quote form================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('quoteModal');
+  const closeModalBtn = document.getElementById('closeQuoteModal');
+  
+  // Select all quote buttons strictly by class
+  const quoteButtons = document.querySelectorAll('.request-quote-btn');
+
+  quoteButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Find the parent product-row of the clicked button
+      const productRow = btn.closest('.product-row');
+      
+      if (productRow) {
+        const title = productRow.querySelector('.product-title')?.innerText || 'Product Quote';
+        const imgSrc = productRow.querySelector('.product-image img')?.src || '';
+
+        // Update modal display elements
+        document.getElementById('modalProductTitle').innerText = title;
+        document.getElementById('modalProductImg').src = imgSrc;
+
+        // Set hidden form fields for email submission
+        document.getElementById('hiddenProductTitle').value = title;
+        document.getElementById('hiddenProductImg').value = imgSrc;
+      }
+
+      // Display the modal
+      modal.classList.add('active');
+    });
+  });
+
+  // Close modal when clicking the X button
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  // Close modal when clicking outside the card overlay
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+});
+
 /*====================COUNTER====================== */
 document.addEventListener('DOMContentLoaded', () => {
   const counters = document.querySelectorAll('.count-num');

@@ -815,7 +815,7 @@
                 </div>
 
                 <div class="product-details">
-                    <button>REQUEST QUOTE</button>
+                    <button class="request-quote-btn">REQUEST QUOTE</button>
                     <div class="product-description">
                         <p>Capacity Range:600 - 8100 CFM | Pressure Range:2.5 to 10.4 kg/cm2(g) | Type:Oil-Free <br> Industry: Power Generation | Automotive | Energy | General Engineering | Pharmaceutical | Steel | Textile</p>
                     </div>
@@ -831,7 +831,7 @@
                 </div>
 
                 <div class="product-details">
-                    <button>REQUEST QUOTE</button>
+                    <button class="request-quote-btn">REQUEST QUOTE</button>
                     <div class="product-description">
                         <p>Designed to withstand hard conditions, these screw compressors deliver unparalleled performance across applications.</p>
                     </div>
@@ -3005,6 +3005,76 @@
     </div>
 
     </section>
+
+    <!--REQUEST QUOTE FORM-->
+    <!-- Modal Overlay -->
+    <div class="quote-modal-overlay" id="quoteModal">
+        <div class="quote-modal-card">
+            <button class="modal-close-btn" id="closeQuoteModal">&times;</button>
+            
+            <div class="modal-header">
+            <h2>Request a Formal Quote</h2>
+            <p>Fill out the details below and our sales team will respond within 24 hours.</p>
+            </div>
+
+            <!-- Product Summary Preview -->
+            <div class="modal-product-preview">
+            <img id="modalProductImg" src="" alt="Selected Product">
+            <div>
+                <span class="preview-label">Selected Item:</span>
+                <h3 id="modalProductTitle">Product Title</h3>
+            </div>
+            </div>
+
+            <!-- Quote Form (Action routes to Formspree for info@cargen.com) -->
+            <form action="https://formspree.io/f/info@cargen.com" method="POST" class="quote-form">
+            
+            <!-- Hidden fields to pass product details to the email -->
+            <input type="hidden" name="Selected_Product" id="hiddenProductTitle">
+            <input type="hidden" name="Product_Image_URL" id="hiddenProductImg">
+
+            <div class="form-row">
+                <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="Full Name" required placeholder="First Second Third">
+                </div>
+                <div class="form-group">
+                <label for="companyName">Company / Business Name *</label>
+                <input type="text" id="companyName" name="Company Name" required placeholder="Company / Business Name">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="Email" required placeholder="username@company.com">
+                </div>
+                <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="Phone Number" required placeholder="+255 700 000 000">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                <label for="quantity">Estimated Quantity *</label>
+                <input type="number" id="quantity" name="Quantity" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                <label for="location">Delivery City / Region *</label>
+                <input type="text" id="location" name="Delivery Location" required placeholder="Dar es Salaam, Arusha, etc.">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Specifications / Requirements</label>
+                <textarea id="message" name="Project Details" rows="3" placeholder="Add specifications, or installation requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-quote-btn">Submit Quote Request</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Floating Privacy Policy Page -->
     <div id="privacy-modal" class="modal-overlay">
