@@ -1277,8 +1277,9 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size:cover; /* Fits width while keeping scale manageable */
-  background-position: center top; /* Centers subject details */
+  
+  background-size:cover;
+  background-position: center top;
   background-repeat: no-repeat;
   transition: opacity 1s ease-in-out;
   z-index: -1;
@@ -1570,8 +1571,89 @@ h3 {
   height: 100%;
   display: flex;
   margin-top: 30px;
-  margin-left: 50px;
 }
+.intro-header{
+  background-color: #f4f6f8;
+  border-radius: 20px;  
+  padding: 40px 20px;
+}
+
+/*Archievements Decor*/
+/* Container set to occupy the remaining panel dimensions */
+.achievements-showcase {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #f4f6f8;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.achievements-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.achievements-header .sub-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--accent-red, #e31b23);
+  text-transform: uppercase;
+}
+
+.achievements-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin: 6px 0 0 0;
+}
+
+/* 3 x 2 Grid layout matching the screenshot structure */
+.stats-counter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Card Styling */
+.counter-card {
+  background: #ffffff;
+  border: 1px solid #eaedf1;
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.counter-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent-red, #e31b23);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.counter-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444444;
+  display: block;
+}
+
 .product-subtitle{
     /*background-color: #e2e8f0;*/
     background-color:white;
@@ -1591,11 +1673,13 @@ h3 {
     transition: 0.3s ease;
 }
 
-.product-display.active{
+.product-display.active {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
     width: 100%;
+    box-sizing: border-box;
+    justify-items: center;
     align-items: center;
 }
 
@@ -1651,30 +1735,35 @@ h3 {
     display: flex;
     flex-direction: column;
 }
-.product-image{
+.product-image {
     display: flex;
     justify-content: center;
     height: 300px;
-    width: 400px !important;
+    width: 100%;             /* Allow fluid scaling inside grid columns */
+    min-width: 400px;        /* Capped at 400px so it doesn't blow up too big */
+    box-sizing: border-box;  /* Ensures padding doesn't increase width */
     background-color: white;
     border: 1px solid var(--card-border);
     transition: 0.3s ease;
     border-radius: 10px;
 }
 
-.product-image:hover{
+.product-image:hover {
     padding-left: 5px;
 }
 
-.product-image img{
+.product-image img {
     height: 250px;
+    min-width: 100%;         /* Keep image inside image container bounds */
     width: auto;
     align-self: center;
     object-fit: contain;
 }
 
-.product-details{
-    width: 400px !important;
+.product-details {
+    width: 100%;             /* Allow fluid scaling */
+    min-width: 400px;        /* Match top container max-width */
+    box-sizing: border-box;
     height: 150px;
     background-color: white;
     border: 1px solid var(--card-border);
@@ -1707,40 +1796,6 @@ h3 {
     padding: 10px;
     margin-bottom: 10px;
     transition: 0.3s ease;
-}
-
-/*PRODUCTS RESPONSIVENESS*/
-@media (min-width:768px){
-    
-}
-
-
-@media (min-width: 1200px) {
-    .product-row{
-        flex-direction: column;
-    }
-    .product-image{
-        height: 300px;
-        width: 600px;
-    }
-    .product-details{
-    width: 600px;
-    }
-
-}
-
-@media (min-width: 1600px) {
-    .product-row{
-        flex-direction: column;
-    }
-    .product-image{
-        height: 400px;
-        width: 800px;
-    }
-    .product-details{
-    width: 800px;
-    }
-
 }
 
 /* Footer Section */
@@ -1887,20 +1942,7 @@ h3 {
 /*******************RESPONSIVENESS*************************/
 /* Responsive Behavior for Mobile Screens */
 @media (max-width: 868px) {
-  .product-container {
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
-  
-  .product-right {
-    align-items: flex-start;
-    text-align: left;
-    margin-top: 20px;
-  }
-  
-  .big-heading {
-    font-size: 2.8rem;
-  }
+
 }
 
 /* Smooth appearance animation */

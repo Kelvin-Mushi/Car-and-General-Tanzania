@@ -321,7 +321,45 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
 
+/*====================COUNTER====================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.count-num');
+  const animationDuration = 1800; // Takes 1.8 seconds to count up
 
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const startTime = performance.now();
+
+      const updateCount = (currentTime) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / animationDuration, 1);
+
+        // Smooth ease-out effect
+        const easeOutQuad = 1 - Math.pow(1 - progress, 3);
+        const currentCount = Math.floor(easeOutQuad * target);
+
+        counter.innerText = currentCount.toLocaleString();
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    });
+  };
+
+  // Run immediately on page load
+  animateCounters();
+
+  // Re-run every 4000 milliseconds (4 seconds)
+  setInterval(() => {
+    animateCounters();
+  }, 4000);
+});
 // ==========================================================================
 // 3. MODALS (PRIVACY POLICY & TERMS)
 // ==========================================================================
