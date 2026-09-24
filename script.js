@@ -150,7 +150,7 @@ window.addEventListener('popstate', (e) => {
 
 
 // ==========================================================================
-// 2. SIDEBAR DROPDOWNS & UI TOGGLES
+// SIDEBAR DROPDOWNS & UI TOGGLES
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -233,6 +233,89 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  //about us
+    const aboutExtended = document.getElementById('extended-about');
+    const historyLink = document.getElementById('history-link');
+    const historySection = document.getElementById('history-section');
+    const seeMoreBtn = document.getElementById('see-more-btn');
+    const managementTeamBtn = document.getElementById('management-team-btn');
+    const managementTeamSection = document.getElementById('management-team');
+
+    seeMoreBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        aboutExtended.classList.add('active');
+
+        setTimeout(()=>{
+            aboutExtended.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+
+    })
+
+    historyLink.addEventListener('click', (e) => {
+    e.preventDefault();
+
+        if (historyLink && historySection) {
+            historyLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // 1. Reveal section using correct variable name
+                aboutExtended.classList.add('active');
+                
+                // 2. Allow 50ms for browser layout reflow before scrolling
+                setTimeout(() => {
+                historySection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                }, 50);
+            });
+        }
+    });
+
+    managementTeamBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+        if (managementTeamBtn && managementTeamSection) {
+            managementTeamBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // 1. Reveal section using correct variable name
+                aboutExtended.classList.add('active');
+                
+                // 2. Allow 50ms for browser layout reflow before scrolling
+                setTimeout(() => {
+                managementTeamSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                }, 50);
+            });
+        }
+    });
+
+    if(aboutExtended){
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        // If section is active BUT its top edge drops below or goes above view boundary
+        if (aboutExtended.classList.contains('active')) {
+            const rect = entry.boundingClientRect;
+            
+            // When user scrolls back UP past the top of the section
+            if (rect.top > window.innerHeight || rect.bottom < 0) {
+            aboutExtended.classList.remove('active');
+            }
+        }
+        });
+    }, {
+        threshold: 0 // Triggers as soon as the section completely leaves the viewport
+    });
+
+    observer.observe(aboutExtended);
+    }
+    
   // Footer Year
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
@@ -266,12 +349,19 @@ if (closeModal && privacyModal) {
   });
 }
 
+//terms
 const termsLink = document.getElementById('terms-link');
 const termsModal = document.getElementById('terms-modal');
 const closeModal2 = document.getElementById('close-modal2');
+const termsLink2 = document.getElementById('terms-link2');
 
-if (termsLink && termsModal) {
+if (termsLink && termsModal || termsLink2 && termsModal) {
   termsLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    termsModal.style.display = 'flex';
+  });
+
+  termsLink2.addEventListener('click', (e) => {
     e.preventDefault();
     termsModal.style.display = 'flex';
   });
@@ -578,7 +668,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Rear Suspension", "Hydraulic Shock absorber"]
             ],
             electricals: [
-                ["Battery", "12V, 5Ah"],
                 ["Gear Indication", "12V, 1.7Wx5"]
             ],
             dimensionWeight: [
@@ -1136,7 +1225,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             specifications: [
                 ["Engine Type", "4 Stroke, Single Cylinder Air Cooled, Spark ignition Si-Engine"],
-                ["Starting", "Electric (ISG) and Hand Start"],
+                ["Starting", "Electric and Hand Start"],
                 ["Engine Displacement", "199.26 cc"],
                 ["Maximum Power", "7.5 Kw @ rpm 5500"],
                 ["Maximum Torque", "15.5 Nm @ 3250 rpm"],
@@ -1161,14 +1250,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Overall Length", "2647 mm"],
                 ["Overall Width", "1329 mm"],
                 ["Overall Height", "1740 mm"],
-                ["Fuel Tank Capacity", "15 ± 0.5 litre (Petrol)"],
+                ["Fuel Tank Capacity", "10 litre (Petrol)"],
                 ["Kerb Weight", "347 kg"],
                 ["Ground Clearance", "194mm (Unladen) /165 mm (Laden)"]
             ],
             wheelsBrakes: [
                 ["Rim size - Front & Rear", '3.00 D x 8"'],
                 ["Tyre size - Front & Rear", '4.00 – 8, 6 PR'],
-                ["Brakes (Front & Rear)", 'Drum, Hydraulic']
+                ["Brakes (Front & Rear)", 'Drum, Hydraulic & Automatic Adjuster Type']
             ],
             spares: [
                 {
@@ -1271,10 +1360,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             ],
             specifications: [
-                ["Engine Type", "Single Cylinder"],
-                ["Engine Displacement", "199 cc"],
-                ["Fuel Capacity", "16 Litres"],
-                ["Transmission", "4 Speed"]
+                ["Engine Type", "4 Stroke,Air Cooled,Single cylinder SI Engine"],
+                ["Engine Displacement", "199.26 cc"],
+                ["Maximum Power", "6.3 Kw @ 5500 rpm"],
+                ["Maximum Torque", "13 Nm @ 3250 rpm"],
+                ["Starting", "Electric Start/ Hand Start"],
+                ["Ignition System", "DC Digital TCI"],
+                ["Megneto", "12V, 65W @1000rpm & 155 w @2000 rpm"],
+                ["Transmission", "4 Forward and 1 Reverse speed"]
             ],
             chassisSuspension: [
                 ["Chassis Type", "Semi Monocoque"],
@@ -1283,14 +1376,14 @@ document.addEventListener("DOMContentLoaded", () => {
             ],
             electricals: [
                 ["Battery", "12V, 32 Ah"],
-                ["Head Lamp", "35/35W, DC"]
+                ["Head Lamp", "12V,35/35Wx2"]
             ],
             dimensionWeight: [
                 ["Wheelbase", "1990 mm"],
                 ["Overall Length", "2647 mm"],
                 ["Overall Width", "1329 mm"],
                 ["Overall Height", "1740 mm"],
-                ["Fuel Tank Capacity", "15 ± 0.5 litre (Petrol)"],
+                ["Fuel Tank Capacity", "30 Litre CNG tank with 8 Litre petrol tank"],
                 ["Kerb Weight", "405 kg"]
             ],
             wheelsBrakes: [
@@ -1384,7 +1477,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             ],
             specifications: [
-                ["Engine Type", " Stroke, Liquid cooled, Single Cylinder"],
+                ["Engine Type", "4 Stroke, Liquid cooled, Single Cylinder"],
                 ["Starting", "Electric (ISG) and Hand Start"],
                 ["Engine Displacement", "225.8 cc"],
                 ["Maximum Power", "7.8 kW(10 bhp) @ 4750 rpm"],
@@ -1415,7 +1508,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ["Kerb Weight with 90% fuel", "345 kg"]
             ],
             wheelsBrakes: [
-                ["Rim size - Front & Rear", '.00D x 8"'],
+                ["Rim size - Front & Rear", '3.00D x 8"'],
                 ["Tyre size - Front & Rear", '4.00 – 8.76E 6PR'],
                 ["Brakes (Front & Rear)", 'Drum, Hydraulic']
             ],

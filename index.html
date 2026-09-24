@@ -75,7 +75,7 @@
             
                     <!-- Level 2: First Flyout Menu -->
                     <ul class="submenu level-1">
-                        <li> <a href="#" class="nav-btn">History</a> </li>
+                        <li> <a href="#" class="nav-btn" id="history-link">History</a> </li>
                         
                         <li class="has-flyout">
                             <a href="#" class="nav-btn">Company Policies<i class="fas fa-chevron-right"></i></a>
@@ -86,16 +86,12 @@
                                 </li>
 
                                 <li class="has-flyout-2">
-                                  <a href="#" class="nav-btn" data-target="develon-section" data-route="develon-section">Cookie Policy</a>
-                                </li>
-
-                                <li class="has-flyout-2">
-                                  <a href="#" class="nav-btn" data-target="cummins-section" data-route="cummins-section">Customer Service Policy</a>
+                                  <a href="#" class="nav-btn" id="terms-link2">Terms & Conditions</a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li><a href="#" class="nav-btn">Management Team</a></li>
+                        <li><a href="#" class="nav-btn" id="management-team-btn">Management Team</a></li>
                         <li><a href="#our-brands" class="nav-btn">Key Partnerships</a></li>
                     </ul>
                 </li>
@@ -208,14 +204,14 @@
                 </p>
 
                 <!-- Action Buttons -->
-                <div class="cg-hero-actions">
+                <!--<div class="cg-hero-actions">
                 <a href="#our-products" class="cg-btn cg-btn-primary">
                     Explore Our Products <i class="fas fa-arrow-right"></i>
                 </a>
                 <a href="#dealer-locator" class="cg-btn cg-btn-outline">
                     <i class="fas fa-map-marker-alt"></i> Find A TVS Dealer
                 </a>
-                </div>
+                </div>-->
 
                 <!-- Trust Badges & Stats Bar -->
                 <div class="cg-hero-stats">
@@ -278,13 +274,13 @@
 
       <!--our brands-->
         <section class="our-brands-section" id="our-brands">
-            <h2 class="our-brands-title">Our Brands</h2>
+            <h2 class="section-title">Our Brands</h2>
 
             <div class="brands-grid">
                 <!-- TVS -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="assets/tvs/tvs-logo.png" alt="tvs" loading="lazy">
+                    <a href="" data-target="tvs-page-section"><img src="assets/tvs/tvs-logo.png" alt="tvs" loading="lazy"></a>
                 </div>
                 <span class="brand-name">TVS</span>
                 </div>
@@ -292,7 +288,7 @@
                 <!-- Briggs & Stratton -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/briggslogo.png.webp" alt="Briggs & Stratton" loading="lazy">
+                    <a href="" data-target="briggs-section"><img src="products_logos/briggslogo.png.webp" alt="Briggs & Stratton" loading="lazy"></a>
                 </div>
                 <span class="brand-name">Briggs & Stratton</span>
                 </div>
@@ -300,15 +296,15 @@
                 <!-- Cummins Power -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/cumminspower.png" alt="Cummins Power Generation" loading="lazy">
+                    <a href="" data-target="cummins-section"><img src="products_logos/cumminspower.png" alt="Cummins Power Generation" loading="lazy"></a>
                 </div>
-                <span class="brand-name">Cummins Power</span>
+                <span class="brand-name">Cummins</span>
                 </div>
 
                 <!-- Develon -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/develonlogo.png" alt="Develon" loading="lazy">
+                    <a href="" data-target="develon-section"><img src="products_logos/develonlogo.png" alt="Develon" loading="lazy"></a>
                 </div>
                 <span class="brand-name">Develon</span>
                 </div>
@@ -316,7 +312,7 @@
                 <!-- Fleetguard -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/fleetguard.png" alt="Fleetguard" loading="lazy">
+                    <a href="" data-target="fleet"><img src="products_logos/fleetguard.png" alt="Fleetguard" loading="lazy"></a>
                 </div>
                 <span class="brand-name">Fleetguard</span>
                 </div>
@@ -324,7 +320,7 @@
                 <!-- Ingersoll Rand -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/ingersoll.png" alt="Ingersoll Rand" loading="lazy">
+                    <a href="" data-target="ingesoll-section"><img src="products_logos/ingersoll.png" alt="Ingersoll Rand" loading="lazy"></a>
                 </div>
                 <span class="brand-name">Ingersoll Rand</span>
                 </div>
@@ -332,23 +328,23 @@
                 <!-- Kirloskar Chillers -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/kirloscar_chillers.png" alt="Kirloskar Chillers" loading="lazy">
+                    <a href="" data-target="kirloskar-section"><img src="products_logos/kirloscar_chillers.png" alt="Kirloskar Chillers" loading="lazy"></a>
                 </div>
-                <span class="brand-name">Kirloskar Chillers</span>
+                <span class="brand-name">Kirloskar</span>
                 </div>
 
-                <!-- Kubota -->
+                <!-- Compair -->
                 <!--<div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/kubotalogo.svg.png" alt="Kubota" loading="lazy">
+                    <img src="products_logos/kubotalogo.svg.png" alt="Compair" loading="lazy">
                 </div>
-                <span class="brand-name">Kubota</span>
+                <span class="brand-name">Compair</span>
                 </div>-->
 
                 <!-- MRF -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/mrflogo.png" alt="MRF Tyres" loading="lazy">
+                    <a href="" data-target="mrf-section"><img src="products_logos/mrflogo.png" alt="MRF Tyres" loading="lazy"></a>
                 </div>
                 <span class="brand-name">MRF</span>
                 </div>
@@ -356,7 +352,7 @@
                 <!-- Valvoline -->
                 <div class="brand-card">
                 <div class="brand-logo-container">
-                    <img src="products_logos/valvoline.png" alt="Valvoline" loading="lazy">
+                    <a href="" data-target="valvoline"><img src="products_logos/valvoline.png" alt="Valvoline" loading="lazy"></a>
                 </div>
                 <span class="brand-name">Valvoline</span>
                 </div>
@@ -364,65 +360,65 @@
         </section>
 
       <!--Why Cargen-->
-    <section class="why-cargen-section">
-        <h2 class="why-cargen-title">Why Car and General?</h2>
-    
-        <div class="why-cargen-grid">
-            <!-- Card 1 -->
-            <div class="why-cargen-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-star"></i>
-            </div>
-            <h3>Premium Products</h3>
-            <p>Our product includes international brand names in power generation, automotive and engineering.</p>
-            </div>
+        <section class="why-cargen-section">
+            <h2 class="why-cargen-title">Why Car and General?</h2>
+        
+            <div class="why-cargen-grid">
+                <!-- Card 1 -->
+                <div class="why-cargen-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h3>Premium Products</h3>
+                <p>Our product includes international brand names in power generation, automotive and engineering.</p>
+                </div>
 
-            <!-- Card 2 -->
-            <div class="why-cargen-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-wrench"></i>
-            </div>
-            <h3>After Sale Service</h3>
-            <p>We have fully skilled, professional and knowledgeable staff. We offer complete product support.</p>
-            </div>
+                <!-- Card 2 -->
+                <div class="why-cargen-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <h3>After Sale Service</h3>
+                <p>We have fully skilled, professional and knowledgeable staff. We offer complete product support.</p>
+                </div>
 
-            <!-- Card 3 -->
-            <div class="why-cargen-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-earth-americas"></i>
-            </div>
-            <h3>Wide Reach</h3>
-            <p>We have a branches in all major regions in Tanzania. We are also in Kenya, Uganda and Rwanda.</p>
-            </div>
+                <!-- Card 3 -->
+                <div class="why-cargen-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <h3>Wide Reach</h3>
+                <p>We have a branches in all major regions in Tanzania. We are also in Kenya, Uganda and Rwanda.</p>
+                </div>
 
-            <!-- Card 4 -->
-            <div class="why-cargen-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-money-bill-wave"></i>
-            </div>
-            <h3>Finance</h3>
-            <p>We partner with leading banks and other financing partners who provide affordable and flexible payment terms for your purchases.</p>
-            </div>
+                <!-- Card 4 -->
+                <div class="why-cargen-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                </div>
+                <h3>Finance</h3>
+                <p>We partner with leading banks and other financing partners who provide affordable and flexible payment terms for your purchases.</p>
+                </div>
 
-            <!-- Card 5 -->
-            <div class="why-cargen-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-comments"></i>
-            </div>
-            <h3>Consultation</h3>
-            <p>Our team of sales managers and specialists will be happy to help you find the right products and offers</p>
-            </div>
+                <!-- Card 5 -->
+                <div class="why-cargen-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                <h3>Consultation</h3>
+                <p>Our team of sales managers and specialists will be happy to help you find the right products and offers</p>
+                </div>
 
-            <!-- Card 6 -->
-            <div class="why-cargen-card">
-            <div class="card-icon">
-                <i class="fa-solid fa-truck-fast"></i>
+                <!-- Card 6 -->
+                <div class="why-cargen-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3>Shipping & Payments</h3>
+                <p>We accept payments through online payment systems and credit cards.</p>
+                </div>
             </div>
-            <h3>Shipping & Payments</h3>
-            <p>We accept payments through online payment systems and credit cards.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
       <!--testimonials-->
       <section class="testimonials-section" id="testimonials">
@@ -473,13 +469,208 @@
                 <div class="about-text">
                     <h2 class="section-title">About Us</h2>
                     <p>Car and General Trading Limited is a leading supplier of high-quality products and services in Tanzania. With a rich history spanning over 90 years, we have built a reputation for excellence and customer satisfaction. Our diverse range of offerings includes TVS 2-Wheelers and 3-Wheelers, Cummins Power Generation, Develon products, Valvoline products, Kirloskar products, Ingersoll Rand products, Briggs & Stratton products, and MRF Tyres. We are committed to delivering top-notch products and services to meet the evolving needs of our customers.</p>
-                    <a href="#" class="btn-primary">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+                    <a href="" id="see-more-btn" class="btn-primary">SEE MORE</a>
                 </div>
-                <!--<div class="about-image">
-                    <img src="./products_slide/about-us.webp">
-                </div>-->
+                <div class="about-image">
+                    <img src="./products_slide/about-photo.png">
+                </div>
             </div>
       </section> 
+
+      <!--Extended About Section-->
+        <section id="extended-about">
+            <!--Timeline Section-->
+            <section class="timeline-section" id="history-section">
+                <h1 class="section-title">Our History</h1>
+                <div class="timeline-container">
+                    
+                    <!-- Left Intro Column -->
+                    <div class="timeline-intro">
+                    <h2 class="timeline-heading">OUR JOURNEY THROUGH THE YEARS</h2>
+                    <p class="timeline-description">
+                        From a humble beginning in 1936 in Nakuru, Car & General is now the company behind a wide range of power generation, automotive, construction and industrial engineering products in East Africa. Today, our product range represents several international brand names.
+                    </p>
+                    <div class="timeline-clock-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?auto=format&fit=crop&w=500&q=80" alt="Clock" class="timeline-clock-img">
+                    </div>
+                    </div>
+
+                    <!-- Right Horizontal Timeline Track -->
+                    <div class="timeline-track-wrapper">
+                    <div class="timeline-track">
+                        
+                        <!-- Top Row (1936 to 1997) -->
+                        <div class="timeline-row row-top">
+                        <div class="timeline-node">
+                            <div class="node-content">
+                            Established as Car & General Equipment Limited in Nakuru before relocating to Nairobi in 1937, with initial objectives to import and distribute automotive parts and white goods.
+                            </div>
+                            <div class="node-year">1936</div>
+                            <div class="node-stem"></div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-content">
+                            Introduced tyre-retreading, and was actually one of the pioneers of local industry.
+                            </div>
+                            <div class="node-year">1941</div>
+                            <div class="node-stem"></div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-content">
+                            One of the companies to be quoted on the Nairobi Securities Exchange.
+                            </div>
+                            <div class="node-year">1950</div>
+                            <div class="node-stem"></div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-content">
+                            Branch offices in Kampala and Dar-es-Salaam formed into separate subsidiaries Car & General (Uganda) Limited and Car & General (Tanzania) Limited.
+                            </div>
+                            <div class="node-year">1960's</div>
+                            <div class="node-stem"></div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-content">
+                            Dramatic change in revenue base that saw de-investment from original businesses.
+                            </div>
+                            <div class="node-year">1996</div>
+                            <div class="node-stem"></div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-content">
+                            Moved to new premises along Lusaka Road.
+                            </div>
+                            <div class="node-year">1997</div>
+                            <div class="node-stem"></div>
+                        </div>
+                        </div>
+
+                        <!-- Seamless Central Red Bar Loop -->
+                        <div class="timeline-middle-bar"></div>
+
+                        <!-- Bottom Row (2020 down to 2003) -->
+                        <div class="timeline-row row-bottom">
+                        <div class="timeline-node">
+                            <div class="node-stem"></div>
+                            <div class="node-year">2020</div>
+                            <div class="node-content">
+                            Completed the Nairobi Mega C&G's real estate venture, along Mombasa Road.
+                            </div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-stem"></div>
+                            <div class="node-year">2018</div>
+                            <div class="node-content">
+                            Signed an agreement with NIIT of India to operate NIIT C&G Limited, an IT and business training facility in Kenya that was launched in 2019.
+                            </div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-stem"></div>
+                            <div class="node-year">2017</div>
+                            <div class="node-content">
+                            Signed a joint venture with Cummins to form Cummins C&G Limited.<br><br>Acquired a stake in Watu Credit Limited.
+                            </div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-stem"></div>
+                            <div class="node-year">2013</div>
+                            <div class="node-content">
+                            Launched the TVS motorcycle assembly plant in Nakuru.
+                            </div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-stem"></div>
+                            <div class="node-year">2005</div>
+                            <div class="node-content">
+                            Became distributor of Cummins in Uganda and Tanzania before becoming spreading to all Eastern African countries in 2006.
+                            </div>
+                        </div>
+
+                        <div class="timeline-node">
+                            <div class="node-stem"></div>
+                            <div class="node-year">2003</div>
+                            <div class="node-content">
+                            Ventured into new product lines. Introduced two-wheelers and three-wheelers as taxis in East Africa, and took over Cummins distributorship in Kenya.
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!--The management Team-->
+        <section class="team-section" id="management-team">
+            <h2 class="section-title">Our Management Team</h2>
+
+            <div class="team-grid">
+                <!-- Member 1 -->
+                <div class="team-card">
+                <div class="member-avatar">
+                    <img src="images/team/vijay.jpg" alt="Vijay Gidoomal">
+                </div>
+                <h3 class="member-name">Vijay Gidoomal</h3>
+                <p class="member-role">CEO, Car & General (Kenya) Plc</p>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-card">
+                <div class="member-avatar">
+                    <img src="images/team/george.jpg" alt="George Rubiri">
+                </div>
+                <h3 class="member-name">George Rubiri</h3>
+                <p class="member-role">General Manager, Car & General Trading – Kenya</p>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-card">
+                <div class="member-avatar">
+                    <img src="images/team/carol.jpg" alt="Carol Omanjo">
+                </div>
+                <h3 class="member-name">Carol Omanjo</h3>
+                <p class="member-role">Chief Operating Officer</p>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-card">
+                <div class="member-avatar">
+                    <img src="images/team/sam.jpg" alt="Sam Njenga">
+                </div>
+                <h3 class="member-name">Sam Njenga</h3>
+                <p class="member-role">Chief Finance Officer</p>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="team-card">
+                <div class="member-avatar">
+                    <img src="images/team/gilbert.jpg" alt="Gilbert Mutai">
+                </div>
+                <h3 class="member-name">Gilbert Mutai</h3>
+                <p class="member-role">Chief Information Officer</p>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="team-card">
+                <div class="member-avatar">
+                    <img src="images/team/devarakonda.jpg" alt="Devarakonda Srinivas">
+                </div>
+                <h3 class="member-name">Devarakonda Srinivas</h3>
+                <p class="member-role">Regional General Manager –</p>
+                </div>
+            </div>
+        </section>
+        </section>
 
     </section>
 
@@ -544,7 +735,7 @@
             <div class="products-home-container">
                 <div class="company-intro-container">
                     <div class="intro-header">
-                        <h1 class="gradient-headline">Powering Progress Across Motion & Industry</h1>
+                        <h1 class="gradient-headline">Car and General Kirloskar Products</h1>
                         <span class="intro-badge">
                             <i class="fas fa-arrow-left"></i> Click to Explore Products   .
                         </span>
@@ -1189,7 +1380,7 @@
         <div class="products-home-container">
                 <div class="company-intro-container">
                     <div class="intro-header">
-                        <h1 class="gradient-headline">Powering Progress Across Motion & Industry</h1>
+                        <h1 class="gradient-headline">Car and General Develon Products</h1>
                         <span class="intro-badge">
                             <i class="fas fa-arrow-left"></i> Click to Explore Products   .
                         </span>
@@ -1293,12 +1484,12 @@
         <div class="products-home-container">
                 <div class="company-intro-container">
                     <div class="intro-header">
-                        <h1 class="gradient-headline">Powering Progress Across Motion & Industry</h1>
+                        <h1 class="gradient-headline">Car and General Briggs and Stratton Products</h1>
                         <span class="intro-badge">
                             <i class="fas fa-arrow-left"></i> Click to Explore Products   .
                         </span>
                         <p class="intro-description">
-                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class automotive solutions and robust engineering machinery built to perform, endure, and drive your business forward.
+                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class products.
                         </p>
                     </div>
                 </div>
@@ -1440,22 +1631,22 @@
       <main class="main-product-content">
 
         <section id="products-home" class="products-home">
-      <div class="products-home-background"></div>
+            <div class="products-home-background"></div>
       
-      <div class="products-home-container">
-            <div class="company-intro-container">
-                <div class="intro-header">
-                    <h1 class="gradient-headline">Powering Progress Across Motion & Industry</h1>
-                    <span class="intro-badge">
-                        <i class="fas fa-arrow-left"></i> Click to Explore Products   .
-                    </span>
-                    <p class="intro-description">
-                    Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class automotive solutions and robust engineering machinery built to perform, endure, and drive your business forward.
-                    </p>
+            <div class="products-home-container">
+                <div class="company-intro-container">
+                    <div class="intro-header">
+                        <h1 class="gradient-headline">Car and General Cummins Products</h1>
+                        <span class="intro-badge">
+                            <i class="fas fa-arrow-left"></i> Click to Explore Products   .
+                        </span>
+                        <p class="intro-description">
+                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class products.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
         <!--------------------------------------POWER GENERATION------------------------------->
         <div class="product-display" id="power-gen">
             <div class="product-row">
@@ -1723,17 +1914,17 @@
       <main class="main-product-content">
         <!--PRODUCT-HOME-PAGE-->
         <section id="products-home" class="products-home">
-        <div class="products-home-background"></div>
-        
-        <div class="products-home-container">
+            <div class="products-home-background"></div>
+      
+            <div class="products-home-container">
                 <div class="company-intro-container">
                     <div class="intro-header">
-                        <h1 class="gradient-headline">Powering Progress Across Motion & Industry</h1>
+                        <h1 class="gradient-headline">Car and General Ingersoll Products</h1>
                         <span class="intro-badge">
                             <i class="fas fa-arrow-left"></i> Click to Explore Products   .
                         </span>
                         <p class="intro-description">
-                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class automotive solutions and robust engineering machinery built to perform, endure, and drive your business forward.
+                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class products.
                         </p>
                     </div>
                 </div>
@@ -2125,12 +2316,12 @@
         <div class="products-home-container">
                 <div class="company-intro-container">
                     <div class="intro-header">
-                        <h1 class="gradient-headline">Powering Progress Across Motion & Industry</h1>
+                        <h1 class="gradient-headline">Car and General MRF tyres</h1>
                         <span class="intro-badge">
                             <i class="fas fa-arrow-left"></i> Click to Explore Products   .
                         </span>
                         <p class="intro-description">
-                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class automotive solutions and robust engineering machinery built to perform, endure, and drive your business forward.
+                        Welcome to Car & General's comprehensive product showcase. Explore our premium range of world-class products.
                         </p>
                     </div>
 
@@ -2324,7 +2515,7 @@
             <div class="tvs-section-heading">
                 <span>DESIGNED FOR YOU</span>
                 <h2>Features that <b>matter.</b></h2>
-                <p>Explore the technology, convenience and performance features of this TVS product.</p>
+                <p>Click any button to view features of this TVS product.</p>
             </div>
 
             <div class="feature-btns">
@@ -2374,7 +2565,7 @@
             <div class="tvs-section-heading">
                 <span>TECHNICAL DETAILS</span>
                 <h2>Specifications <b>at a glance.</b></h2>
-                <p>Everything you need to know about this TVS model.</p>
+                <p>Click any button to view all Specifications of this product.</p>
             </div>
             <div class="spec-btns">
                 <button class="main-spec-btn">Engine & Control</button>
