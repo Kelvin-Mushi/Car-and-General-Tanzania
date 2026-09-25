@@ -238,6 +238,71 @@ h3{
     display: block;
 }
 
+/*=======SEARCH BAR=================*/
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#searchInput:focus {
+  border-color: #007bff;
+}
+
+/* Floating Results Dropdown */
+.search-results-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  list-style: none;
+  margin: 4px 0 0 0;
+  padding: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: none; /* Hidden by default */
+  z-index: 1000;
+}
+
+.search-results-dropdown.active {
+  display: block;
+}
+
+.search-results-dropdown li, .search-results-dropdown li a {
+    text-decoration: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.15s ease;
+}
+
+.search-results-dropdown li:hover {
+  background: #f1f5f9;
+  color: #007bff;
+}
+
+.no-results {
+  padding: 10px 14px;
+  color: #888;
+  font-style: italic;
+}
+/*===================================*/
 
 /* Hero Slider */
 .hero-slider {

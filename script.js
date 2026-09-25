@@ -2406,3 +2406,101 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+//===============SEARCH. BAR
+// 1. Define your searchable site index
+// Add all products, categories, or sections you want users to find
+const searchIndex = [
+  { name: "Kirloskar", type: "Products", targetId: "kirloskar-section" },
+  { name: "Cummins", type: "Products", targetId: "cummins-section" },
+  { name: "Ingesoll", type: "Products", targetId: "ingesoll-section" },
+  { name: "MRF Tyres", type: "Products", targetId: "mrf-section" },
+  { name: "Briggs & Stratton", type: "Products", targetId: "briggs-section" }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+
+  if (!searchInput || !searchResults) return;
+
+  // 2. Real-time typing listener ('input' fires on every keystroke)
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.trim().toLowerCase();
+
+    // Clear dropdown if query is empty
+    if (query.length === 0) {
+      searchResults.innerHTML = '';
+      searchResults.classList.remove('active');
+      return;
+    }
+
+    // Filter array based on match
+    const matches = searchIndex.filter(item =>
+      item.name.toLowerCase().includes(query) ||
+      item.type.toLowerCase().includes(query)
+    );
+
+    // Render filtered results
+    renderResults(matches);
+  });
+
+  // 3. Render items into the dropdown
+  function renderResults(matches) {
+    searchResults.innerHTML = '';
+
+    if (matches.length === 0) {
+      searchResults.innerHTML = '<li class="no-results">No products found</li>';
+      searchResults.classList.add('active');
+      return;
+    }
+
+    matches.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="" data-target="${item.targetId}">${item.name}</a> <small style="color:#888;">(${item.type})</small>`;
+      
+      // Store target ID on the element
+      li.dataset.dataTarget = item.targetId;
+        
+      // 4. Click event to handle navigation
+      li.addEventListener('click', () => {
+        handleNavigation(item.targetId, item.name);
+        
+        // Reset input and close dropdown after selection
+        searchInput.value = '';
+        searchResults.classList.remove('active');
+      });
+
+      searchResults.appendChild(li);
+    });
+
+    searchResults.classList.add('active');
+  }
+
+  // 5. Precise Navigation Handler
+  function handleNavigation(targetId, itemName) {
+    // Check if target is a product category section
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      // If you are using the category activator function:
+      if (typeof activateProductCategory === 'function') {
+        activateProductCategory(targetId);
+      } else {
+        // Fallback: smooth scroll directly to section
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } 
+    // If you have individual product details (like loadProduct function)
+    else if (typeof loadProduct === 'function') {
+      loadProduct(targetId);
+    }
+  }
+
+  // Close dropdown if user clicks anywhere outside the search container
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) {
+      searchResults.classList.remove('active');
+    }
+  });
+});
