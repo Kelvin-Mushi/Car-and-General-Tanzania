@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car and General Tanzania</title>
+    <!-- Flag Icons CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.2.3/css/flag-icons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +15,17 @@
      
     <header class="main-header">
         <div class="top-bar">
-            <p><i class="fa-solid fa-phone"></i>TOLL FREE 0800724600</p> <p><i class="fa-solid fa-envelope"></i>info@cargen.com</p> <p><i class="fa-solid fa-location-dot"></i>Branch Locator</p> <p><i class="fa-solid fa-location"></i>Select Country</p>
+            <a href="tel:0800724600"><i class="fa-solid fa-phone"></i>TOLL FREE 0800724600</a> <a href="mailTo:info@cargen.com"><i class="fa-solid fa-envelope"></i>info@cargen.com</a> <a href="#map-section"><i class="fa-solid fa-location-dot"></i>Branch Locator</a> 
+            <li class="dropdown">
+                <a href=""><i class="fa-solid fa-location"></i>Select Country</a>
+                <ul class="submenu level-1">
+                    <li class="country-select">
+                        <a href="#" id="tanzaniaLink"><i class="fi fi-tz flag-icon"></i> Tanzania</a>
+                        <a href="https://cargen.com" target="_parent"><i class="fi fi-ke flag-icon"></i> Kenya</a>
+                    </li>
+                </ul>
+                
+            </li>
         </div>
 
         <div class="branding">
@@ -68,7 +81,7 @@
                 </li>
                 <!--<a href="#">My Orders</a>-->
                 <a href="#dealer-locator" class="main-links" >Dealer Locator</a>
-                <a href="#testimonials" class="main-links" >Testimonials</a>
+                <!--<a href="#testimonials" class="main-links" >Testimonials</a>-->
 
                 <li class="dropdown">
                   <a href="#about-us" class="main-links" >About Us <i class="fas fa-chevron-down"></i></a>
@@ -107,11 +120,12 @@
             >
             <ul id="searchResults" class="search-results-dropdown"></ul>
             </div>
+
             <!-- Auth Buttons -->
-             <div class="auth">
+             <!--<div class="auth">
                 <a href="#" class="login-btn"><i class="fas fa-user"></i></a>
 
-             </div>     
+             </div>-->     
 
         </div>
 
@@ -430,7 +444,7 @@
         </section>
 
       <!--testimonials-->
-      <section class="testimonials-section" id="testimonials">
+      <!--<section class="testimonials-section" id="testimonials">
             <h2 class="section-title">Testimonials</h2>
             
             <div class="container testimonial-box">    
@@ -444,7 +458,7 @@
                     </iframe>
                 </div>
             </div>
-      </section>
+      </section>-->
 
       <!--Contact Us-->
       <section class="contact-section" id="contact-us">
@@ -484,7 +498,18 @@
                     <img src="./products_slide/about-photo.png">
                 </div>
             </div>
-      </section> 
+      </section>
+      
+      <!--Map Section-->
+      <section class="branches-map-section" id="map-section">
+        <div class="container">
+            <h2>Our Branches Across Tanzania</h2>
+            <p>Find your nearest Car & General branch location.</p>
+            
+            <!-- Map Container -->
+            <div id="tanzaniaMap"></div>
+        </div>
+    </section>
 
       <!--Extended About Section-->
         <section id="extended-about">
@@ -627,55 +652,19 @@
                 <!-- Member 1 -->
                 <div class="team-card">
                 <div class="member-avatar">
-                    <img src="images/team/vijay.jpg" alt="Vijay Gidoomal">
+                    <img src="assets/team-photos/md_photo.png" alt="Venkatesh">
                 </div>
-                <h3 class="member-name">Vijay Gidoomal</h3>
-                <p class="member-role">CEO, Car & General (Kenya) Plc</p>
+                <h3 class="member-name">Venkatesh Jayaraman</h3>
+                <p class="member-role">Managing Director</p>
                 </div>
 
                 <!-- Member 2 -->
                 <div class="team-card">
                 <div class="member-avatar">
-                    <img src="images/team/george.jpg" alt="George Rubiri">
+                    <img src="assets/team-photos/bhavin_photo.png" alt="Bhavin">
                 </div>
-                <h3 class="member-name">George Rubiri</h3>
-                <p class="member-role">General Manager, Car & General Trading – Kenya</p>
-                </div>
-
-                <!-- Member 3 -->
-                <div class="team-card">
-                <div class="member-avatar">
-                    <img src="images/team/carol.jpg" alt="Carol Omanjo">
-                </div>
-                <h3 class="member-name">Carol Omanjo</h3>
-                <p class="member-role">Chief Operating Officer</p>
-                </div>
-
-                <!-- Member 4 -->
-                <div class="team-card">
-                <div class="member-avatar">
-                    <img src="images/team/sam.jpg" alt="Sam Njenga">
-                </div>
-                <h3 class="member-name">Sam Njenga</h3>
-                <p class="member-role">Chief Finance Officer</p>
-                </div>
-
-                <!-- Member 5 -->
-                <div class="team-card">
-                <div class="member-avatar">
-                    <img src="images/team/gilbert.jpg" alt="Gilbert Mutai">
-                </div>
-                <h3 class="member-name">Gilbert Mutai</h3>
-                <p class="member-role">Chief Information Officer</p>
-                </div>
-
-                <!-- Member 6 -->
-                <div class="team-card">
-                <div class="member-avatar">
-                    <img src="images/team/devarakonda.jpg" alt="Devarakonda Srinivas">
-                </div>
-                <h3 class="member-name">Devarakonda Srinivas</h3>
-                <p class="member-role">Regional General Manager –</p>
+                <h3 class="member-name">Bhavin Parmar</h3>
+                <p class="member-role">Director</p>
                 </div>
             </div>
         </section>
@@ -2120,7 +2109,7 @@
                         <a href="#" class="stage-1" data-target="ingersoll-2">Compair</a>
 
                         <ul class="stage-2" id="ingersoll-2">
-                            <li><a href="#" class="sub-link">Compressors</a></li>
+                            <li><a href="#" class="sub-link" data-target="compair-air">Compressors</a></li>
                             <li><a href="#" class="sub-link">Compressed Air Dryers</a></li>
                             <li><a href="#" class="sub-link">Air Treatment & accessories</a></li>
                             <li><a href="#" class="sub-link">Industrial Rotary Vane Solutions</a></li>
@@ -3304,6 +3293,8 @@
         </div>
     </div>
 
+    <!--Map-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

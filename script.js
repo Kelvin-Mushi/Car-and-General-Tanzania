@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const tzLink = document.getElementById('tanzaniaLink');
+
+  if (tzLink) {
+    tzLink.addEventListener('click', (event) => {
+      // 1. Display the popup prompt
+      alert("You are now in Tanzania Website");
+    });
+  }
+});
+
 function renderRoute(targetId) {
   if (!targetId) return;
 
@@ -321,6 +332,52 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
 
+//===================MAP
+document.addEventListener('DOMContentLoaded', () => {
+  const mapElement = document.getElementById('tanzaniaMap');
+  if (!mapElement) return;
+
+  // 1. Initialize the map centered on Tanzania
+  const map = L.map('tanzaniaMap').setView([-6.3690, 34.8888], 6); // Coordinates center of TZ, Zoom level 6
+
+  // 2. Load OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // 3. Array of all 14 branch locations with coordinates
+  const branches = [
+    { name: "Dar es Salaam Branch", lat: -6.8235, lng: 39.2695, info: "Main Head Office & Service Center" },
+    { name: "Arusha Branch", lat: -3.3869, lng: 36.6830, info: "Sales & Service Showroom" },
+    { name: "Mwanza (Sengerema) Branch", lat: -2.5407, lng: 32.6267, info: "Regional Distribution Point" },
+    { name: "Mbeya Branch", lat: -8.9094, lng: 33.4586, info: "Southern Highlands Outlet" },
+    { name: "Mtwara Branch", lat: -10.2736, lng: 40.1828, info: "Coastal Branch" },
+    { name: "Kahama Branch", lat: -3.8376, lng: 32.6015, info: "Shinyanga Region Branch" },
+    { name: "Tanga Branch", lat: -5.0689, lng: 39.0988, info: "Tanga Port Area Branch" },
+    { name: "Tunduma Branch", lat: -9.3000, lng: 32.7667, info: "Border Trade Service Point" },
+    { name: "Sumbawanga Branch", lat: -7.9667, lng: 31.6167, info: "Rukwa Outlet" },
+    { name: "Singida Branch", lat: -4.8167, lng: 34.7500, info: "Central Zone Branch" },
+    { name: "Moshi Branch", lat: -3.3349, lng: 37.3404, info: "Kilimanjaro Branch" },
+    { name: "Morogoro Branch", lat: -6.8278, lng: 37.6591, info: "Morogoro Town Outlet" },
+    { name: "Zanzibar Branch", lat: -6.1659, lng: 39.2026, info: "Island Showroom & Spares" },
+    { name: "Pwani (Kibaaha) Branch", lat: -6.7667, lng: 38.9167, info: "Pwani Regional Center" }
+  ];
+
+  // 4. Loop through array and plot markers with popups
+  branches.forEach(branch => {
+    const marker = L.marker([branch.lat, branch.lng]).addTo(map);
+    
+    // Bind popup content to each marker
+    const popupContent = `
+      <div class="branch-popup">
+        <h4>${branch.name}</h4>
+        <p>${branch.info}</p>
+      </div>
+    `;
+    marker.bindPopup(popupContent);
+  });
+});
 
 /*====================COUNTER====================== */
 document.addEventListener('DOMContentLoaded', () => {
@@ -2415,15 +2472,42 @@ const searchIndex = [
   { name: "Cummins", type: "Products", targetId: "cummins-section" },
   { name: "Ingesoll", type: "Products", targetId: "ingesoll-section" },
   { name: "MRF Tyres", type: "Products", targetId: "mrf-section" },
-  { name: "Briggs & Stratton", type: "Products", targetId: "briggs-section" }
+  { name: "Briggs & Stratton", type: "Products", targetId: "briggs-section" },
+  { name: "Air Compressors", type: "Kirloskar", targetId: "air-compressors" },
+  { name: "Gas Systems", type: "Kirloskar", targetId: "gas" },
+  { name: "Refrigeration Compressors", type: "Kirloskar", targetId: "refrigeration" },
+  { name: "Chillers", type: "Kirloskar", targetId: "chillers" },
+  { name: "Heat Pumps", type: "Kirloskar", targetId: "heat-pump" },
+  { name: "Gas Generators", type: "Kirloskar", targetId: "gas-gen" },
+  { name: "Wheel Loaders", type: "Cummins", targetId: "wheel-loaders" },
+  { name: "Excavators", type: "Cummins", targetId: "excavators" },
+  { name: "Attachments", type: "Cummins", targetId: "" },
+  { name: "Lawn Mowers", type: "Briggs & Stratton", targetId: "lawn-mower" },
+  { name: "Briggs & Stratton Gensets", type: "Briggs & Stratton", targetId: "genset" },
+  { name: "Brush Cutters", type: "Briggs & Stratton", targetId: "other-products" },
+  { name: "Water Pumps", type: "Briggs & Stratton", targetId: "other-products" },
+  { name: "Cummins Genset", type: "Cummins", targetId: "power-gen" },
+  { name: "Cummins Engines", type: "Cummins", targetId: "engines" },
+  { name: "Ingersoll Air Compressors", type: "Ingersoll", targetId: "ingersoll-air" },
+  { name: "Ingersoll Power Tools", type: "Ingersoll", targetId: "Power Tools" },
+  { name: "Dryers", type: "Ingersoll", targetId: "dryers" },
+  { name: "Compressors", type: "Compair", targetId: "compair-air" },
+  { name: "Two Wheeler Tyres", type: "MRF Tyres", targetId: "2w-tyres" },
+  { name: "Two Wheeler Tyres", type: "MRF Tyres", targetId: "3w-tyres" }
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
+//=====SEARCH BAR
+/*document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
 
   if (!searchInput || !searchResults) return;
 
+    function clearSearch() {
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+    searchResults.classList.remove('active');
+  }
   // 2. Real-time typing listener ('input' fires on every keystroke)
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.trim().toLowerCase();
@@ -2457,18 +2541,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     matches.forEach(item => {
       const li = document.createElement('li');
-      li.innerHTML = `<a href="" data-target="${item.targetId}">${item.name}</a> <small style="color:#888;">(${item.type})</small>`;
+      li.innerHTML = `<a href="#" data-target="${item.targetId}">${item.name}</a> <small style="color:#888;">(${item.type})</small>`;
       
       // Store target ID on the element
       li.dataset.dataTarget = item.targetId;
         
       // 4. Click event to handle navigation
-      li.addEventListener('click', () => {
+      li.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevents page reload from <a> tag
+        
         handleNavigation(item.targetId, item.name);
         
-        // Reset input and close dropdown after selection
-        searchInput.value = '';
-        searchResults.classList.remove('active');
+        // Clear input text and close dropdown
+        clearSearch();
       });
 
       searchResults.appendChild(li);
@@ -2477,28 +2562,83 @@ document.addEventListener('DOMContentLoaded', () => {
     searchResults.classList.add('active');
   }
 
-  // 5. Precise Navigation Handler
-  function handleNavigation(targetId, itemName) {
-    // Check if target is a product category section
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      // If you are using the category activator function:
-      if (typeof activateProductCategory === 'function') {
-        activateProductCategory(targetId);
-      } else {
-        // Fallback: smooth scroll directly to section
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    } 
-    // If you have individual product details (like loadProduct function)
-    else if (typeof loadProduct === 'function') {
-      loadProduct(targetId);
-    }
-  }
-
   // Close dropdown if user clicks anywhere outside the search container
   document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) {
+      searchResults.classList.remove('active');;
+    }
+  });
+});*/
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+
+  if (!searchInput || !searchResults) return;
+
+  // Function to completely reset and clear the search bar UI
+  function clearSearch() {
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+    searchResults.classList.remove('active');
+  }
+
+  // Real-time typing listener
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.trim().toLowerCase();
+
+    if (query.length === 0) {
+      clearSearch();
+      return;
+    }
+
+    const matches = searchIndex.filter(item =>
+      item.name.toLowerCase().includes(query) ||
+      item.type.toLowerCase().includes(query)
+    );
+
+    renderResults(matches);
+  });
+
+  // Render items into the dropdown
+  function renderResults(matches) {
+    searchResults.innerHTML = '';
+
+    if (matches.length === 0) {
+      searchResults.innerHTML = '<li class="no-results">No products found</li>';
+      searchResults.classList.add('active');
+      return;
+    }
+
+    matches.forEach(item => {
+      const li = document.createElement('li');
+      // Added href="#" and preventDefault handling so empty href doesn't reload page
+      li.innerHTML = `<a href="#" data-target="${item.targetId}">${item.name}</a> <small style="color:#888;">(${item.type})</small>`;
+      
+      li.dataset.targetId = item.targetId;
+        
+      li.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevents page reload from <a> tag
+        
+        handleNavigation(item.targetId, item.name);
+        
+        // Clear input text and close dropdown
+        clearSearch();
+      });
+
+      searchResults.appendChild(li);
+    });
+
+    searchResults.classList.add('active');
+  }
+
+  // Global Click Listener: Ensure any global data-target clicks or outside clicks clear the input
+  document.addEventListener('click', (e) => {
+    // If the clicked element is any link with a data-target, clear the search bar
+    if (e.target.closest('[data-target]')) {
+      clearSearch();
+    }
+
+    // Close dropdown if user clicks anywhere outside the search container
     if (!e.target.closest('.search-container')) {
       searchResults.classList.remove('active');
     }
