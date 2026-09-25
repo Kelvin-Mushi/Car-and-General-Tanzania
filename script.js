@@ -2382,3 +2382,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+//==============PRODUCT PAGE ANIMATIONS
+document.addEventListener('DOMContentLoaded', () => {
+  const navBtns = document.querySelectorAll('.nav-btn');
+  const allContainers = document.querySelectorAll('.product-display, .products-home-container');
+
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const targetId = btn.dataset.target || btn.getAttribute('href')?.replace('#', '');
+      
+      // 1. Hide all containers
+      allContainers.forEach(el => el.classList.remove('active'));
+
+      // 2. Show selected container & re-trigger simple CSS animation
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        void targetEl.offsetWidth; // force browser repaint
+        targetEl.classList.add('active');
+      }
+    });
+  });
+});
