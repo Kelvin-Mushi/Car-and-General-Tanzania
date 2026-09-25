@@ -1302,7 +1302,7 @@ h3 {
 .scrollable-sidebar {
   transform: translateX(-100%);
   opacity: 0;
-  animation: sidebarSlideIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: sidebarSlideIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 /* Keyframe to slide it into place */
@@ -1320,7 +1320,7 @@ h3 {
 /* Main content fade-in */
 .products-home-container,
 .product-display.active {
-  animation: simpleFadeIn 0.4s ease-out forwards;
+  animation: simpleFadeIn 1.2s ease-out forwards;
 }
 
 @keyframes simpleFadeIn {
@@ -2402,6 +2402,51 @@ h3 {
 
 #tvs-product-page *{box-sizing:border-box}
 #tvs-product-page button{font:inherit}
+/*ANIMATIONSSSSSS*/
+/* 1. Brand Logo: Slide in from the left (-100% offset) */
+/* 1. Brand Logo: Slide in from the left (-100% offset) */
+.tvs-nav-brand {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: brandSlideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes brandSlideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 2. Hero Section Elements: Smooth translateY & Fade-In */
+.tvs-hero {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeUp 0.6s ease-out 0.1s forwards;
+}
+
+/* Stagger the inner slider controls for a layered entrance */
+.tvs-hero-arrow,
+.tvs-hero-dots {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroFadeUp 0.4s ease-out 0.3s forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* NAVIGATION */
 

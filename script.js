@@ -1762,8 +1762,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentProductId = id;
 
-        navProduct.textContent = product.name;
-        selectedName.textContent = product.name;
+        if (navProduct) navProduct.textContent = product.name;
+        if (selectedName) selectedName.textContent = product.name;
 
         renderHero(product.hero);
         render360(product);
@@ -2255,7 +2255,7 @@ if (relatedSlider) {
 ===================================================== */
 
 document.querySelector("#tvsRelatedPrev").addEventListener("click", () => {
-
+    relatedPaused = true;
     const slider = document.querySelector("#tvsRelatedSlider");
 
     slider.scrollBy({
@@ -2270,7 +2270,7 @@ document.querySelector("#tvsRelatedPrev").addEventListener("click", () => {
 ===================================================== */
 
 document.querySelector("#tvsRelatedNext").addEventListener("click", () => {
-
+    relatedPaused = true;
     const slider = document.querySelector("#tvsRelatedSlider");
 
     slider.scrollBy({
