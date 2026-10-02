@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
 
-//===================MAP
+//===================MAP==============================
 document.addEventListener('DOMContentLoaded', () => {
 const mapElement = document.getElementById('tanzaniaMap');
 if (!mapElement) return;
@@ -375,7 +375,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     { name: "Moshi Branch", lat: -3.3349, lng: 37.3404, info: "Kilimanjaro Branch" },
     { name: "Morogoro Branch", lat: -6.8278, lng: 37.6591, info: "Morogoro Town Outlet" },
     { name: "Zanzibar Branch", lat: -6.1659, lng: 39.2026, info: "Island Showroom & Spares" },
-    { name: "Pwani (Kibaaha) Branch", lat: -6.7667, lng: 38.9167, info: "Pwani Regional Center" }
+    { name: "Pwani Branch", lat: -6.7667, lng: 38.9167, info: "Pwani Regional Center" }
   ];
 
   // 4. Loop through array and plot markers with popups
