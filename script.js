@@ -333,17 +333,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //===================MAP
 document.addEventListener('DOMContentLoaded', () => {
-  const mapElement = document.getElementById('tanzaniaMap');
-  if (!mapElement) return;
+const mapElement = document.getElementById('tanzaniaMap');
+if (!mapElement) return;
 
-  // 1. Initialize the map centered on Tanzania
-  const map = L.map('tanzaniaMap').setView([-6.3690, 34.8888], 6 , { scrollwheel : false}); // Coordinates center of TZ, Zoom level 6
+// 1. Initialize the map with Leaflet-specific zoom restrictions
+const map = L.map('tanzaniaMap', {
+  zoomControl: false,   
+  scrollWheelZoom: false,     
+  doubleClickZoom: false,     
+  boxZoom: false,              
+  touchZoom: false,            
+  dragging: false,             
+  minZoom: 6,                  
+  maxZoom: 6                   
+}).setView([-6.3690, 34.8888], 6);
 
-  // 2. Load OpenStreetMap tiles
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+// 2. Extra safety: explicitly disable handlers
+map.touchZoom.disable();
+map.doubleClickZoom.disable();
+map.scrollWheelZoom.disable();
+map.boxZoom.disable();
+
+// 3. Load OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
   // 3. Array of all 14 branch locations with coordinates
   const branches = [
