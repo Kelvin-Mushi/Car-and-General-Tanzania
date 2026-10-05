@@ -331,6 +331,539 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 });
 
+//================ASIDE BUTTON=======================//
+document.addEventListener("DOMContentLoaded", function () {
+
+    const productSections =
+        document.querySelectorAll(".page-section");
+
+
+    productSections.forEach(section => {
+
+        const toggleButton =
+            section.querySelector(".mobile-sidebar-toggle");
+
+        const sidebar =
+            section.querySelector(".scrollable-sidebar");
+
+
+        if (!toggleButton || !sidebar) {
+            return;
+        }
+
+
+        /* ================================================
+           OPEN / CLOSE SIDEBAR
+           ================================================ */
+
+        toggleButton.addEventListener("click", function (e) {
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            section.classList.toggle("sidebar-open");
+
+        });
+
+
+        /* ================================================
+           PRODUCT GROUP CLICK
+           ================================================ */
+
+        const sidebarLinks =
+            sidebar.querySelectorAll("a");
+
+
+        sidebarLinks.forEach(link => {
+
+            link.addEventListener("click", function () {
+
+                /*
+                 * Don't interfere with your existing
+                 * product navigation.
+                 *
+                 * Just close the mobile menu.
+                 */
+
+                section.classList.remove("sidebar-open");
+
+            });
+
+        });
+
+
+        /* ================================================
+           ESCAPE
+           ================================================ */
+
+        document.addEventListener("keydown", function (e) {
+
+            if (e.key === "Escape") {
+
+                section.classList.remove("sidebar-open");
+
+            }
+
+        });
+
+    });
+
+});
+
+//=====================header responsiveness==================
+/* =========================================================
+   RESPONSIVE MOBILE HEADER NAVIGATION
+   IMPORTANT:
+   This does NOT interfere with your existing renderRoute()
+   and navigateTo() routing system.
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const header = document.querySelector(".main-header");
+
+    if (!header) return;
+
+
+    const mobileToggle =
+        header.querySelector(".mobile-nav-toggle");
+
+    const navbar =
+        header.querySelector(".navbar");
+
+    if (!mobileToggle || !navbar) return;
+
+
+    /* =====================================================
+       HAMBURGER BUTTON
+       ===================================================== */
+
+    mobileToggle.addEventListener("click", function (e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        header.classList.toggle("mobile-nav-open");
+
+        const icon =
+            mobileToggle.querySelector("i");
+
+        if (!icon) return;
+
+        if (header.classList.contains("mobile-nav-open")) {
+
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+    /* =====================================================
+       MAIN DROPDOWNS
+       
+       Examples:
+       Products
+       About Us
+       ===================================================== */
+
+    const mainDropdowns =
+        navbar.querySelectorAll(
+            ":scope > .nav-links > .dropdown"
+        );
+
+
+    mainDropdowns.forEach(dropdown => {
+
+        const trigger =
+            dropdown.querySelector(":scope > a");
+
+        if (!trigger) return;
+
+
+        trigger.addEventListener("click", function (e) {
+
+            if (window.innerWidth > 900) {
+                return;
+            }
+
+            /*
+             * Only intercept the click if this dropdown
+             * actually has a submenu.
+             */
+
+            const submenu =
+                dropdown.querySelector(":scope > .level-1");
+
+            if (!submenu) {
+                return;
+            }
+
+
+            e.preventDefault();
+            e.stopPropagation();
+
+
+            /*
+             * Close other main dropdowns
+             */
+
+            mainDropdowns.forEach(other => {
+
+                if (other !== dropdown) {
+
+                    other.classList.remove(
+                        "mobile-open"
+                    );
+
+                    /*
+                     * Also close anything nested inside it.
+                     */
+
+                    other
+                        .querySelectorAll(".mobile-open")
+                        .forEach(item => {
+                            item.classList.remove(
+                                "mobile-open"
+                            );
+                        });
+
+                }
+
+            });
+
+
+            dropdown.classList.toggle(
+                "mobile-open"
+            );
+
+        });
+
+    });
+
+
+    /* =====================================================
+       SECOND-LEVEL MOBILE MENUS
+       
+       Examples:
+       Automotive
+       Engineering
+       Company Policies
+       ===================================================== */
+
+    const flyoutItems =
+        navbar.querySelectorAll(".has-flyout");
+
+
+    flyoutItems.forEach(item => {
+
+        const trigger =
+            item.querySelector(":scope > a");
+
+        if (!trigger) return;
+
+
+        /*
+         * IMPORTANT:
+         * Only treat this as an expandable menu if
+         * it actually contains a level-2 submenu.
+         */
+
+        const submenu =
+            item.querySelector(":scope > .level-2");
+
+
+        if (!submenu) {
+            return;
+        }
+
+
+        trigger.addEventListener("click", function (e) {
+
+            if (window.innerWidth > 900) {
+                return;
+            }
+
+
+            e.preventDefault();
+            e.stopPropagation();
+
+
+            /*
+             * Close sibling flyouts
+             */
+
+            const parent = item.parentElement;
+
+            if (parent) {
+
+                parent
+                    .querySelectorAll(
+                        ":scope > .has-flyout"
+                    )
+                    .forEach(other => {
+
+                        if (other !== item) {
+
+                            other.classList.remove(
+                                "mobile-open"
+                            );
+
+                            other
+                                .querySelectorAll(
+                                    ".mobile-open"
+                                )
+                                .forEach(child => {
+
+                                    child.classList.remove(
+                                        "mobile-open"
+                                    );
+
+                                });
+
+                        }
+
+                    });
+
+            }
+
+
+            item.classList.toggle(
+                "mobile-open"
+            );
+
+        });
+
+    });
+
+
+    /* =====================================================
+       THIRD-LEVEL MOBILE MENUS
+       
+       IMPORTANT:
+       Only items that ACTUALLY contain a level-3 menu
+       are treated as expandable.
+       
+       This prevents product links such as:
+       Kirloskar
+       Develon
+       Cummins
+       Ingersoll Rand
+       
+       from being blocked.
+       ===================================================== */
+
+    const level3Parents =
+        navbar.querySelectorAll(
+            ".has-flyout-2"
+        );
+
+
+    level3Parents.forEach(item => {
+
+        const trigger =
+            item.querySelector(":scope > a");
+
+        if (!trigger) return;
+
+
+        /*
+         * THIS IS THE IMPORTANT FIX.
+         *
+         * If there is no .level-3 submenu,
+         * this is a normal navigation/product link.
+         *
+         * Therefore we do NOTHING.
+         */
+
+        const submenu =
+            item.querySelector(":scope > .level-3");
+
+
+        if (!submenu) {
+            return;
+        }
+
+
+        /*
+         * Only actual level-3 menu parents get
+         * this click handler.
+         */
+
+        trigger.addEventListener("click", function (e) {
+
+            if (window.innerWidth > 900) {
+                return;
+            }
+
+
+            e.preventDefault();
+            e.stopPropagation();
+
+
+            item.classList.toggle(
+                "mobile-open"
+            );
+
+        });
+
+    });
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU AFTER A REAL ROUTE IS CLICKED
+       
+       IMPORTANT:
+       We DO NOT preventDefault().
+       We DO NOT stopPropagation().
+       
+       Therefore your existing routing listener gets
+       the click normally.
+       ===================================================== */
+
+    navbar.addEventListener("click", function (e) {
+
+        if (window.innerWidth > 900) {
+            return;
+        }
+
+
+        const link =
+            e.target.closest("a");
+
+        if (!link) return;
+
+
+        /*
+         * Check whether this link itself opens a submenu.
+         *
+         * Products
+         * About Us
+         * Automotive
+         * Engineering
+         * etc.
+         */
+
+        const parent = link.parentElement;
+
+        if (!parent) return;
+
+
+        const directSubmenu =
+            parent.querySelector(":scope > .level-1, :scope > .level-2, :scope > .level-3");
+
+
+        /*
+         * If this link opens a submenu, leave it alone.
+         */
+
+        if (directSubmenu) {
+            return;
+        }
+
+
+        /*
+         * Otherwise this is a REAL navigation link.
+         *
+         * Examples:
+         *
+         * TVS
+         * MRF
+         * Briggs & Stratton
+         * Kirloskar
+         * Develon
+         * Cummins
+         * Ingersoll Rand
+         */
+
+        closeMobileNavigation();
+
+    });
+
+
+    /* =====================================================
+       CLICK OUTSIDE HEADER
+       ===================================================== */
+
+    document.addEventListener("click", function (e) {
+
+        if (window.innerWidth > 900) {
+            return;
+        }
+
+
+        if (!header.contains(e.target)) {
+
+            closeMobileNavigation();
+
+        }
+
+    });
+
+
+    /* =====================================================
+       CLOSE NAVIGATION FUNCTION
+       ===================================================== */
+
+    function closeMobileNavigation() {
+
+        header.classList.remove(
+            "mobile-nav-open"
+        );
+
+
+        navbar
+            .querySelectorAll(".mobile-open")
+            .forEach(item => {
+
+                item.classList.remove(
+                    "mobile-open"
+                );
+
+            });
+
+
+        const icon =
+            mobileToggle.querySelector("i");
+
+
+        if (icon) {
+
+            icon.classList.remove(
+                "fa-xmark"
+            );
+
+            icon.classList.add(
+                "fa-bars"
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       RESET MOBILE MENU WHEN RETURNING TO DESKTOP
+       ===================================================== */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 900) {
+
+            closeMobileNavigation();
+
+        }
+
+    });
+
+});
+
 //===================MAP==============================
 document.addEventListener('DOMContentLoaded', () => {
 const mapElement = document.getElementById('tanzaniaMap');

@@ -127,36 +127,6 @@ h3{
     padding-left: 15px;
 }
 
-.auth {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.auth a {
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 13px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.login-btn i{
-    color: var(--text-dark);
-    transition: 0.3s ease;
-    font-size: 25px;
-    border: 2px solid var(--text-dark);
-    border-radius: 100%;
-    padding: 7px;
-}
-
-.login-btn i:hover{
-    transform: scale(1.2);
-    color: var(--accent-red);
-    border-color: var(--accent-red);
-}
-
 /*NAVIGATION STYLING*/
 .navbar{
   width: 100%;
@@ -1918,12 +1888,12 @@ h3 {
 .product-display{
     width:100%;
     height:100%;
-    display: none !important;
+    display: none;
     transition: 0.3s ease;
 }
 
 .product-display.active {
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     width: 100%;
@@ -2011,6 +1981,7 @@ h3 {
     color: var(--accent-red);
     transition: 0.3s ease;
     margin-bottom: 7px;
+    text-align: center;
 }
 .title-image{
     display: flex;
@@ -2221,9 +2192,18 @@ h3 {
     color: #111111;
 }
 /*******************RESPONSIVENESS*************************/
+
+/*PRODUCTSSSS*/
 /* Responsive Behavior for Mobile Screens */
 @media (max-width: 868px) {
-
+    .product-display.active{
+        display: flex;
+        flex-direction: column;
+    }
+    .product-details{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 /* Smooth appearance animation */
@@ -2241,26 +2221,14 @@ h3 {
 
 /* 2. Laptops & Medium Desktops (992px to 1200px) */
 @media (max-width: 1199px) {
-    .products-icons {
-        gap: 20px;
-    }
-    .products-icons img {
-        height: 30px;
-    }
+
 }
 
 /* 3. Tablets (768px to 991px) */
 @media (max-width: 991px) {
-    .branding {
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-    }
-    .products-icons {
-        display: none; /* Hide product icons on smaller screens to prevent clutter */
-    }
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    .product-details{
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .about-content, .contact-content {
         flex-direction: column;
@@ -2269,36 +2237,21 @@ h3 {
         flex-direction: column;
         text-align: center;
     }
-    .locator-box, .testimonial-box {
-        height: 60vh;
-    }
-}
+}  
 
 /* 4. Mobile Devices (Under 767px) */
 @media (max-width: 767px) {
-    .branding {
+    .product-details{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .product-display.active{
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    .nav-links {
-        gap: 5px;
-    }
-    .nav-links a {
-        font-size: 11px;
-        padding: 5px 6px;
-    }
-    .sub-nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
     }
     .hero-slider {
         height: 40vh;
         min-height: 250px;
-    }
-    .card-grid {
-        grid-template-columns: 1fr; /* Single column layout for mobile */
     }
     .contact-form {
         padding: 20px;
@@ -2337,21 +2290,6 @@ h3 {
         max-height: 750px;
     }
 
-    .card-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-    }
-
-    .card-img-container {
-        height: 280px;
-    }
-
-    .locator-box, 
-    .testimonial-box {
-        height: 65vh;
-        min-height: 600px;
-    }
-
      .product-container {
     max-width: 1700px; /* Expand grid boundary for larger canvas */
     padding: 60px 40px;
@@ -2366,11 +2304,6 @@ h3 {
     height: 90px;
   }
 
-  /*.product-description {
-    font-size: 1.35rem;
-    max-width: 750px;
-  }*/
-
   .action-btn {
     padding: 18px 36px;
     font-size: 1.2rem;
@@ -2378,11 +2311,6 @@ h3 {
 
   .big-heading {
     font-size: 5.5rem;
-  }
-
-  .back-btn {
-    padding: 16px 32px;
-    font-size: 1.1rem;
   }
 }
 
@@ -2407,12 +2335,6 @@ h3 {
     .logo img {
         height: 95px;
     }
-
-    .products-icons img {
-        height: 60px;
-        gap: 45px;
-    }
-
     .hero-slider {
         height: 55vh;
         max-height: 850px;
@@ -2425,26 +2347,6 @@ h3 {
     .slide-overlay p {
         font-size: 24px;
     }
-
-    .card-grid {
-        grid-template-columns: repeat(5, 1fr); /* Fits 5 products per row on large displays */
-        gap: 35px;
-    }
-
-    .card-img-container {
-        height: 320px;
-    }
-
-    .card-body h3 {
-        font-size: 18px;
-    }
-
-    .arrow-btn {
-        width: 48px;
-        height: 48px;
-        font-size: 18px;
-    }
-
     .section-title {
         font-size: 40px;
         margin-bottom: 45px;
@@ -2494,13 +2396,828 @@ h3 {
   .big-heading {
     font-size: 7rem;
   }
-
-  .back-btn {
-    padding: 20px 40px;
-    font-size: 1.3rem;
-  }
+}
+/*================new=======================*/
+.mobile-sidebar-toggle {
+    display: none;
 }
 
+@media screen and (max-width: 900px) {
+
+        /* =====================================================
+   MOBILE COUNTRY MENU
+   ===================================================== */
+
+    .top-bar > .dropdown > .submenu.level-1 {
+        position: fixed;
+
+        top: 40px;
+
+        right: 10px;
+        left: auto;
+
+        min-width: 180px;
+
+        max-width: calc(100vw - 20px);
+
+        z-index: 100000;
+    }
+    /* =====================================================
+       HAMBURGER
+       ===================================================== */
+
+    .page-section:not(.hidden) .mobile-sidebar-toggle {
+
+        display: flex;
+
+        position: fixed;
+
+        /*
+         * This places the button below your website header.
+         * Adjust this ONE value if your header is taller/shorter.
+         */
+        top: 185px;
+
+        left: 15px;
+
+        width: 48px;
+        height: 48px;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #ed1c24;
+        color: #ffffff;
+
+        font-size: 21px;
+
+        cursor: pointer;
+
+        z-index: 20001;
+
+        box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.25);
+
+        transition:
+            left 0.3s ease,
+            background 0.25s ease,
+            transform 0.2s ease;
+    }
+
+
+    .page-section:not(.hidden) .mobile-sidebar-toggle:hover {
+        background: #c9141b;
+    }
+
+
+    .page-section:not(.hidden) .mobile-sidebar-toggle:active {
+        transform: scale(0.92);
+    }
+
+
+    /* =====================================================
+       MOBILE SIDEBAR
+
+       IMPORTANT:
+       position: fixed !important is needed because your
+       original desktop CSS contains:
+
+       position: sticky !important;
+       ===================================================== */
+
+    .page-section:not(.hidden) .scrollable-sidebar {
+
+        position: fixed !important;
+
+        /*
+         * KEEP SIDEBAR BELOW YOUR WEBSITE HEADER
+         */
+        top: 185px !important;
+
+        left: 0 !important;
+
+        width: min(320px, 85vw) !important;
+
+        /*
+         * Remaining screen height
+         */
+        height: auto !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        box-sizing: border-box;
+
+        z-index: 20000;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        /*
+         * Hidden outside the screen
+         */
+        transform: translateX(-105%);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            transform 0.35s ease,
+            opacity 0.25s ease,
+            visibility 0.35s ease;
+
+        /*
+         * Preserve your sidebar appearance
+         */
+        background-color: #f6f7fa;
+
+        border-radius: 0 20px 20px 0;
+
+        box-shadow:
+            5px 0 25px rgba(0, 0, 0, 0.20);
+    }
+
+
+    /* =====================================================
+       OPEN SIDEBAR
+       ===================================================== */
+
+    .page-section.sidebar-open .scrollable-sidebar {
+
+        transform: translateX(0);
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    /* =====================================================
+       DARK OVERLAY
+
+       Only created when the currently visible product
+       section has .sidebar-open.
+       ===================================================== */
+
+    .page-section.sidebar-open::after {
+
+        content: "";
+
+        position: fixed;
+
+        /*
+         * Start BELOW the website header.
+         */
+        top: 110px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        z-index: 19999;
+    }
+
+
+    /* =====================================================
+       HAMBURGER -> X
+       ===================================================== */
+
+    .page-section.sidebar-open .mobile-sidebar-toggle {
+
+        left: min(
+            calc(320px - 60px),
+            calc(85vw - 60px)
+        );
+
+        background: #ffffff;
+
+        color: #ed1c24;
+    }
+
+
+    .page-section.sidebar-open
+    .mobile-sidebar-toggle i::before {
+
+        content: "\f00d";
+    }
+
+
+    /* =====================================================
+       PRODUCT CONTENT
+
+       Only affect the VISIBLE product section.
+
+       We do NOT change .page-section itself.
+       ===================================================== */
+
+    .page-section:not(.hidden) .main-product-content {
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: 0;
+        margin-right: 0;
+
+        box-sizing: border-box;
+
+        min-width: 0;
+    }
+
+
+    .page-section:not(.hidden) .product-display {
+
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        min-width: 0;
+    }
+
+
+    /* =====================================================
+       PRODUCT ROW
+
+       Prevent desktop widths from forcing horizontal
+       overflow on small screens.
+       ===================================================== */
+
+    .page-section:not(.hidden) .product-row {
+
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        min-width: 0;
+    }
+
+}
+
+/* =========================================================
+   MOBILE HEADER / NAVIGATION
+   ========================================================= */
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+
+/* =========================================================
+   TABLETS + MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    /* -----------------------------------------------------
+       HEADER
+       ----------------------------------------------------- */
+
+    .main-header {
+        position: sticky;
+        top: 0;
+        z-index: 50000;
+
+        width: 100%;
+    }
+
+
+    /* =====================================================
+       TOP BAR
+       ===================================================== */
+
+    .top-bar {
+
+        height: auto;
+        min-height: 38px;
+
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 25px;
+
+        padding: 6px 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        white-space: nowrap;
+
+        box-sizing: border-box;
+
+        scrollbar-width: none;
+    }
+
+
+    .top-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .top-bar a {
+        flex-shrink: 0;
+
+        font-size: 13px;
+
+        padding: 3px 0;
+
+        white-space: nowrap;
+    }
+
+
+    .top-bar a:hover {
+        padding-left: 0;
+    }
+
+
+    /*
+     * Country selector stays usable but doesn't
+     * create a huge dropdown outside the screen.
+     */
+
+    .top-bar .dropdown {
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       BRANDING AREA
+       ===================================================== */
+
+    .branding {
+
+        position: relative;
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 10px 15px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGO
+       ----------------------------------------------------- */
+
+    .logo {
+        flex-shrink: 0;
+    }
+
+
+    .logo img {
+
+        height: 50px;
+
+        width: auto;
+
+        max-width: 190px;
+    }
+
+
+    .logo img:hover {
+        padding-left: 0;
+    }
+
+
+    /* =====================================================
+       MOBILE HAMBURGER
+       ===================================================== */
+
+    .mobile-nav-toggle {
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 46px;
+        height: 46px;
+
+        flex-shrink: 0;
+
+        border: none;
+
+        border-radius: 10px;
+
+        background: var(--accent-red);
+
+        color: white;
+
+        font-size: 21px;
+
+        cursor: pointer;
+
+        box-shadow:
+            0 4px 12px rgba(0,0,0,0.15);
+
+        transition:
+            background 0.25s ease,
+            transform 0.2s ease;
+    }
+
+
+    .mobile-nav-toggle:active {
+        transform: scale(0.93);
+    }
+
+
+    .mobile-nav-toggle:hover {
+        background: #c91d28;
+    }
+
+
+    /* =====================================================
+       NAVIGATION PANEL
+       ===================================================== */
+
+    .navbar {
+
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        max-height: calc(100dvh - 100%);
+
+        overflow-y: auto;
+
+        overflow-x: hidden;
+
+        background: #ffffff;
+
+        box-shadow:
+            0 8px 25px rgba(0,0,0,0.18);
+
+        border-top: 1px solid #eeeeee;
+
+        box-sizing: border-box;
+    }
+
+
+    /* OPEN NAVIGATION */
+
+    .main-header.mobile-nav-open .navbar {
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       NAVIGATION LIST
+       ===================================================== */
+
+    .nav-links {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 5px 0 15px;
+    }
+
+
+    .nav-links > a,
+    .nav-links > .dropdown {
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       NAVIGATION LINKS
+       ===================================================== */
+
+    .navbar a {
+
+        width: 100%;
+
+        min-height: 52px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        box-sizing: border-box;
+
+        padding: 15px 20px;
+
+        border-bottom: 1px solid #eeeeee;
+
+        white-space: normal;
+
+        font-size: 16px;
+
+        color: var(--text-dark);
+    }
+
+
+    .navbar a:hover {
+
+        background-color: #f8f8f8;
+
+        color: var(--accent-red);
+
+        padding-left: 20px;
+
+        border-bottom: 1px solid #eeeeee;
+    }
+
+
+    /* =====================================================
+       MOBILE DROPDOWNS
+       
+       Desktop uses hover.
+       Mobile uses .mobile-open instead.
+       ===================================================== */
+
+
+    /*
+     * Completely disable the desktop hover chain
+     * on mobile.
+     */
+
+    .navbar .dropdown:hover > .level-1,
+    .navbar .has-flyout:hover > .level-2,
+    .navbar .has-flyout-2:hover > .level-3 {
+
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       LEVEL 1
+       ----------------------------------------------------- */
+
+    .navbar .submenu.level-1 {
+
+        position: static;
+
+        width: 100%;
+
+        min-width: 0;
+
+        display: none;
+
+        margin: 0;
+
+        padding: 0;
+
+        box-shadow: none;
+
+        border: none;
+
+        background: #f7f8fa;
+
+        box-sizing: border-box;
+    }
+
+
+    /* OPEN LEVEL 1 */
+
+    .navbar .dropdown.mobile-open > .submenu.level-1 {
+
+        display: block;
+    }
+
+
+    /* -----------------------------------------------------
+       LEVEL 2
+       ----------------------------------------------------- */
+
+    .navbar .submenu.level-2 {
+
+        position: static;
+
+        width: 100%;
+
+        min-width: 0;
+
+        display: none;
+
+        margin: 0;
+
+        padding: 0;
+
+        box-shadow: none;
+
+        border: none;
+
+        background: #eef0f3;
+
+        box-sizing: border-box;
+    }
+
+
+    /* OPEN LEVEL 2 */
+
+    .navbar .has-flyout.mobile-open > .submenu.level-2 {
+
+        display: block;
+    }
+
+
+    /* -----------------------------------------------------
+       LEVEL 3
+       ----------------------------------------------------- */
+
+    .navbar .submenu.level-3 {
+
+        position: static;
+
+        width: 100%;
+
+        min-width: 0;
+
+        display: none;
+
+        margin: 0;
+
+        padding: 0;
+
+        box-shadow: none;
+
+        border: none;
+
+        background: #e5e7eb;
+
+        box-sizing: border-box;
+    }
+
+
+    .navbar .has-flyout-2.mobile-open > .submenu.level-3 {
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       INDENT NESTED MENUS
+       ===================================================== */
+
+    .navbar .level-1 > li > a {
+
+        padding-left: 35px;
+    }
+
+
+    .navbar .level-2 > li > a {
+
+        padding-left: 55px;
+
+        font-size: 15px;
+    }
+
+
+    .navbar .level-3 > li > a {
+
+        padding-left: 75px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       CHEVRONS
+       ===================================================== */
+
+    .navbar .dropdown > a > i,
+    .navbar .has-flyout > a > i,
+    .navbar .has-flyout-2 > a > i {
+
+        transition: transform 0.25s ease;
+    }
+
+
+    /* Products / About Us */
+
+    .navbar .dropdown.mobile-open > a > i {
+
+        transform: rotate(180deg);
+    }
+
+
+    /* Automotive / Engineering */
+
+    .navbar .has-flyout.mobile-open > a > i {
+
+        transform: rotate(90deg);
+    }
+
+
+    /* Level 3 */
+
+    .navbar .has-flyout-2.mobile-open > a > i {
+
+        transform: rotate(90deg);
+    }
+
+
+    /* =====================================================
+       SEARCH
+       ===================================================== */
+
+    .search-container {
+
+        width: 100%;
+
+        max-width: none;
+
+        order: 3;
+
+        box-sizing: border-box;
+
+        padding: 5px 0 0;
+    }
+
+
+    #searchInput {
+
+        width: 100%;
+
+        height: 44px;
+
+        font-size: 15px;
+
+        border-radius: 8px;
+    }
+
+
+    /*
+     * Search stays in the header, but on mobile it
+     * becomes full width.
+     */
+
+    .branding {
+
+        flex-wrap: wrap;
+    }
+
+
+    .search-container {
+        flex-basis: 100%;
+    }
+
+
+    /* =====================================================
+       COUNTRY DROPDOWN
+       ===================================================== */
+
+    .top-bar .submenu {
+
+        position: fixed;
+
+        top: 40px;
+
+        right: 10px;
+
+        left: auto;
+
+        min-width: 180px;
+
+        max-width: calc(100vw - 20px);
+
+        box-sizing: border-box;
+    }
+
+}
 /*========================================TVS SECTION START=============================================*/
 /* =========================================================
    TVS PRODUCT PAGE
@@ -3104,7 +3821,6 @@ h3 {
 
 .main-feature-btn{
     border: 1px solid var(--tvs-border);
-    padding: 5px 7px;
     color:black;
     cursor:pointer;
     transition:.3s;
@@ -3164,7 +3880,7 @@ h3 {
 }
 
 .tvs-colour-image{
-    width:600px;
+    max-width:600px;
     border-radius:25px;
     background:radial-gradient(circle,#fff,#eef0f4);
     display:grid;
@@ -3218,7 +3934,8 @@ h3 {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px 0px;
+    padding: 15px 10px;
+    gap: 5px;
 }
 
 .main-spec-btn{
@@ -3229,6 +3946,7 @@ h3 {
     background-color: var(--tvs-border);
     padding:15px;
     border-radius:12px;
+
 }
 .main-spec-btn.active{
     color: var(--accent-red);
@@ -3389,18 +4107,28 @@ h3 {
     .tvs-feature-image,.tvs-colour-image{height:400px}
     .tvs-related-card{min-width:75%}
     .tvs-selected-banner{justify-content:flex-start;padding-right:160px}
+    .tvs-360-viewer img{transform: translateY(-70px);}
+    .feature-btns{padding: 7px 0px; width: 100%;}
+    .main-feature-btn{padding: 7px;}
+    .spec-btns{padding: 4px 0px; width: 100%; gap: 2px; border-color: transparent;}
+    .main-spec-btn{padding: 5px;}
 }
 
 @media(max-width:520px){
     .tvs-selector,.tvs-detail-section{padding:75px 5%}
     .tvs-category-products{grid-template-columns:repeat(2,1fr)}
-    .tvs-mini-card-image{height:120px}
+    /*.tvs-mini-card-image{height:120px}*/
     .tvs-hero-content h2{font-size:42px}
     .tvs-hero-content p{font-size:13px}
     .tvs-hero-arrow{width:40px;height:40px}
     .tvs-spec-row{grid-template-columns:1fr;gap:7px}
     .tvs-selected-banner{padding:12px 5%;flex-wrap:wrap}
     .tvs-selected-banner button{position:static;margin-left:auto}
+    .tvs-360-viewer img{transform: translateY(-50px);}
+    .feature-btns{padding: 7px 0px; width: 100%;}
+    .main-feature-btn{padding: 7px;}
+    .spec-btns{padding: 4px 0px; width: 100%; gap: 2px; border-color: transparent;}
+    .main-spec-btn{padding: 5px;}
 }
 /*========================================TVS SECTION END=============================================*/
 
