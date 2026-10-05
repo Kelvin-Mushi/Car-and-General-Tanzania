@@ -3824,7 +3824,7 @@ h3 {
     color:black;
     cursor:pointer;
     transition:.3s;
-    background-color: var(--tvs-border);
+    background-color: transparent;
     padding:15px;
     border-radius:12px;
 }
@@ -3943,7 +3943,7 @@ h3 {
     color:black;
     cursor:pointer;
     transition:.3s;
-    background-color: var(--tvs-border);
+    background-color: transparent;
     padding:15px;
     border-radius:12px;
 
@@ -4096,6 +4096,22 @@ h3 {
 }
 
 /* MOBILE */
+/*@media(max-width:900px){
+    .tvs-product-nav{padding:14px 5%;flex-direction:column;align-items:flex-start}
+    .tvs-quick-links{width:100%;overflow-x:auto;padding-bottom:5px}
+    .tvs-quick-links a{white-space:nowrap}
+    .tvs-hero{height:75vw;min-height:420px}
+    .tvs-category-buttons{grid-template-columns:1fr}
+    .tvs-feature-layout,.tvs-colour-display{grid-template-columns:1fr;gap:30px}
+    .tvs-feature-image,.tvs-colour-image{height:400px}
+    .tvs-related-card{min-width:75%}
+    .tvs-selected-banner{justify-content:flex-start;padding-right:160px}
+    .tvs-360-viewer img{transform: translateY(-70px);}
+    .feature-btns{padding: 7px 0px; width: 100%;}
+    .main-feature-btn{padding: 7px;}
+    .spec-btns{padding: 4px 0px; width: 100%; gap: 2px; border-color: transparent;}
+    .main-spec-btn{padding: 5px; font-size: small; display: grid; grid-template-rows: 3, 1fr ;}
+}*/
 
 @media(max-width:800px){
     .tvs-product-nav{padding:14px 5%;flex-direction:column;align-items:flex-start}
@@ -4110,8 +4126,9 @@ h3 {
     .tvs-360-viewer img{transform: translateY(-70px);}
     .feature-btns{padding: 7px 0px; width: 100%;}
     .main-feature-btn{padding: 7px;}
-    .spec-btns{padding: 4px 0px; width: 100%; gap: 2px; border-color: transparent;}
-    .main-spec-btn{padding: 5px;}
+    .spec-btns{padding: 4px 0px; width: 100%; gap: 2px; border-color: transparent; display: grid; grid-template-columns: repeat(3, 1fr);}
+    .main-spec-btn{padding: 5px; font-size: small; margin-bottom: 5px;}
+
 }
 
 @media(max-width:520px){
@@ -4127,8 +4144,8 @@ h3 {
     .tvs-360-viewer img{transform: translateY(-50px);}
     .feature-btns{padding: 7px 0px; width: 100%;}
     .main-feature-btn{padding: 7px;}
-    .spec-btns{padding: 4px 0px; width: 100%; gap: 2px; border-color: transparent;}
-    .main-spec-btn{padding: 5px;}
+    .spec-btns{padding: 4px 0px; width: 100%; gap: 2px; border-color: transparent;display: grid; grid-template-columns: repeat(3, 1fr);}
+    .main-spec-btn{padding: 5px; font-size: smaller; margin-bottom: 5px;}
 }
 /*========================================TVS SECTION END=============================================*/
 
