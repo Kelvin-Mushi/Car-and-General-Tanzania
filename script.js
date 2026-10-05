@@ -871,21 +871,21 @@ if (!mapElement) return;
 
 // 1. Initialize the map with Leaflet-specific zoom restrictions
 const map = L.map('tanzaniaMap', {
-  zoomControl: false,   
+  /*zoomControl: false,   
   scrollWheelZoom: false,     
   doubleClickZoom: false,     
   boxZoom: false,              
   touchZoom: false,            
   dragging: false,             
   minZoom: 6,                  
-  maxZoom: 6                   
+  maxZoom: 6 */                  
 }).setView([-6.3690, 34.8888], 6);
 
 // 2. Extra safety: explicitly disable handlers
-map.touchZoom.disable();
+/*map.touchZoom.disable();
 map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();
-map.boxZoom.disable();
+map.boxZoom.disable();*/
 
 // 3. Load OpenStreetMap tiles
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
